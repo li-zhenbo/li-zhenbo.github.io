@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Review: The Generalized Pade Approximation Series -- Five Papers from Homoclinic Orbits to Periodic Solutions"
+title: Review of the Generalized Pade Approximation Series
 date: 2026-07-26 10:00:00+0800
-description: A retrospective review of five GPA papers (2013-2022): motivations, methodology, key results, and the unifying design principle
+description: >-
+  A retrospective review of five GPA papers from 2013 to 2022
 tags: [research-notes]
 categories: [notes]
 featured: true
