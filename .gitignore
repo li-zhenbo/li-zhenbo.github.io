@@ -17,6 +17,10 @@ assets/pdf/*.aux
 assets/pdf/*.log
 assets/pdf/*.out
 assets/pdf/*.synctex.gz
+assets/mghfp-review/*.aux
+assets/mghfp-review/*.log
+assets/mghfp-review/*.out
+assets/mghfp-review/*.synctex.gz
 test-results/
 vendor
 *.aux
