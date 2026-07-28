@@ -1,0 +1,35 @@
+\contentsline {section}{\numberline {1}Introduction: Why Generalize Pad\'e?}{3}{section.1}%
+\contentsline {section}{\numberline {2}Paper I (2013): The Generalized Pad\'e Approximation --- Definition and Foundation}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Motivation}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The GPA Definition}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Application: Homoclinic Orbits via Hyperbolic Basis}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Key Contributions of Paper\nobreakspace {}I}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Paper II (2014): Extending GPA to Heteroclinic Orbits and Irrational Oscillators}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motivation}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Methodological Extension}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Key Contributions of Paper\nobreakspace {}II}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Paper III (2016): The GPLP Method --- Marrying GPA with Lindstedt--Poincar\'e}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motivation}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The GPLP Procedure}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Three Approximant Types, By Design}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Validation Across Four Oscillator Classes}{7}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Why $\varepsilon = 50$ Works}{7}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Contributions of Paper\nobreakspace {}III}{8}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Paper IV (2019): Cosine GPA --- Extending the Reach to Periodic Solutions}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Motivation: The Periodicity Gap}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The Cosine-Type Generalized Pad\'e Approximant}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Two Improvement Schemes}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Results Across Three Oscillator Classes}{9}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Contributions of Paper\nobreakspace {}IV}{9}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Paper V (2022): Refining GPLP for Asymmetric Potentials}{10}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Motivation}{10}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Improvement 1: $\omega $-Parameterized Homoclinic Approximant}{10}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Improvement 2: Type\nobreakspace {}A and Type\nobreakspace {}B Heteroclinic Approximants}{11}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Improvement 3: Rational Restoring Force Coverage}{11}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Accuracy Gains: 2022 vs.\ 2016}{11}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Contributions of Paper\nobreakspace {}V}{12}{subsection.6.6}%
+\contentsline {section}{\numberline {7}The Unifying Theme: Basis-Geometry Correspondence}{12}{section.7}%
+\contentsline {section}{\numberline {8}Limitations and Open Problems}{12}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Intrinsic Limitations of the GPA Framework}{12}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Open Problems and Future Directions}{13}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Conclusion}{13}{section.9}%
