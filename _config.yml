@@ -168,6 +168,11 @@ latest_posts:
   scrollable: true
   limit: 8
 
+announcements:
+  enabled: true
+  scrollable: true
+  limit: 5
+
 # -----------------------------------------------------------------------------
 # Newsletter
 # -----------------------------------------------------------------------------
