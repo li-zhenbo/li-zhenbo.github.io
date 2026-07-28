@@ -17,7 +17,7 @@ make("nody-cover.png",
     (0, 70, 140),
     lambda s: (s, int(s*0.55), int(s*0.4)),
     555,
-    f"{ESS}/essential-summary-p10/p10-fig1.png")
+    f"{ESS}/essential-summary-p10/p10-fig2.png")
 
 # P11
 make("jvet-cover.png",
