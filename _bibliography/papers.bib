@@ -31,8 +31,26 @@ Adding a paper = adding one BibTeX entry here. The site renders them by year.
   doi             = {10.1088/1402-4896/ae5134},
   pdf             = {li2026-coupled-sd-oscillator.pdf},
   preview         = {fig19-preview.png},
-  abstract        = {The quantitative analysis of the coupled smooth and discontinuous (SD) oscillator remains challenging due to its two irrational nonlinear terms. This paper proposes a modified generalized harmonic function perturbation (MGHFP) method to investigate the global evolution of limit cycles in a nonlinearly damped coupled SD oscillator. Analytical expressions for the relationship between amplitude and system parameters are derived, and a stability criterion is established. Both single-well and triple-well configurations are analyzed, with critical values for homo-heteroclinic bifurcation parameters predicted for the triple-well case. All analytical results are validated against the Runge-Kutta method.},
-  additional_info = {**核心结论**：MGHFP 实现极限环振幅—参数定量预测、稳定性解析判据、同异宿分岔参数预测、高阶阻尼适用范围验证 — 全部与 Runge-Kutta 解析一致。},
+  abstract        = {The quantitative analysis of the coupled smooth and discontinuous (SD) oscillator remains challenging due to its two irrational nonlinear terms. This paper proposes a modified generalized harmonic function perturbation (MGHFP) method to investigate the global evolution of limit cycles in a nonlinearly damped coupled SD oscillator. Analytical expressions for the relationship between amplitude and system parameters are derived, and a stability criterion is established. Both single-well and triple-well configurations are analyzed, with critical values for homo-heteroclinic bifurcation parameters predicted for the triple-well case. All analytical results are validated against the Runge-Kutta method.
+
+![Figure 1: 振幅 A 与控制参数 μc 的关系](../assets/img/publication_preview/fig19-preview.png)
+
+![Figure 7: 三阱系统极限环相图](../assets/img/publication_preview/fig23-analysis.png)
+
+## 核心结论 Key Findings
+
+1. **振幅—参数定量预测**：MGHFP 方法解析地获得极限环振幅 \\(A\\) 与控制参数 \\(\\mu_c\\) 的关系式，实现极限环生命周期（产生→演化→终止）的全定量预测。
+
+2. **稳定性解析判据**：基于常微分方程定性理论，建立了极限环稳定性的解析判据，能够判断每个极限环稳定、不稳定还是半稳定——后者纯数值方法极难捕捉。
+
+3. **同异宿分岔预测**：针对三阱耦合 SD 振子，同时预测了同宿与异宿分岔参数，并给出近似解析解。
+
+4. **高阶阻尼适用范围**：验证了含四次项的高阶非线性阻尼下该方法的适用范围：当 \\(|\\varepsilon\\mu_i| \\leq 0.5\\) 时精度可靠，超过此范围可提升截断阶数补偿。
+
+## 方法要点 Method Highlights
+
+MGHFP 方法的核心改进在于引入**复合 Simpson 公式**将传统 GHFP 方法中无法解析计算的无理非线性项积分离散化，使整个摄动流程可以走通。对于含两个无理非线性项的耦合 SD 振子，这是首次实现的全定量分析框架。},
+  additional_info = {点击「Details」查看图文解读 / Click "Details" for full illustrated notes},
   selected        = {true}
 }
 
