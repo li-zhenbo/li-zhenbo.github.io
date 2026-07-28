@@ -1,1 +1,218 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Paper Notes — Global Evolution of Limit Cycles and Homoclinic Bifurcation in SD Oscillator with Quartic Nonlinear Damping | Zhenbo Li </title> <meta name="author" content="Zhenbo Li"> <meta name="description" content="Padé-enhanced MGHFP method for global limit cycle evolution and homoclinic bifurcation in SD oscillators with quartic damping — first multi-parameter analysis"> <meta name="keywords" content="nonlinear-dynamics, bifurcation, limit-cycle, perturbation-method, sd-oscillator, 非线性动力学, 分岔, 极限环, 摄动法, 耦合SD振子"> <meta property="og:site_name" content="Zhenbo Li"> <meta property="og:type" content="article"> <meta property="og:title" content="Zhenbo Li | Paper Notes — Global Evolution of Limit Cycles and Homoclinic Bifurcation in SD Oscillator with Quartic Nonlinear Damping"> <meta property="og:url" content="https://li-zhenbo.github.io/blog/2025/paper-notes-sd-oscillator-en/"> <meta property="og:description" content="Padé-enhanced MGHFP method for global limit cycle evolution and homoclinic bifurcation in SD oscillators with quartic damping — first multi-parameter analysis"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Paper Notes — Global Evolution of Limit Cycles and Homoclinic Bifurcation in SD Oscillator with Quartic Nonlinear Damping"> <meta name="twitter:description" content="Padé-enhanced MGHFP method for global limit cycle evolution and homoclinic bifurcation in SD oscillators with quartic damping — first multi-parameter analysis"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 1200px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%94%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://li-zhenbo.github.io/blog/2025/paper-notes-sd-oscillator-en/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Zhenbo</span> Li </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog 笔记 </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications 论文 </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects 代码 </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV 简历 </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <div class="post"> <header class="post-header"> <h1 class="post-title">Paper Notes — Global Evolution of Limit Cycles and Homoclinic Bifurcation in SD Oscillator with Quartic Nonlinear Damping</h1> <p class="post-meta"> Created on July 04, 2025 </p> <p class="post-tags"> <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>   ·   <a href="/blog/tag/paper-notes"> <i class="fa-solid fa-hashtag fa-sm"></i> paper-notes</a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> notes</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <blockquote> <p><strong>Paper:</strong> Li, Z., Hou, L., &amp; Peng, R. (2025). <em>Global Evolution of Limit Cycles and Homoclinic Bifurcation of Smooth and Discontinuous Oscillator with Quartic Nonlinear Damping</em>. International Journal of Non-Linear Mechanics, 178, 105185. <strong>Links:</strong> <a href="/assets/pdf/essential-summary-p2.pdf">Essential Summary PDF</a> · <a href="https://doi.org/10.1016/j.ijnonlinmec.2025.105185" rel="external nofollow noopener" target="_blank">DOI</a></p> </blockquote> <h2 id="tldr">TL;DR</h2> <p>Introducing Padé approximation into the MGHFP framework simplifies previously complicated analytical expressions into rational functions — lowering the barrier to practical use and, critically, enabling <strong>multi-parameter</strong> analysis for the first time. This represents a major methodological upgrade for the MGHFP series.</p> <h2 id="motivation">Motivation</h2> <p>The SD oscillator (Smooth and Discontinuous Oscillator) is a prototypical irrational nonlinear oscillator, but research on its <strong>nonlinearly damped</strong> variant is scarce. Prior work has focused on the SD–van der Pol oscillator (quadratic damping only); the case of <strong>quartic nonlinear damping</strong> ($\mu_4 x^4\dot{x}$), which arises naturally in MEMS micro-beam resonators and high-damping vibration isolators, has remained unaddressed.</p> <p>Moreover, the authors’ previously developed MGHFP method, while effective, produced expressions that were prohibitively complicated — the coefficient functions involved nested Simpson integrals, requiring system parameters to be assigned upfront and degenerating the results to semi-analytic, single-parameter analysis. Padé approximation was introduced precisely to break this bottleneck.</p> <h2 id="system-model">System Model</h2> <p>The SD oscillator with quartic nonlinear damping:</p> \[\ddot{x} + \omega_0^2 x\left(1 - \frac{1}{\sqrt{x^2+\alpha^2}}\right) = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4)\dot{x}\] <p>where $\alpha$ is the smoothing parameter ($\alpha\to 0$ recovers the non-smooth limit), $\omega_0$ is the natural frequency, $\varepsilon$ is a small perturbation parameter, and $\mu_c$ serves as the control parameter.</p> <p><img src="/assets/img/publication_preview/p2-fig2-potential.png" alt="Potential portrait" width="70%"></p> <p><em>Figure 2: Double-well potential portrait of the SD oscillator. As $\alpha$ decreases from 1 to 0, the system transitions from single-well to double-well dynamics, forming a homoclinic orbit that plays a central role in the bifurcation analysis.</em></p> <h2 id="methodological-innovation-mghfp--padé-approximation">Methodological Innovation: MGHFP + Padé Approximation</h2> <h3 id="the-mghfp-pipeline">The MGHFP Pipeline</h3> <ol> <li> <strong>Nonlinear time transformation</strong> $d\varphi/dt = \Phi(\varphi)$, assuming a solution of the form $x = a\cos^2\Phi + b$</li> <li> <strong>Perturbation expansion</strong> $a = a_0 + \varepsilon a_1 + \cdots$</li> <li> <strong>Composite Simpson integration</strong> to discretize the integrals of irrational nonlinear terms that cannot be handled analytically</li> </ol> <h3 id="padé-approximation--the-key-upgrade">Padé Approximation — The Key Upgrade</h3> <p>The coefficient functions $f_{2i}(\alpha, A)$ output by MGHFP are formally complex, with nested integrals that hinder direct analysis. This paper introduces Padé approximation to fit these functions as <strong>rational functions</strong>:</p> \[f(\alpha, A) \approx \frac{P_n(\alpha, A)}{Q_m(\alpha, A)}\] <p>In contrast to the least-squares polynomial approach previously attempted by the authors (which required parameter pre-assignment, degenerating results to semi-analytic form), Padé yields <strong>fully analytical</strong> expressions that support simultaneous multi-parameter discussion.</p> <h2 id="key-equations">Key Equations</h2> <h3 id="amplitudeparameter-relationship">Amplitude–Parameter Relationship</h3> \[\boxed{\mu_c = -\frac{4}{a_0^2(2p_0 - p_4)}\Big(\tilde{E}_1\mu_1 + \tilde{E}_2\mu_2 + \tilde{E}_3\mu_3 + \tilde{E}_4\mu_4\Big)}\] <p>where $\tilde{E}<em>i$ are now <strong>Padé-approximated rational functions</strong> of $\alpha$ and $A$ — substantially simpler than the raw MGHFP expressions and fully amenable to multi-parameter analysis. The Fourier coefficients $p</em>{2i}$ are still computed via the composite Simpson formula.</p> <p><img src="/assets/img/publication_preview/p2-fig3-amplitude.png" alt="Amplitude–parameter curves" width="70%"></p> <p><em>Figure 3: (Upper) $\mu_c$–$A$ curves. (Lower) $H_0$–$A$ curves. (Bottom row) Phase portraits at different $\mu_c$ values. Solid/dotted lines: MGHFP. Dots: Runge–Kutta. The complete limit cycle lifecycle — emergence, bifurcation, and convergence — is quantitatively visualized.</em></p> <h3 id="stability-criterion">Stability Criterion</h3> \[\boxed{H_0 = \frac{1}{\pi}\int_0^\pi \left[\mu_c + \sum_{i=1}^{4}\mu_i(a_0\cos^2\varphi + b)^i\right]d\varphi}\] <p>$H_0 &gt; 0$: unstable; $H_0 = 0$: semi-stable; $H_0 &lt; 0$: stable.</p> <h3 id="homoclinic-bifurcation-threshold">Homoclinic Bifurcation Threshold</h3> <p>Setting $b = h$ (saddle point ordinate) in the amplitude–parameter relation yields the critical $\mu_c^{\mathrm{hom}}$ — the parameter value at which the limit cycle collides with the saddle point and is annihilated.</p> <h2 id="key-results">Key Results</h2> <h3 id="example-1-single-well-alpha--2">Example 1: Single-Well ($\alpha = 2$)</h3> <p>With $\mu_1=-1, \mu_2=1.5, \mu_3=1, \mu_4=-1$, Figure 3 reveals the complete limit cycle lifecycle:</p> <ul> <li>Below critical $\mu_c$: <strong>no limit cycle exists</strong> </li> <li>At critical point: a <strong>semi-stable</strong> limit cycle emerges</li> <li>Further increase of $\mu_c$: splits into one <strong>stable</strong> ($H_0 &lt; 0$) and one <strong>unstable</strong> ($H_0 &gt; 0$) limit cycle</li> <li>The unstable cycle eventually <strong>collapses</strong> to the equilibrium point; the stable cycle persists and grows</li> </ul> <h3 id="example-2-different-parameter-set-alpha--065">Example 2: Different Parameter Set ($\alpha = 0.65$)</h3> <p>With $\mu_1=-0.5, \mu_2=1, \mu_3=1, \mu_4=-0.1$, analytical and numerical results are in good agreement.</p> <p><img src="/assets/img/publication_preview/p2-fig8-amplitude2.png" alt="Another parameter set" width="70%"></p> <p><em>Figure 8: $\mu_c$–$A$ and $H_0$–$A$ curves for a different parameter set. The method accurately captures limit cycle evolution and stability transitions across parameter space.</em></p> <h3 id="analytical-solution-verification">Analytical Solution Verification</h3> <p><img src="/assets/img/publication_preview/p2-fig7-solutions.png" alt="Analytical vs. numerical" width="70%"></p> <p><em>Figure 7: Analytical limit cycle solutions at different $\mu_c$ compared with Runge–Kutta numerical integration, validating the accuracy and reliability of the MGHFP+Padé approach.</em></p> <h2 id="five-key-findings">Five Key Findings</h2> <ol> <li> <p><strong>Padé-enhanced MGHFP:</strong> Introducing Padé approximation yields concise, fully analytical amplitude–parameter relationships. Unlike prior semi-analytic results, the present version supports <strong>multi-parameter</strong> analysis.</p> </li> <li> <p><strong>Complete lifecycle prediction:</strong> The method quantitatively answers: when does a limit cycle emerge? How does it bifurcate? Where does it converge? Is it stable? — including precise prediction of <strong>unstable limit cycles</strong>, notoriously difficult for numerical methods.</p> </li> <li> <p><strong>Analytical homoclinic bifurcation threshold:</strong> The critical parameter at which the limit cycle collides with the saddle point is obtained analytically.</p> </li> <li> <p><strong>Multi-parameter classification (Theorems 2 &amp; 3):</strong> The simplified expressions enable deriving <strong>parametric regions</strong> where the oscillator has exactly two limit cycles — a generalization unattainable with prior MGHFP results.</p> </li> <li> <p><strong>Engineering relevance:</strong> The framework supports both <strong>amplitude regulation</strong> (energy harvesting, predator–prey models) and <strong>oscillation suppression</strong> (vibration isolation, vehicle suspension, aeroelastic flutter). Through bifurcation parameter tuning, limit cycles can be created, modulated, or annihilated.</p> </li> </ol> <h2 id="limitations">Limitations</h2> <ul> <li>Large perturbation ($\varepsilon &gt; 0.5$): accuracy degrades; higher-order expansions can mitigate this</li> <li>Limit cycles crossing saddle points: the drop in velocity demands higher Fourier truncation orders</li> <li>Non-smooth potential wells ($\alpha = 0$): non-smoothness affects accuracy</li> </ul> <h2 id="position-in-the-mghfp-series">Position in the MGHFP Series</h2> <p>This paper occupies a pivotal position in the MGHFP series — through Padé approximation, it elevates the method from semi-analytic to fully analytic and from single-parameter to multi-parameter. This upgrade directly enabled the subsequent Physica Scripta 2026 work (MGHFP applied to coupled SD oscillators with two irrational nonlinear terms), which is the most complex application in the series to date.</p> <p>For researchers in nonlinear perturbation methods, the methodological contribution — the Padé + perturbation expansion strategy for systems with irrational nonlinearities — may hold broader value than the specific results.</p> </div> </article> <br> <hr> <br> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <ul class="list-disc pl-7 my-3 space-y-2 marker:text-[var(--global-theme-color)]"> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/2024-07-14-paper-notes-mghfp-en/"></a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/paper-notes-coupled-sd/">论文笔记：耦合 SD 振子的极限环全局演化与同异宿分岔定量分析</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/paper-notes-coupled-sd-en/">Paper Notes — Quantitative Analysis of Dynamical Bifurcations in a Coupled SD Oscillator with High-order Nonlinear Damping</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2025/paper-notes-sd-oscillator/">论文笔记：SD 振子的极限环全局演化与同宿分岔——Padé 增强的 MGHFP 方法</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2024/paper-notes-mghfp/">论文笔记：MGHFP 方法的提出——广义谐波函数摄动法的符号化改进</a> </li> </ul> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Zhenbo Li. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. 境外镜像 <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a> · 国内镜像 <a href="https://gitee.com/" target="_blank" rel="external nofollow noopener">Gitee Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog-笔记",
+          title: "Blog 笔记",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications-论文",
+          title: "Publications 论文",
+          description: "论文列表（按年份倒序，由 _bibliography/papers.bib 自动生成）。每篇论文附核心结论、PDF 与代码链接。Publications in reversed chronological order, generated by jekyll-scholar from papers.bib.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects-代码",
+          title: "Projects 代码",
+          description: "论文配套代码与研究工具。Code accompanying my papers and other research utilities.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv-简历",
+          title: "CV 简历",
+          description: "学术简历（在线版由 _data/cv.yml 生成）。Academic CV — edit _data/cv.yml to update the online version.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-",
+        
+          title: "",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/2024-07-14-paper-notes-mghfp-en/";
+          
+        },
+      },{id: "post-论文笔记-耦合-sd-振子的极限环全局演化与同异宿分岔定量分析",
+        
+          title: "论文笔记：耦合 SD 振子的极限环全局演化与同异宿分岔定量分析",
+        
+        description: "提出 MGHFP 方法，对含高阶非线性阻尼的耦合 SD 振子进行极限环全局演化与同异宿分岔的定量分析",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/paper-notes-coupled-sd/";
+          
+        },
+      },{id: "post-paper-notes-quantitative-analysis-of-dynamical-bifurcations-in-a-coupled-sd-oscillator-with-high-order-nonlinear-damping",
+        
+          title: "Paper Notes — Quantitative Analysis of Dynamical Bifurcations in a Coupled SD Oscillator...",
+        
+        description: "MGHFP method for global limit cycle evolution and homo-heteroclinic bifurcation in coupled SD oscillators with two irrational nonlinearities",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/paper-notes-coupled-sd-en/";
+          
+        },
+      },{id: "post-论文笔记-sd-振子的极限环全局演化与同宿分岔-padé-增强的-mghfp-方法",
+        
+          title: "论文笔记：SD 振子的极限环全局演化与同宿分岔——Padé 增强的 MGHFP 方法",
+        
+        description: "引入 Padé 近似改进 MGHFP 方法，对含四次非线性阻尼的 SD 振子进行极限环全局演化与同宿分岔定量分析，首次实现多参数讨论",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/paper-notes-sd-oscillator/";
+          
+        },
+      },{id: "post-paper-notes-global-evolution-of-limit-cycles-and-homoclinic-bifurcation-in-sd-oscillator-with-quartic-nonlinear-damping",
+        
+          title: "Paper Notes — Global Evolution of Limit Cycles and Homoclinic Bifurcation in SD...",
+        
+        description: "Padé-enhanced MGHFP method for global limit cycle evolution and homoclinic bifurcation in SD oscillators with quartic damping — first multi-parameter analysis",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/paper-notes-sd-oscillator-en/";
+          
+        },
+      },{id: "post-论文笔记-mghfp-方法的提出-广义谐波函数摄动法的符号化改进",
+        
+          title: "论文笔记：MGHFP 方法的提出——广义谐波函数摄动法的符号化改进",
+        
+        description: "引入复合 Simpson 积分实现 GHFP 方法的纯符号化执行，MGHFP 系列方法的开篇之作",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-mghfp/";
+          
+        },
+      },{id: "news-新论文发表在-ijnlm-mghfp-方法的开篇之作-the-foundational-paper-of-the-mghfp-method-series-is-now-published-in-ijnlm-doi-https-doi-org-10-1016-j-ijnonlinmec-2024-104832",
+          title: '新论文发表在 IJNLM：MGHFP 方法的开篇之作 / The foundational paper of the MGHFP method series is...',
+          description: "",
+          section: "News",},{id: "news-新论文发表在-international-journal-of-non-linear-mechanics-sd-振子极限环全局演化与同宿分岔-new-paper-published-in-ijnlm-global-evolution-of-limit-cycles-and-homoclinic-bifurcation-in-sd-oscillator-with-quartic-nonlinear-damping-doi-https-doi-org-10-1016-j-ijnonlinmec-2025-105185",
+          title: '新论文发表在 International Journal of Non-Linear Mechanics：SD 振子极限环全局演化与同宿分岔 / New paper published in IJNLM:...',
+          description: "",
+          section: "News",},{id: "news-新论文发表在-physica-scripta-耦合-sd-振子极限环全局定量分析-new-paper-published-in-physica-scripta-quantitative-analysis-of-limit-cycles-in-coupled-sd-oscillator-doi-https-doi-org-10-1088-1402-4896-ae5134",
+          title: '新论文发表在 Physica Scripta：耦合 SD 振子极限环全局定量分析 / New paper published in Physica Scripta: quantitative...',
+          description: "",
+          section: "News",},{id: "news-个人主页上线啦-my-academic-homepage-is-now-online",
+          title: '个人主页上线啦！🎉 My academic homepage is now online.',
+          description: "",
+          section: "News",},{id: "projects-sample-repo",
+          title: 'sample-repo',
+          description: "示例项目：论文 &quot;A Sample Journal Paper Title&quot; 的官方实现 / Official code of the sample paper",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_paper-code/";
+            },},{id: "projects-another-tool",
+          title: 'another-tool',
+          description: "示例项目（点击卡片直达 GitHub）：一个实用的研究小工具 / A handy research utility",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_research-tool/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6C%69%7A%68%65%6E%62%6F@%75%73%63.%65%64%75.%63%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/li-zhenbo", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://gitee.com/your-gitee-username", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
