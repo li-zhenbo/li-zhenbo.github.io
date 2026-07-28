@@ -21,3 +21,13 @@ papers:
     title: A Modified Perturbation Method for Global Dynamic Analysis of Generalized
       Mixed Rayleigh–Liénard Oscillator with Cubic and Quintic Nonlinearities
     year: '2024'
+  li2013generalized:
+    citations: 0
+    title: A Generalized Harmonic Function Perturbation Method for Determining Limit
+      Cycles and Homoclinic Orbits of Helmholtz–Duffing Oscillator
+    year: '2013'
+  li2016predicting:
+    citations: 4
+    title: Predicting Homoclinic and Heteroclinic Bifurcation of Generalized Duffing–Harmonic–van
+      de Pol Oscillator
+    year: '2016'

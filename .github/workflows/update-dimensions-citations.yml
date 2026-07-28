@@ -25,6 +25,8 @@ jobs:
           papers = {
               "li2026quantitative": "10.1088/1402-4896/ae5134",
               "li2025global": "10.1016/j.ijnonlinmec.2025.105185",
+              "li2013generalized": "10.1016/j.jsv.2013.05.007",
+              "li2016predicting": "10.1007/s12346-015-0138-z",
           }
 
           results = {}
