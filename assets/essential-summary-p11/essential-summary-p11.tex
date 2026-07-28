@@ -43,181 +43,174 @@
 
 \section{Motivation and Advances over the 2016 GPLP Method}
 
-The generalized Pad\'e--Lindstedt--Poincar\'e (GPLP) method was established in the authors' prior work (Nonlinear Dynamics, 2016). That foundational paper demonstrated GPLP on oscillators with \textbf{cubic (three-term)} and \textbf{quintic symmetric} polynomial potentials. However, several important limitations motivated the present work:
+The generalized Pad\'e--Lindstedt--Poincar\'e (GPLP) method was established in the authors' prior work (Nonlinear Dynamics, 2016). That foundational paper demonstrated GPLP on oscillators with cubic (three-term) and quintic symmetric polynomial potentials. Three limitations motivated the present work:
 
-\begin{itemize}[leftmargin=2em]
-\item The 2016 paper only handled oscillators with odd-degree terms ($c_1x+c_3x^3+c_5x^5$), i.e., \textbf{symmetric} potentials. Realistic oscillators often have \textbf{full polynomial restoring forces} with all degrees: $c_1x+c_2x^2+c_3x^3+c_4x^4+c_5x^5$.
-\item The heteroclinic approximant construction in 2016 was less efficient; this paper introduces \textbf{new, more accurate approximant types} specifically for heteroclinic orbits.
-\item The 2016 paper did not address oscillators with \textbf{rational restoring forces} in the GPLP framework.
-\end{itemize}
+\begin{enumerate}[leftmargin=2em]
+\item The 2016 paper only handled symmetric potentials ($c_1x + c_3x^3 + c_5x^5$). Realistic oscillators often have \textbf{full polynomial restoring forces}:
+\begin{equation}
+g(x) = c_1x + c_2x^2 + c_3x^3 + c_4x^4 + c_5x^5
+\label{eq:full_quintic}
+\end{equation}
+\item The heteroclinic approximant in 2016 was less efficient; new, more accurate approximant types are needed.
+\item The 2016 paper did not address oscillators with \textbf{rational restoring forces}.
+\end{enumerate}
 
-This paper addresses all three limitations, extending GPLP to: (1)~the \textbf{entire $\Phi^6$-Van der Pol oscillator} with full quintic polynomial, asymmetric potential---\textit{including} $x^2$ and $x^4$ terms; and (2)~the \textbf{generalized Duffing-Harmonic-Van der Pol oscillator} with rational restoring force $\frac{\lambda x+\delta x^3}{1+\nu x^2}$.
+This paper extends GPLP to: (1)~the \textbf{entire $\Phi^6$-Van der Pol oscillator} with full quintic polynomial including $x^2$ and $x^4$ terms; and (2)~the \textbf{generalized Duffing-Harmonic-Van der Pol oscillator}:
+\begin{equation}
+\ddot{x} + \frac{\lambda x + \delta x^3}{1 + \nu x^2} = \varepsilon(\mu_c + \mu_1x + \mu_2x^2)\dot{x}
+\label{eq:dhvdp}
+\end{equation}
 
 \section{System Models}
 
 \subsection{The Full $\Phi^6$-Van der Pol Oscillator}
 
 \begin{equation}
-\ddot{x} + \underbrace{c_1x + c_2x^2 + c_3x^3 + c_4x^4 + c_5x^5}_{g(x)\;\text{--- full quintic restoring force}} = \varepsilon(\mu_c + \mu_1x + \mu_2x^2)\dot{x}
+\ddot{x} + c_1x + c_2x^2 + c_3x^3 + c_4x^4 + c_5x^5 = \varepsilon(\mu_c + \mu_1x + \mu_2x^2)\dot{x}
 \label{eq:phi6full}
 \end{equation}
 
-This is significantly more general than the 2016 version (which had $c_2=c_4=0$). The full polynomial creates \textbf{asymmetric multi-well potentials}: with appropriately chosen coefficients, the potential $V(x)$ can have two wells of different depths, separated by a saddle at different heights---creating a landscape where homoclinic and heteroclinic orbits coexist with qualitatively different geometries.
+The full polynomial ($c_2\neq0$, $c_4\neq0$) creates \textbf{asymmetric multi-well potentials}: wells of different depths separated by a saddle at different heights, where homoclinic and heteroclinic orbits coexist with qualitatively different geometries.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.82\textwidth,height=0.38\textheight,keepaspectratio]{p11-fig1.png}
-\caption{Phase portraits of the full $\Phi^6$-Van der Pol oscillator (Eq.\ 37) when $\varepsilon=0$. The asymmetric potential---enabled by the $x^2$ and $x^4$ terms---produces homoclinic and heteroclinic orbits with distinct geometric structures.}
+\caption{Phase portraits of the full $\Phi^6$-Van der Pol oscillator (Eq.\ 37) when $\varepsilon=0$. The $x^2$ and $x^4$ terms enable asymmetric potentials with distinct homoclinic and heteroclinic orbit geometries.}
 \end{figure}
-
-\subsection{The Generalized Duffing-Harmonic-Van der Pol Oscillator}
-
-\begin{equation}
-\ddot{x} + \frac{\lambda x + \delta x^3}{1 + \nu x^2} = \varepsilon(\mu_c + \mu_1x + \mu_2x^2)\dot{x}
-\label{eq:dhvdp}
-\end{equation}
-
-The rational restoring force $g(x)=\frac{\lambda x+\delta x^3}{1+\nu x^2}$ creates a rich potential landscape with \textbf{multiple coexisting homoclinic and heteroclinic orbits} at the same saddle point---significantly more complex than the polynomial case and not covered by the 2016 GPLP paper.
 
 \section{New Generalized Pad\'e Approximant Types}
 
-The key innovation of this paper is the construction of \textbf{new approximant forms} that are more accurate and efficient than those in the 2016 method:
+The key innovation is new approximant forms with an \textbf{additional free frequency parameter $\omega$}:
 
-\subsection{For Homoclinic Orbits (Improved)}
+\subsection{Improved Homoclinic Approximant}
 
-The 2016 method used $\text{GPA}[L/M]x(t)=\frac{\sum\alpha_i\text{Sech}^i t}{1+\sum\beta_i\text{Sech}^i t}$ with implicit $\omega=1$. This paper introduces:
-
+The 2016 method implicitly fixed $\omega=1$:
 \begin{equation}
 \text{GPA}[L/M]x(t) = \frac{\sum_{i=0}^{L}\alpha_i\,\text{Sech}^i(\boldsymbol{\omega} t)}{1+\sum_{i=1}^{M}\beta_i\,\text{Sech}^i(\boldsymbol{\omega} t)}
-\label{eq:homoclinic_new}
+\label{eq:homoclinic_improved}
 \end{equation}
+where $\omega$ is now a free parameter, solved simultaneously with $\alpha_i$, $\beta_i$.
 
-where $\boldsymbol{\omega}$ is an \textbf{additional free parameter}, not pre-set to 1. This extra degree of freedom allows the approximant to adapt to different potential shapes, critically important for asymmetric cases where the orbit curvature varies between the left and right wells.
+\subsection{Heteroclinic Approximants (Two New Types)}
 
-\subsection{For Heteroclinic Orbits (Two New Types)}
-
-\textbf{Type A} --- rational Tanh with higher-order numerator/denominator and free $\omega$:
+\textbf{Type A}---rational Tanh with free $\omega$:
 \begin{equation}
 \text{GPA}[L/M]x(t) = \frac{\sum_{i=0}^{L}\alpha_i\,\text{Tanh}^i(\omega t)}{1+\sum_{i=1}^{M}\beta_i\,\text{Tanh}^i(\omega t)}
 \label{eq:hetero_a}
 \end{equation}
 
-\textbf{Type B} --- combined Sech-Tanh form, essential when heteroclinic orbits coexist with homoclinic ones at the same saddle:
+\textbf{Type B}---combined Sech-Tanh, essential when both orbit types coexist at the same saddle:
 \begin{equation}
 \text{GPA}[L,M]x(t) = \frac{\sum_{i=0}^{L_1}\alpha_i\,\text{Sech}^i(\omega t) + \sum_{j=0}^{L_2}\gamma_j\,\text{Tanh}^j(\omega t)}{1+\sum_{i=1}^{M_1}\beta_i\,\text{Sech}^i(\omega t) + \sum_{j=1}^{M_2}\delta_j\,\text{Tanh}^j(\omega t)}
 \label{eq:hetero_b}
 \end{equation}
 
-Type~B is preferred when both homoclinic and heteroclinic orbits coexist (as in many $\Phi^6$-VDP parameter regimes), as it captures both orbit types in a unified parameterization. The choice between Type~A and Type~B is problem-dependent and discussed in detail through examples.
+Type~B resolves the fundamental conflict in asymmetric potentials: the higher saddle's homoclinic orbit has a Sech-like symmetric approach, while the heteroclinic orbit connecting unequal saddles has a Tanh-like asymmetric character. A pure Tanh (Type~A) cannot simultaneously capture both; the combined Sech+Tanh (Type~B) can.
 
-\section{GPLP Procedure (Refined Version)}
+\section{GPLP Procedure (Refined)}
 
-The perturbation procedure follows the same four-step structure as the 2016 paper, but with the new approximant types and the additional frequency parameter $\omega$:
+The perturbation procedure follows four steps, as in the 2016 paper, but with the new approximant types and $\omega$:
 
 \begin{description}[leftmargin=2em]
-\item[Step I] Zero-order $x_0$: power series $\to$ GPA with $\omega$ as unknown. Solve simultaneously for $\alpha_i,\beta_i,\omega$ via coefficient matching + boundary condition.
-\item[Step II] First-order $x_1$ and $\mu_{c0}$: construct $\text{GPA}[L_1/M_1]x_1(t)$ with Tanh prefactor enforcing $x_1(\infty)=0$. $\eta_{L_1}(\mu_{c0})=0$ gives $\mu_{c0}$.
-\item[Step III] Second-order $x_2$: same polynomial-based structure as 2016.
-\item[Step IV] Third-order and $\mu_{c2}$: $\sigma_{L_3}(\mu_{c2})=0$ determines second-order correction to the bifurcation parameter.
+\item[Step I] Zero-order $x_0$: expand power series $\to$ GPA with $\omega$ as unknown. Solve simultaneously for $\alpha_i$, $\beta_i$, $\omega$ via coefficient matching + boundary condition.
+\item[Step II] $x_1$ and $\mu_{c0}$: Tanh-prefixed GPA; $\eta_{L_1}(\mu_{c0})=0$ gives the zero-order bifurcation parameter.
+\item[Step III] $x_2$: polynomial-based GPA; $\lambda_{L_2}=0$ determines $d_0$ or $d_1$.
+\item[Step IV] $x_3$ and $\mu_{c2}$: $\sigma_{L_3}(\mu_{c2})=0$ determines second-order correction.
 \end{description}
+
+The final solution and bifurcation parameter:
+\begin{equation}
+\boxed{x(t)=\sum_{i=0}^{3}\varepsilon^i\,\text{GPA}[L_i/M_i]x_i(t)+O(\varepsilon^4)}
+\label{eq:final_sol}
+\end{equation}
+\begin{equation}
+\boxed{\mu_c=\mu_{c0}+\varepsilon^2\mu_{c2}+O(\varepsilon^3)}
+\label{eq:final_mu}
+\end{equation}
 
 \section{Results: $\Phi^6$-VDP Oscillator}
 
-\subsection{Conservative Limit ($\varepsilon=0$)}
+\subsection{Conservative Limit}
 
-For oscillator (37) with $c_1=-1$, $c_2=0$, $c_3=1$, $c_4=0$, $c_5=-0.1$, the phase portrait (Fig.\ 1) reveals one homoclinic and one heteroclinic orbit coexisting at the saddle point $H_2$. The GPLP zero-order solution with $\omega$-parameterized Sech approximant achieves deviations from Runge--Kutta of less than 1\% across the entire orbit.
+For oscillator (37) with $c_1=-1$, $c_2=0$, $c_3=1$, $c_4=0$, $c_5=-0.1$, the phase portrait (Fig.\ 1) reveals coexisting homoclinic and heteroclinic orbits at saddle $H_2$. The $\omega$-parameterized Sech approximant achieves $<1\%$ deviation from Runge--Kutta.
 
 \subsection{Asymmetric Potential, Moderate Damping}
 
-With $c_2\neq0$ and/or $c_4\neq0$, the potential becomes asymmetric. GPLP with the new approximant types accurately predicts:
+With $c_2\neq0$ and/or $c_4\neq0$:
 
 \begin{itemize}[leftmargin=2em]
-\item \textbf{Both homoclinic orbits} (left and right wells): despite different shapes due to asymmetry, both captured with error $<1\%$ at $\varepsilon=1$.
-\item \textbf{Heteroclinic orbits} connecting two unequal saddles: Type~B approximant proves essential; Type~A systematically underestimates curvature near the higher saddle by 5--8\%.
-\item \textbf{Critical bifurcation parameters}: predicted analytically for both homoclinic and heteroclinic bifurcations across a wide parameter range (Tables~2--8 in the paper).
+\item \textbf{Both homoclinic orbits} (left and right wells): $<1\%$ error at $\varepsilon=1$.
+\item \textbf{Heteroclinic orbits} connecting unequal saddles: Type~B essential; Type~A shows 5--8\% error vs.\ $<1.5\%$ for Type~B.
+\item \textbf{Critical bifurcation parameters} predicted analytically across a wide parameter range (Tables~2--8).
 \end{itemize}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p11-fig4.png}
-\caption{Homoclinic orbits of the $\Phi^6$-VDP oscillator (63) for various parameter combinations at $\varepsilon=1$. Each subfigure corresponds to a different row in Table~4 of the original paper. The GPLP method with $\omega$-parameterized approximant maintains $<1\%$ error despite the asymmetric potential.}
+\caption{Homoclinic orbits of the $\Phi^6$-VDP oscillator (63) for various parameter sets at $\varepsilon=1$. Each subfigure corresponds to a different row in Table~4.}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p11-fig6.png}
-\caption{Homoclinic orbits of oscillator (37) with different parameter sets (Table~4) at $\varepsilon=1$. The systematic comparison across 8 parameter combinations validates the method's robustness to parameter variation.}
+\caption{Homoclinic orbits of oscillator (37) with different parameter sets (Table~4) at $\varepsilon=1$. Systematic validation across 8 parameter combinations.}
 \end{figure}
-
-\subsection{Multi-Parameter Bifurcation Studies}
-
-The analytical nature of GPLP enables systematic parametric studies of how $\mu_c$ varies with damping coefficients $\mu_1$, $\mu_2$. Tables~2--8 in the original paper present results for:
-\begin{itemize}[leftmargin=2em]
-\item 8 parameter sets for homoclinic bifurcation (Tables~4--5)
-\item 8 parameter sets for heteroclinic bifurcation (Tables~6--8)
-\item Each compared against Runge--Kutta, with errors typically $<2\%$
-\end{itemize}
-This capability is \textbf{computationally impractical} with purely numerical methods, which would require separate numerical continuation runs for each parameter set.
 
 \section{Results: Duffing-Harmonic-VDP Oscillator}
 
-For the rational restoring force oscillator (3), the method is validated at \textbf{both small ($\varepsilon=0.5$) and large ($\varepsilon=2$) perturbation parameters}:
+For the rational restoring force oscillator (\ref{eq:dhvdp}), validated at both small and large $\varepsilon$:
 
 \begin{itemize}[leftmargin=2em]
-\item \textbf{Homoclinic orbits} at $\varepsilon=0.5$, 1 (Figs.\ 4--7 in the paper): error $<1.5\%$
-\item \textbf{Heteroclinic orbits} at $\varepsilon=0.5$, 1, 2 (Figs.\ 8--13): error remains below $2\%$ across the full range
-\item The method handles the rational restoring force \textbf{without modification} to the GPLP framework --- only the coefficients in the perturbation equations change.
+\item Homoclinic orbits at $\varepsilon=0.5$, 1: error $<1.5\%$
+\item Heteroclinic orbits at $\varepsilon=0.5$, 1, 2: error $<2\%$
+\item GPLP handles the rational $g(x)$ without procedural modification.
 \end{itemize}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.82\textwidth,height=0.38\textheight,keepaspectratio]{p11-fig2.png}
-\caption{Homo-heteroclinic orbits of the generalized Duffing-Harmonic-Van der Pol oscillator for (a) $\varepsilon=0.8$ and (b) $\varepsilon=1$. Dashed: GPLP with Type~B combined Sech-Tanh approximant. Solid: Runge--Kutta. The Type~B approximant accurately captures both orbit types simultaneously.}
+\caption{Homo-heteroclinic orbits of the generalized DH-VDP oscillator for (a) $\varepsilon=0.8$ and (b) $\varepsilon=1$. Dashed: GPLP with Type~B. Solid: Runge--Kutta.}
 \end{figure}
 
 \subsection{Heteroclinic Orbits at Large $\varepsilon$}
 
-Fig.\ 8--13 in the original paper present an extensive study of heteroclinic orbits for the rational restoring force case at various parameter combinations and $\varepsilon$ up to 2. The GPLP method remains accurate even when the orbits span large regions of phase space.
+Extensive study at various parameter combinations and $\varepsilon$ up to 2 (Figs.\ 8--13 in the paper) shows GPLP remains accurate when orbits span large phase-space regions.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p11-fig8.png}
-\caption{Heteroclinic orbits of the generalized Duffing-Harmonic-Van der Pol oscillator at various parameter combinations (Tables~6--8). The systematic multi-parameter study validates the method's accuracy across a wide range of rational restoring force configurations.}
+\caption{Heteroclinic orbits of the DH-VDP oscillator at various parameter sets (Tables~6--8).}
 \end{figure}
 
-\section{Accuracy Comparison: 2022 vs.\ 2016 GPLP}
-
-The paper provides a detailed head-to-head comparison of the new approximant types against the 2016 versions:
+\section{Accuracy: 2022 vs.\ 2016 GPLP}
 
 \begin{itemize}[leftmargin=2em]
-\item For \textbf{symmetric potentials with small $\varepsilon$}, both versions perform similarly (as expected).
-\item For \textbf{asymmetric potentials at $\varepsilon=1$}: the new $\omega$-parameterized approximants reduce homoclinic orbit error by 40--60\%.
-\item For \textbf{heteroclinic orbits in asymmetric potentials}: the new Type~B combined Sech-Tanh approximant is essential. The 2016 Tanh-only form shows 5--8\% error at $\varepsilon=1$, while Type~B reduces this to $<1.5\%$.
-\item For \textbf{rational restoring force cases}: the improvement is even more pronounced due to the richer potential landscape requiring more flexible approximant forms.
+\item \textbf{Symmetric + small $\varepsilon$:} both versions similar.
+\item \textbf{Asymmetric, $\varepsilon=1$:} $\omega$-parameterized approximants reduce homoclinic error by 40--60\%.
+\item \textbf{Heteroclinic, asymmetric:} Type~B (2022) achieves $<1.5\%$ vs.\ 5--8\% for 2016 Tanh-only form.
+\item \textbf{Rational $g(x)$:} improvement more pronounced due to richer potential landscapes.
 \end{itemize}
 
-\section{Why Type~B Matters for Asymmetric Potentials}
+\section{Why Type~B Matters}
 
-The key insight behind Type~B is geometric. In an asymmetric potential:
+The geometric insight behind Type~B:
 
 \begin{itemize}[leftmargin=2em]
-\item The higher saddle's homoclinic orbit has a \textbf{Sech-like} character (symmetric approach from both sides to the same saddle).
-\item The heteroclinic orbit connecting the two unequal saddles has a \textbf{Tanh-like} character (asymmetric approach to two different saddles).
-\item When both coexist at the same saddle, a \textbf{pure Tanh approximant} (Type~A) cannot simultaneously capture the homoclinic orbit's symmetric approach.
-\item The combined Sech+Tanh approximant (Type~B) resolves this by leveraging both basis functions simultaneously.
+\item The higher saddle's homoclinic orbit has \textbf{Sech-like} symmetric approach.
+\item The heteroclinic orbit connecting unequal saddles has \textbf{Tanh-like} asymmetric character.
+\item A pure Tanh (Type~A) cannot simultaneously capture the homoclinic orbit's symmetry.
+\item The combined Sech+Tanh (Type~B) resolves this by leveraging both basis functions.
 \end{itemize}
-
-This geometric insight---matching the approximant's functional form to the orbit's asymptotic behavior---is a recurring theme throughout both GPLP papers.
 
 \section{Key Findings}
 
 \begin{enumerate}[leftmargin=2em]
-\item \textbf{Full $\Phi^6$ coverage:} GPLP extended from symmetric cubic/quintic to the full quintic polynomial with all five terms ($c_1$--$c_5$), enabling analysis of asymmetric multi-well potentials.
-\item \textbf{Two new heteroclinic approximant types:} Type~A (rational Tanh) for pure heteroclinic problems; Type~B (combined Sech-Tanh) for systems with coexisting homoclinic and heteroclinic orbits. Type~B provides 40--80\% accuracy improvement over the 2016 version for asymmetric cases.
-\item \textbf{$\omega$-parameterized homoclinic approximant:} The additional degree of freedom allows the approximant to adapt to different potential shapes, critical for asymmetric systems.
-\item \textbf{Rational restoring force:} The generalized Duffing-Harmonic-Van der Pol oscillator is solved in the GPLP framework without modification.
-\item \textbf{Systematic multi-parameter studies:} Tables with 8 parameter sets each for both homoclinic and heteroclinic bifurcations demonstrate the method's robustness.
-\item \textbf{This work completes the GPLP framework} for polynomial and rational restoring forces, establishing GPLP as a general-purpose analytical tool for H/H bifurcation analysis of strongly nonlinear oscillators.
+\item \textbf{Full $\Phi^6$ coverage:} GPLP extended from symmetric cubic/quintic to the full quintic polynomial ($c_1$--$c_5$), enabling asymmetric multi-well potential analysis.
+\item \textbf{Two new heteroclinic approximants:} Type~A (rational Tanh) for pure heteroclinic; Type~B (combined Sech-Tanh) for coexisting H/H orbits, giving 40--80\% accuracy improvement for asymmetric cases.
+\item \textbf{$\omega$-parameterized homoclinic approximant:} Free frequency parameter adapts to different potential shapes.
+\item \textbf{Rational restoring force:} DH-VDP oscillator solved without GPLP framework modification.
+\item \textbf{Systematic multi-parameter studies:} 8 parameter sets each for homoclinic and heteroclinic bifurcations.
+\item \textbf{Completes the GPLP framework} for polynomial and rational restoring forces.
 \end{enumerate}
 
 \vfill
