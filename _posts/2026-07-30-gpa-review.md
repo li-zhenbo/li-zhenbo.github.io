@@ -10,9 +10,11 @@ toc:
   sidebar: left
 ---
 
-> **正式综述 PDF**: [Generalized Padé Approximation Methods for Strongly Nonlinear Oscillators: A Personal Retrospective](/assets/pdf/gpa-review.pdf)
-> 
-> 这是一篇英文 LaTeX 正式综述，共 15 页，包含技术路线图、完整公式推导、插图对比、参考文献和发展脉络总结。
+> **正式综述 PDF**: [Generalized Padé Approximation Methods for Strongly Nonlinear Oscillators: A Personal Retrospective](/assets/pdf/gpa-review.pdf)（14页，英文LaTeX，含技术路线图、公式推导、参考文献）
+
+![技术路线图](/assets/mghfp-review/gpa-review/gpa-roadmap.png){: width="100%"}
+
+*Figure: GPA系列五篇论文的技术路线图。从2013年的定义推广到2022年的非对称精化，核心设计原则"基函数匹配轨道几何"贯穿始终。*
 
 ![技术路线图](/assets/mghfp-review/gpa-review/gpa-roadmap.png){: width="100%"}
 

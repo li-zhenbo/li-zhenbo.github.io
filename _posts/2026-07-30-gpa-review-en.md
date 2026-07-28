@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Review — The Generalized Padé Approximation Series: Five Papers from Homoclinic Orbits to Periodic Solutions"
-date: 2026-07-30 10:00:00+0800
+date: 2026-07-26 10:00:00+0800
 description: A retrospective review of five GPA papers (2013–2022): motivations, methodology, key results, and the unifying design principle
 tags: [research-notes]
 categories: [notes]
@@ -10,9 +10,11 @@ toc:
   sidebar: left
 ---
 
-> **Full Review (PDF)**: [Generalized Padé Approximation Methods for Strongly Nonlinear Oscillators: A Personal Retrospective](/assets/pdf/gpa-review.pdf)
-> 
-> A 14-page LaTeX review with complete derivations, figures, references, and a systematic development narrative.
+> **Full Review (PDF)**: [Generalized Padé Approximation Methods for Strongly Nonlinear Oscillators: A Personal Retrospective](/assets/pdf/gpa-review.pdf)（14 pages, English LaTeX, with roadmap, derivations, and references）
+
+![Technical Roadmap](/assets/mghfp-review/gpa-review/gpa-roadmap.png){: width="100%"}
+
+*Figure: Technical roadmap of the five-paper GPA series. From the foundational definition (2013) to asymmetric refinement (2022), the core design principle — matching basis functions to solution geometry — guides every methodological choice.*
 
 ## TL;DR
 
