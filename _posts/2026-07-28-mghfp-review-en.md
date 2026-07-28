@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Review: The Evolution of the MGHFP Method — From Proposal to Completion Across Four Papers"
+title: "Review: Evolution of the MGHFP Method — From Proposal to Completion Across Four Papers"
 date: 2026-07-28 10:00:00+0800
-description: Tracing the development of the MGHFP method from its first proposal through multi-parameter extension to irrational nonlinearity and coupled multi-well systems
+description: Tracing the development of the MGHFP method from its first proposal through multi-parameter extension, irrational nonlinearity, to the most complex dual-irrational coupled application
 tags: [paper-notes]
 categories: [notes]
 featured: true
@@ -10,174 +10,104 @@ toc:
   sidebar: left
 ---
 
-## TL;DR
+> This is the concise online version. The full academic review — with LaTeX-grade typesetting, complete references, and internal cross-references — is available as a **[[PDF download]](/assets/pdf/mghfp-review.pdf)**.
 
-This article traces the complete development trajectory of the MGHFP (Modified Generalized Harmonic Function Perturbation) method across four papers published from 2024 to 2026. The core problem remains consistent: how to **purely symbolically** derive the analytical relationship between limit cycle amplitude and system parameters for complicated nonlinear oscillators. The solution evolved through four stages: first symbolic implementation → simplified multi-parameter extension → generalization to irrational nonlinearity → conquering dual-irrational coupled multi-well systems.
+## Abstract
 
-## Method Overview
+Quantitative analysis of the global evolution of limit cycles in strongly nonlinear oscillators has long been impeded by the inability of classical perturbation methods to execute their procedures symbolically when the restoring force or damping is complicated. Between 2024 and 2026, the Modified Generalized Harmonic Function Perturbation (MGHFP) method evolved across four sequential papers from its initial proposal to a comprehensive analytical framework. This review systematically examines these four papers, tracing the method's development, core framework, and innovation trajectory. It summarizes the contributions at three levels: methodology, theoretical analysis, and engineering applications.
 
-The unified core framework of the MGHFP method consists of four steps:
+## 1. Introduction: Why Symbolic Execution Matters
 
-1. **Nonlinear time transformation**: $d\varphi/dt = \Phi(\varphi)$ converts the time-domain equation into an angular-domain one
-2. **Fourier expansion of the solution**: assuming $x = a\cos^2\varphi + b$, expand $\Phi(\varphi) = \sum (p_{2i}\cos 2i\varphi + q_{2i}\sin 2i\varphi)$
-3. **Perturbation expansion**: $a = a_0 + \varepsilon a_1 + \cdots$, treating damping as a small perturbation order by order
-4. **Composite Simpson integration**: $\int_a^b f(x)dx \approx \frac{h}{3}[f(x_0) + 4\sum f_{odd} + 2\sum f_{even} + f(x_n)]$, discretizing analytically intractable integrals into explicit algebraic expressions
+The global dynamic analysis of limit cycles — their birth, multiplicity, stability, amplitude, and critical bifurcation conditions — lies at the heart of nonlinear oscillator theory. Most classical perturbation methods encounter a bottleneck at a common stage: when the restoring force or damping is complicated, the integrals involved in Fourier coefficient computation cannot be evaluated analytically. System parameters must be pre-assigned numerical values, reducing the analysis to semi-analytic snapshots and making a continuous global picture unattainable.
 
-The application of this framework produces two core formulas: the **amplitude–parameter relation** $\mu(A)$ and the **stability criterion** $h_0(A)$. From these two formulas, all quantitative questions about the complete lifecycle of limit cycles can be answered.
+The core innovation of the MGHFP method — introducing the composite Simpson quadrature formula into the GHFP procedure — was designed precisely to break this impasse. Four subsequent papers progressively extended the method, ultimately yielding a complete analytical framework capable of covering systems from polynomial restoring forces to dual-irrational nonlinear coupled oscillators.
 
-## Global Comparison of Four Papers
+## 2. Method Overview and Evolutionary Trajectory
 
-| Paper (Year) | Journal | Core System | Damping Complexity | Well Structure | Methodological Innovation |
-|---|---|---|---|---|---|
-| P1: Phys. Scr. (2024.06) | Physica Scripta 99, 075213 | Mixed Rayleigh–Liénard $(c_1x + c_3x^3 + c_5x^5)$ | 6-term (mixed Rayleigh + Liénard) | Single / Triple | **First MGHFP proposal**: first introduction of composite Simpson integration for purely symbolic GHFP execution |
-| P2: IJNLM (2024.07) | Int. J. Non-Linear Mech. 166, 104832 | Generalized DHRL $\frac{\lambda x + \mu x^3}{1+\nu x^2}$ | 6-term (Rayleigh + Liénard) | Single / Double | **First rational restoring force application**: extending MGHFP to rational nonlinearity |
-| P3: IJNLM (2025) | Int. J. Non-Linear Mech. 178, 105185 | SD oscillator $\omega_0^2 x(1-1/\sqrt{x^2+\alpha^2})$ | 5-term (quartic damping) | Single / Double | **Padé enhancement**: introducing Padé approximation to simplify expressions and enable multi-parameter analysis |
-| P4: Phys. Scr. (2026) | Physica Scripta 101, 125205 | Coupled SD oscillator (dual irrational) | 5-term (quartic damping) | Single / Triple | **Dual-irrational + multi-well coupling**: conquering systems with two simultaneous irrational nonlinear terms |
+The unified MGHFP framework consists of four steps:
 
-## Four-Stage Development Path
+**Step 1** Nonlinear time transformation: using $\frac{d\varphi}{dt} = \Phi(\varphi)$ to convert the time-domain oscillator equation into a symmetric, periodic form over the angular domain $[0, \pi]$.
 
-### Stage 1: Method Proposal (P1, 2024.06)
+**Step 2** Fourier expansion: assuming $x(\varphi) = a\cos^2\varphi + b$ and expanding $\Phi(\varphi) = \sum_{i=0}^{M}(p_{2i}\cos 2i\varphi + q_{2i}\sin 2i\varphi)$.
 
-**Core problem**: The classical GHFP breaks down when facing complicated damping and restoring forces — the integrals involved in Fourier coefficient computation cannot be evaluated analytically, forcing parameter pre-assignment and degenerating results to semi-analytic form.
+**Step 3** Perturbation expansion: treating the damping strength $\varepsilon$ as a small parameter, writing $a = a_0 + \varepsilon a_1 + \cdots$, $\Phi = \Phi_0 + \varepsilon\Phi_1 + \cdots$, and solving order by order.
 
-**Solution**: Introduce the **composite Simpson quadrature formula** ($n=18$ subintervals, $M=4$ harmonic terms) at the Fourier coefficient computation stage, discretizing all analytically intractable integrals into explicit algebraic functions of system parameters. The **mixed Rayleigh–Liénard oscillator with cubic and quintic nonlinearities** served as the first application case:
+**Step 4** Composite Simpson integration: for any analytically intractable function $f$, discretizing via $\int_a^b f(x)dx \approx \frac{h}{3}[f(x_0) + 4\sum_{i:odd}f(x_i) + 2\sum_{i:even}f(x_i) + f(x_n)]$. With $n = 18$ subintervals, all Fourier coefficients $p_i$ become **explicit algebraic functions** of the system parameters $\{c_i, \mu_i\}$ — no parameter pre-assignment required.
 
-$$
-\ddot{x} + c_1 x + c_3 x^3 + c_5 x^5 = \varepsilon(\mu + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4 + \mu_{22} \dot{x}^2)\dot{x}
-$$
+This framework yields two core formulas: the **amplitude–parameter relation** (control parameter $\mu$ as an explicit function of amplitude $A$ and all system parameters) and the **stability characteristic quantity** $h_0(A)$. Setting $A$ equal to the saddle point coordinate further yields the critical homoclinic or heteroclinic bifurcation parameters.
 
-**Milestones**: First purely symbolic derivation of the amplitude–parameter relation $\mu(A)$ (Eq. 35) and stability criterion $h_0(A)$ (Eq. 50). Achieved complete quantitative analysis of up to **three coexisting limit cycles** under single-well conditions, and prediction of homoclinic and heteroclinic bifurcations under triple-well conditions.
 
-### Stage 2: Generalization to Rational Nonlinearity (P2, 2024.07)
+![MGHFP Method Evolution Overview](/assets/img/publication_preview/mghfp-flowchart.png)
 
-**Core problem**: P1's restoring force $g(x) = c_1x + c_3x^3 + c_5x^5$ is purely polynomial — can MGHFP handle restoring forces with denominators containing $x^2$, i.e., rational forms?
 
-**Challenge escalation**: The generalized Duffing–Harmonic–Rayleigh–Liénard oscillator's restoring force is $\frac{\lambda x + \mu x^3}{1 + \nu x^2}$ — a rational function with polynomial numerator and denominator. Compared to P1's pure polynomial, rational nonlinearity significantly increases the complexity of Fourier coefficient computation. Damping was also upgraded to 6 terms (adding $\mu_{24} \dot{x}^4$).
+## 3. Detailed Progression of the Four Papers
 
-$$
-\ddot{x} + \frac{\lambda x + \mu x^3}{1 + \nu x^2} = \varepsilon(\mu_c + \mu_2 x^2 + \mu_4 x^4 + \mu_6 x^6 + \mu_{22} \dot{x}^2 + \mu_{24} \dot{x}^4)\dot{x}
-$$
+### 3.1 Stage I: Method Proposal (P1, 2024.06)
 
-**Milestones**: MGHFP successfully applied to rational nonlinear oscillators, with both the amplitude–parameter relation and the stability criterion maintaining their generalized forms. The analytical approach identified **four regions** in the $\mu_c$–$A$ curve (I: no cycle → II: stable + unstable coexistence → III: stable + unstable → IV: single stable), along with two semi-stable bifurcation point locations.
+**Reference**: Li, Hou, Zhang, Xu. Phys. Scr. 99, 075213.
 
-### Stage 3: Methodological Upgrade — Padé Approximation (P3, 2025)
+**Target system**: $\ddot{x} + c_1 x + c_3 x^3 + c_5 x^5 = \varepsilon(\mu + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4 + \mu_{22} \dot{x}^2)\dot{x}$. This mixed Rayleigh–Liénard oscillator features a purely polynomial restoring force and six-term damping combining Rayleigh ($\dot{x}^2$) and Liénard ($x, x^3$) types — making the classical GHFP incapable of symbolic execution.
 
-**Core problem**: While the MGHFP outputs from P1 and P2 are symbolic, they remain excessively complex — coefficient functions involve nested Simpson integrals, raising the barrier to practical use and limiting discussion to single-parameter analysis.
+**Milestones**: (i) First public proposal of the MGHFP method with its "composite Simpson + GHFP" formulation; (ii) First purely symbolic derivation of the complete $\mu(A)$ and $h_0(A)$ expressions; (iii) Complete quantitative analysis of up to three coexisting limit cycles under single-well conditions; (iv) Simultaneous prediction of homoclinic and heteroclinic bifurcation thresholds under triple-well conditions.
 
-**Solution**: Introduce **Padé approximation** to fit the complex raw expressions into rational function form:
+### 3.2 Stage II: Generalization to Rational Restoring Force (P2, 2024.07)
 
-$$
-f(\alpha, A) \approx \frac{P_n(\alpha, A)}{Q_m(\alpha, A)}
-$$
+**Reference**: Li, Cai, Hou. Int. J. Non-Linear Mech. 166, 104832.
 
-**Milestones**: Padé approximation brought three breakthrough improvements:
+**Target system**: $\ddot{x} + \frac{\lambda x + \mu x^3}{1 + \nu x^2} = \varepsilon(\mu_c + \mu_2 x^2 + \mu_4 x^4 + \mu_6 x^6 + \mu_{22} \dot{x}^2 + \mu_{24} \dot{x}^4)\dot{x}$. The defining challenge is the rational restoring force — a denominator containing $\nu x^2$ significantly complicates the Fourier coefficient computation compared to P1's pure polynomial.
 
-1. **Drastic expression simplification**: nested Simpson integrals replaced by rational functions usable directly by practitioners
-2. **First multi-parameter analysis**: the dependence of $\mu_c$ on $\mu_1, \mu_2, \mu_3, \mu_4$ and $\alpha$ can be discussed simultaneously
-3. **Multi-parameter classification theorems**: parametric regions where exactly two limit cycles exist were analytically characterized (Theorems 2 & 3)
+**Milestones**: (i) Demonstrated that MGHFP can handle rational restoring forces with $x^2$-containing denominators; (ii) Identified a four-region structure in the $\mu_c$–$A$ curve (I: no cycle → II: stable + unstable coexistence → III: distinct stable/unstable structure → IV: single stable); (iii) Successful homoclinic and heteroclinic bifurcation prediction under triple-well conditions confirmed the framework's robustness across restoring force forms.
 
-The system studied at this stage was the SD oscillator — restoring force containing the irrational square-root term $\sqrt{x^2+\alpha^2}$, with quartic nonlinear damping:
+### 3.3 Stage III: Padé Enhancement and Multi-Parameter Extension (P3, 2025)
 
-$$
-\ddot{x} + \omega_0^2 x\left(1 - \frac{1}{\sqrt{x^2+\alpha^2}}\right) = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4)\dot{x}
-$$
+**Reference**: Li, Hou, Peng. Int. J. Non-Linear Mech. 178, 105185.
 
-This marked MGHFP's first application to **irrational nonlinearity**, laying the groundwork for the coupled system in Stage 4.
+**Target system**: SD oscillator, $\ddot{x} + \omega_0^2 x(1 - 1/\sqrt{x^2+\alpha^2}) = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4)\dot{x}$. This marks MGHFP's **first application to irrational nonlinearity** — the restoring force contains a square-root term whose Taylor expansion is an infinite series. Damping extends to quartic order ($\mu_4 x^4\dot{x}$).
 
-### Stage 4: Conquering the Most Complex System — Coupled SD Oscillator (P4, 2026)
+**Milestones**: (i) Introduction of **Padé approximation** $f(\alpha, A) \approx P_n(\alpha, A)/Q_m(\alpha, A)$ to fit previously complex nested Simpson integration outputs into simple rational functions; (ii) **First multi-parameter limit cycle analysis** — the joint dependence of $\mu_c$ on $(\mu_1,\mu_2,\mu_3,\mu_4,\alpha)$ can now be discussed simultaneously, in contrast to earlier single-parameter discussions; (iii) Derivation of "Theorems 2 & 3" characterizing the complete parametric regions where the oscillator has exactly two limit cycles — an impossibility in the P1/P2 framework without Padé.
 
-**Core problem**: All three previous stages dealt with systems containing only **one** irrational nonlinear term. What if **two** irrational terms are present (arising from two coupled SD oscillators)?
+### 3.4 Stage IV: Dual-Irrational Coupled Multi-Well System (P4, 2026)
 
-**System complexity**: The coupled SD oscillator's restoring forces are $(x+\beta)/\sqrt{(x+\beta)^2+\alpha^2}$ and $(x-\beta)/\sqrt{(x-\beta)^2+\alpha^2}$. Fourier coefficient computation must simultaneously handle high-dimensional integrals from two independent irrational terms, with exponentially increased complexity.
+**Reference**: Li, Hou, Peng. Phys. Scr. 101, 125205.
 
-Furthermore, the well structure expands from single/double-well to **triple-well** — meaning that within the same system, small limit cycles enclosed by homoclinic orbits, large limit cycles enclosing the entire system, and both homoclinic and heteroclinic orbits (connecting different saddle points) can coexist, posing unprecedented demands on the method's bifurcation prediction capability.
+**Target system**: Coupled SD oscillator, $\ddot{x} + (x+\beta)/\sqrt{(x+\beta)^2+\alpha^2} + (x-\beta)/\sqrt{(x-\beta)^2+\alpha^2} = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4)\dot{x}$. The **dual irrational terms** represent the highest complexity in the series — Fourier coefficient computation must simultaneously apply Simpson discretization to two independent square-root terms in a high-dimensional parameter space.
 
-**Milestones**: MGHFP successfully applied to dual-irrational-nonlinearity coupled systems, demonstrating sufficient generality and extensibility. This stage marks MGHFP's ability to cover the complete spectrum from simple polynomial restoring forces to complex irrational nonlinear coupled systems.
+**Milestones**: (i) MGHFP successfully applied to a coupled system with two irrational nonlinear terms, demonstrating its generality and extensibility; (ii) The triple-well + dual-irrational coupling allows simultaneous coexistence of small limit cycles (within homoclinic orbits), large limit cycles (enclosing the full space), and heteroclinic orbits (cross-saddle connections) — MGHFP provides all bifurcation predictions in this highest-dimensional setting; (iii) Marks the completion of the series' coverage from polynomial restoring forces to dual-irrational coupled systems.
 
-## Core Framework Summary
+## 4. Comparative Summary
 
-```
-            ┌─────────────────────────────────────┐
-            │      GHFP Framework                  │
-            │  (Nonlinear time transformation)     │
-            │   + Fourier solution expansion       │
-            │   + Perturbation expansion           │
-            └──────────────┬──────────────────────┘
-                           │
-              ┌────────────▼──────────────┐
-              │  Composite Simpson         │  ← P1 (2024): First introduced
-              │  Integration (n=18, M=4)   │     Enables pure symbolics
-              └────────────┬──────────────┘
-                           │
-              ┌────────────▼──────────────┐
-              │  Derive μ(A) relation      │
-              │  Derive h₀(A) criterion    │
-              └────────────┬──────────────┘
-                           │
-         ┌─────────────────┼──────────────────┐
-         │                 │                  │
-    ┌────▼────┐    ┌───────▼──────┐    ┌─────▼──────┐
-    │ P1 Out   │    │ P2 Out       │    │P3+P4 Out   │
-    │Poly rest │    │Rational rest │    │Irrational  │
-    │Mixed damp│    │General damp  │    │Multi-well  │
-    └─────────┘    └──────────────┘    └────────────┘
-                           │
-              ┌────────────▼──────────────┐
-              │  Padé Approximation       │
-              │  (P3, 2025)               │
-              │  Simplification +         │
-              │  Multi-parameter ability  │
-              └────────────┬──────────────┘
-                           │
-              ┌────────────▼──────────────┐
-              │  Dual-irrational Coupled  │
-              │  Multi-well (P4, 2026)    │
-              │  Most complex application │
-              └──────────────────────────┘
-```
+| | P1 (Phys. Scr.'24) | P2 (IJNLM '24) | P3 (IJNLM '25) | P4 (Phys. Scr.'26) |
+|---|---|---|---|---|
+| **Published** | 2024.06 | 2024.07 | 2025 | 2026 |
+| **Restoring Force** | $c_1x + c_3x^3 + c_5x^5$ | $\frac{\lambda x+\mu x^3}{1+\nu x^2}$ | $\omega_0^2x(1-\frac{1}{\sqrt{x^2+\alpha^2}})$ | Dual-irrational coupled |
+| **Damping Terms** | 5 | 6 | 5 | 5 |
+| **Potential Wells** | Single/Triple | Single/Double | Single/Double | Single/Triple |
+| **Core Innovation** | MGHFP first proposal | Rational restoring force | Padé + multi-parameter | Dual-irrational + multi-well |
+| **Homo-hetero Prediction** | ✓ | ✓ | ✓ (homoclinic) | ✓ (all types) |
 
-## System Complexity Evolution
+## 5. Discussion and Contributions
 
-```
-Restoring force:   Polynomial ──→ Rational ──→ Irrational ──→ Dual-Irr Coupled
-                   (P1)         (P2)         (P3)           (P4)
+### 5.1 Methodological
 
-Damping order:     5-term       6-term       5-term         5-term
-                   (+μ₂₂)       (+μ₂₄)       (quartic)      (quartic)
+MGHFP resolved the core deficiency of nonlinear perturbation methodology — the inability to execute purely symbolically on complicated oscillators. Composite Simpson integration is the key that unlocks the door; Padé approximation compresses the factory-produced expressions into simple closed-form rational functions, simultaneously upgrading them from single-parameter numerical byproducts to true multi-parameter analytical tools.
 
-Well structure:    Single/Triple  Single/Double  Single/Double  Single/Triple
+### 5.2 Theoretical Analysis
 
-Method:            First symbolic   Rational ext    Padé-enhanced   Full-system ext
+Across the four papers, the same framework provides: (i) **Complete lifecycle quantitative prediction** — from semi-stable emergence through stability bifurcation to termination; (ii) A **global evolutionary portrait** on any designated parameter plane; (iii) Analytical determination of **homoclinic and heteroclinic bifurcation thresholds** as precursors to chaos, with direct implications for controller design.
 
-Key capability:    Symbolic execution  Rational NL    Multi-param     Dual-irrational
-                   Homo-hetero pred   4-region ID     2-cycle theorem  Multi-well coupling
-```
+### 5.3 Engineering Applications
 
-## Logical Relationships Among the Four Papers
+From $\mu(A)$ one can directly design amplitude control strategies — maintaining limit cycles of specified amplitudes in inertial impact shakers or population dynamics. From $h_0(A)$ and bifurcation thresholds one can determine the boundary of chaotic behavior, applicable to encryption or equipment protection. The framework has demonstrated transferability to MEMS, quasi-zero stiffness vibration isolation, and energy harvesting systems.
 
-These four papers form a clear methodological evolution chain:
+## 6. Conclusion and Outlook
 
-- **P1 → P2**: From polynomial to rational — validating the method's extensibility in restoring force forms
-- **P2 → P3**: "Subtraction" after producing results — introducing Padé approximation to simplify while enabling multi-parameter analysis
-- **P2 + P3 → P4**: After being validated on rational nonlinearity and simplified by Padé, simultaneously conquering "doubled irrational terms" + "triple-well structure"
+The MGHFP series — spanning four papers in less than two years — progressed from method proposal to full coverage of dual-irrational nonlinear coupled systems. From the perspective of analytical methodology, this toolkit fills a longstanding gap in the GHFP family where symbolic execution on complicated oscillators was impossible, and provides a bridge from qualitative description to global quantitative prediction.
 
-Notably, P1 and P2 were published only about one month apart — P2's work started earlier but took longer due to the more complex DHRL oscillator, allowing P1 to be published first. The transition from P3 (SD oscillator + Padé) to P4 (coupled SD oscillator) represents a substantial leap in the spiral of progress, requiring method validation preparation from single to dual irrational terms.
+Promising future directions include: (i) extension to multi-degree-of-freedom coupled systems (e.g., Coupled van der Pol–Duffing oscillators); (ii) higher-order perturbation to improve accuracy under large damping; (iii) machine learning acceleration of Simpson subinterval optimization or automated Padé coefficient generation, further expanding the method's complexity frontier.
 
-## Core Contributions
+----
 
-From the perspective of nonlinear perturbation methodology, the MGHFP series' contributions can be summarized at three levels:
-
-1. **Methodological**: Solved the long-standing challenge of symbolic execution on complicated oscillators. Composite Simpson integration is the key; Padé approximation is the lubricant after unlocking.
-
-2. **Theoretical analysis**: Advanced global limit cycle analysis from qualitative description to quantitative prediction. Previously, this capability barely existed for complicated oscillators — analysis could only answer "how many" and "are they stable," not "when do they emerge, what amplitudes do they have, when do they vanish."
-
-3. **Engineering applications**: Provided directly computable analytical tools for limit cycle amplitude regulation and chaos threshold prediction, with direct applicability to MEMS, quasi-zero stiffness vibration isolation, and energy harvesting.
-
-## Outlook
-
-The MGHFP series' development trajectory suggests three promising directions: (1) extension to multi-degree-of-freedom coupled systems (e.g., Coupled van der Pol–Duffing oscillators); (2) introduction of higher-order perturbation expansions for improved accuracy under large perturbation parameters; (3) integration with machine learning to accelerate Fourier coefficient computation or automate Padé coefficient generation. These directions will further expand the application boundaries of MGHFP.
-
-*This review is based on the following four papers:*
+*This review is based on the following four papers (full PDF review with **[[PDF download]](/assets/pdf/mghfp-review.pdf)** ):* 
 1. Li et al. (2024) Phys. Scr. 99, 075213 — MGHFP first proposal
 2. Li et al. (2024) IJNLM 166, 104832 — Rational nonlinearity extension
 3. Li et al. (2025) IJNLM 178, 105185 — Padé enhancement & multi-parameter analysis
