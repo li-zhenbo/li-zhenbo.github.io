@@ -1,0 +1,174 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!70!black,urlcolor=blue!70!black}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{5}
+
+\definecolor{primary}{RGB}{0,51,102}
+\definecolor{accent}{RGB}{204,102,0}
+
+\titleformat{\section}{\Large\bfseries\color{primary}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{primary!80!black}}{\thesubsection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{primary}Essential Summary}
+\fancyhead[R]{\small\color{primary}Li et al.\ (2025)}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{primary}Essential Summary}\\[12pt]
+{\large\bfseries Global Evolution of Limit Cycles and Homoclinic Bifurcation\\of Smooth and Discontinuous Oscillator\\with Quartic Nonlinear Damping}\\[8pt]
+{\normalsize Zhenbo Li, Linxia Hou, Ruyue Peng}\\[4pt]
+{\small\itshape International Journal of Non-Linear Mechanics, Vol.\ 178, 105185 (2025)\\DOI: 10.1016/j.ijnonlinmec.2025.105185}\\[6pt]
+{\small\rule{0.7\textwidth}{0.5pt}}\\[4pt]
+{\small\color{accent}This is an author-prepared essential summary, not the original paper.\\Please cite the published version.}
+\end{center}
+
+\vspace{0.5em}
+
+\section{Background and Motivation}
+
+The smooth and discontinuous (SD) oscillator is a prototypical irrational oscillator whose restoring force contains a square-root nonlinearity. While its undamped dynamics have been extensively studied, research on the \textbf{nonlinearly damped} SD oscillator remains rare. Existing studies mainly focus on SD--van der Pol oscillators with quadratic damping, leaving the case of \textbf{quartic nonlinear damping} unaddressed.
+
+This work investigates the SD oscillator with quartic nonlinear damping:
+\begin{equation}
+\ddot{x} + \omega_0^2 x\left(1 - \frac{1}{\sqrt{x^2+\alpha^2}}\right) = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4)\dot{x}
+\label{eq:model}
+\end{equation}
+where $\alpha$ is the smoothing parameter ($\alpha \to 0$ gives the discontinuous limit), $\omega_0$ is the natural frequency, $\varepsilon$ is a small perturbation parameter, and $\mu_c$ serves as the control parameter.
+
+The key challenge is that the irrational restoring force renders classical quantitative methods (elliptic L--P method, elliptic perturbation method, standard GHFP method) inapplicable. This work overcomes this by combining the \textbf{MGHFP method} with the \textbf{Pad\'e approximation method}---a novel improvement that not only makes the analysis tractable but also yields \textbf{simplified closed-form expressions} and enables \textbf{multi-parameter} analysis.
+
+\section{Methodological Innovation: MGHFP + Pad\'e Approximation}
+
+\subsection{Step 1: MGHFP Framework}
+
+The modified generalized harmonic function perturbation (MGHFP) method, previously developed by the authors, proceeds via:
+\begin{itemize}[leftmargin=2em]
+\item Nonlinear time transformation: $\frac{d\varphi}{dt} = \Phi(\varphi)$
+\item Fourier expansion of the solution: $x = a\cos^2\Phi + b$
+\item Perturbation expansion in $\varepsilon$: $a = a_0 + \varepsilon a_1 + \cdots$
+\item Composite Simpson integration to evaluate Fourier coefficients involving irrational terms
+\end{itemize}
+
+\subsection{Step 2: Pad\'e Approximation (Key Innovation)}
+
+The MGHFP method yields analytical expressions, but they are \textbf{complicated}---limiting practical application. The Pad\'e approximation is introduced to:
+
+\begin{itemize}[leftmargin=2em]
+\item Approximate the complex coefficient functions $f_{2i}(\alpha, A)$ as \textbf{rational functions} (ratios of polynomials)
+\item Obtain \textbf{concise, fully analytical} expressions for the amplitude--parameter relationship
+\item Enable \textbf{multi-parameter} analysis (previous MGHFP results only allowed single-parameter discussion)
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth,height=0.30\textheight,keepaspectratio]{p2-fig2-potential.png}
+\caption{\textbf{Figure 2.} Potential portrait of the SD oscillator with double-well structure. The system transitions from single-well to double-well dynamics as $\alpha$ decreases from 1 to 0, creating a homoclinic orbit that plays a central role in the bifurcation analysis.}
+\end{figure}
+
+\section{Key Equations}
+
+\subsection{Amplitude--Parameter Relation (Central Result)}
+
+Through the MGHFP method with Pad\'e approximation, the analytical relationship between the limit cycle amplitude $A$ and the control parameter $\mu_c$ simplifies to:
+\begin{equation}
+\boxed{\mu_c = -\frac{4}{a_0^2(2p_0 - p_4)}\Big(\tilde{E}_1\mu_1 + \tilde{E}_2\mu_2 + \tilde{E}_3\mu_3 + \tilde{E}_4\mu_4\Big)}
+\label{eq:amplitude}
+\end{equation}
+where $\tilde{E}_i$ are now \textbf{Pad\'e-approximated rational functions} of $\alpha$ and $A$---significantly simpler than the raw MGHFP expressions. This enables analytical multi-parameter discussion for the first time.
+
+\subsection{Stability Criterion}
+
+The stability of each limit cycle is determined by:
+\begin{equation}
+\boxed{H_0 = \frac{1}{\pi}\int_0^\pi \left[\mu_c + \sum_{i=1}^{4}\mu_i(a_0\cos^2\varphi + b)^i\right]d\varphi}
+\label{eq:stability}
+\end{equation}
+$H_0 > 0$: unstable; $H_0 = 0$: semi-stable; $H_0 < 0$: stable.
+
+\subsection{Homoclinic Bifurcation Threshold}
+
+Setting $b = h$ (saddle point value) in Eq.~\eqref{eq:amplitude} yields the critical parameter $\mu_c^{\mathrm{hom}}$ for \textbf{homoclinic bifurcation}---the parameter value at which the limit cycle collides with the saddle point and is annihilated.
+
+\subsection{Multi-Parameter Analysis (Theorems 2 \& 3)}
+
+A major advance of this work: the Pad\'e-simplified expressions allow deriving \textbf{parametric regions} (Theorems 2 and 3) where the oscillator has exactly two limit cycles. This multi-parameter classification was not possible with prior MGHFP results.
+
+\section{Example 1: Single-Well Potential ($\alpha = 2$)}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.38\textheight,keepaspectratio]{p2-fig3-amplitude.png}
+\caption{\textbf{Figure 3.} (Upper) The $\mu_c$--$A$ curves showing limit cycle amplitude vs.\ control parameter. (Lower) The $H_0$--$A$ curve determining stability. (Bottom row) Phase portraits at different $\mu_c$ values. The complete lifecycle---emergence, bifurcation, and convergence---is quantitatively captured. Solid/dotted: MGHFP. Dots: Runge--Kutta.}
+\end{figure}
+
+Key observations from Figure 3:
+\begin{itemize}[leftmargin=2em]
+\item Below a critical $\mu_c$, \textbf{no limit cycle exists}.
+\item At the critical value, a \textbf{semi-stable} limit cycle emerges.
+\item As $\mu_c$ increases, it \textbf{splits} into a stable and an unstable limit cycle.
+\item The unstable cycle eventually \textbf{collapses} to the equilibrium point.
+\item The stable cycle persists and grows with further increase of $\mu_c$.
+\end{itemize}
+
+\section{Example 2: Different Parameter Set ($\alpha = 0.65$)}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.38\textheight,keepaspectratio]{p2-fig8-amplitude2.png}
+\caption{\textbf{Figure 8.} The $\mu_c$--$A$ and $H_0$--$A$ curves with phase portraits for a different parameter set ($\alpha=0.65$, $\mu_1=-0.5$, $\mu_2=1$, $\mu_3=1$, $\mu_4=-0.1$). The method accurately captures the limit cycle evolution and stability transitions across parameter space.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth,height=0.38\textheight,keepaspectratio]{p2-fig7-solutions.png}
+\caption{\textbf{Figure 7.} Analytical solutions of the limit cycles at different $\mu_c$ values compared with Runge--Kutta numerical integration. The excellent agreement validates both the accuracy of the MGHFP+Pad\'e method and the reliability of the approximate solutions.}
+\end{figure}
+
+\section{Key Findings}
+
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{Pad\'e-enhanced MGHFP method:} Introducing Pad\'e approximation into the MGHFP framework yields \textbf{simplified, fully analytical} expressions for the amplitude--parameter relationship. Unlike previous semi-analytic simplifications (least-squares), the present results remain fully analytical and support \textbf{multi-parameter} analysis.
+
+\item \textbf{Complete lifecycle prediction:} The method quantitatively answers: when does a limit cycle emerge? How does it bifurcate? Where does it converge? Is it stable? This includes precise prediction of \textbf{unstable limit cycles}---notoriously difficult for numerical methods.
+
+\item \textbf{Homoclinic bifurcation threshold:} The critical parameter for homoclinic bifurcation is obtained analytically, predicting exactly when the limit cycle collides with the saddle point and is destroyed.
+
+\item \textbf{Multi-parameter classification (Theorems 2 \& 3):} The simplified expressions enable deriving \textbf{parametric regions} where the oscillator has exactly two limit cycles---a multi-parameter generalization not achievable with prior MGHFP results.
+
+\item \textbf{Engineering relevance:} The framework supports both \textbf{amplitude regulation} (energy harvesting, predator--prey models) and \textbf{oscillation suppression} (vibration isolation, vehicle suspension, aeroelastic flutter). Through bifurcation parameter tuning, limit cycles can be created, modulated, or annihilated.
+\end{enumerate}
+
+\section{Significance and Future Work}
+
+This work serves as an \textbf{important supplement} to SD oscillator research and demonstrates that introducing Pad\'e approximation into the MGHFP method is an effective continuous improvement. The method can be extended to SD oscillators with double or triple irrational terms in their restoring force---validated in the authors' subsequent work (Physica Scripta, 2026).
+
+\vfill
+\begin{center}
+\small\rule{0.5\textwidth}{0.3pt}\\[4pt]
+\small\color{primary} Author: Zhenbo Li (lizhenbo@usc.edu.cn)\\
+\small University of South China, School of Mathematics and Physics\\
+\small Hunan Key Laboratory of Mathematical Modeling and Scientific Computing
+\end{center}
+
+\end{document}
