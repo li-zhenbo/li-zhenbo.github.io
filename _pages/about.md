@@ -28,11 +28,7 @@ latest_posts:
 
 I am a researcher at the School of Mathematics and Physics, University of South China (南华大学), and a member of the Hunan Key Laboratory of Mathematical Modeling and Scientific Computing. My research focuses on **nonlinear dynamics and bifurcation analysis**, particularly on the quantitative study of limit cycles and homoclinic-heteroclinic orbits in strongly nonlinear oscillators using analytical perturbation methods. My recent work has appeared in *Physica Scripta*, *International Journal of Non-Linear Mechanics*, and other journals.
 
-我任职于南华大学数理学院，隶属于湖南省数学建模与科学计算重点实验室。研究方向为**非线性动力学与分岔分析**，聚焦于用解析摄动方法对强非线性振子中的极限环、同异宿轨道进行定量研究。近期成果发表于 *Physica Scripta*（IF 2026）、*International Journal of Non-Linear Mechanics* 等期刊。
+我任职于南华大学数理学院、数学建模与科学计算湖南省重点实验室。研究方向为**非线性动力学与分岔分析**，聚焦于用解析摄动方法对强非线性振子中的极限环、同异宿轨道进行定量研究。近期成果发表于 *Physica Scripta*（IF 2026）、*International Journal of Non-Linear Mechanics* 等期刊。
 
 **研究兴趣 Research interests**：非线性动力学 · 分岔与混沌 · 摄动方法 · 耦合 SD 振子 · 极限环稳定性分析
 Nonlinear dynamics · Bifurcation & chaos · Perturbation methods · Coupled SD oscillators · Limit cycle stability
-
-本页下方的内容会自动生成：最新动态（`_news/` 目录）、精选论文（`_bibliography/papers.bib` 中标记 `selected={true}` 的条目）、最新博客（`_posts/` 目录）。
-
-The sections below are generated automatically: news (`_news/`), selected papers (entries with `selected={true}` in `papers.bib`), and latest posts (`_posts/`).
