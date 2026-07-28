@@ -3,9 +3,16 @@ metadata:
 papers:
   li2026quantitative:
     citations: 0
-    title: 'Quantitative Analysis of Dynamical Bifurcations in a Coupled Smooth and Discontinuous Oscillator with High-order Nonlinear Damping'
+    title: Quantitative Analysis of Dynamical Bifurcations in a Coupled Smooth and
+      Discontinuous Oscillator with High-order Nonlinear Damping
     year: '2026'
   li2025global:
     citations: 1
-    title: 'Global Evolution of Limit Cycles and Homoclinic Bifurcation of Smooth and Discontinuous Oscillator with Quartic Nonlinear Damping'
+    title: Global Evolution of Limit Cycles and Homoclinic Bifurcation of Smooth and
+      Discontinuous Oscillator with Quartic Nonlinear Damping
     year: '2025'
+  li2024modified:
+    citations: 0
+    title: A Modified Generalized Harmonic Function Perturbation Method and Its Application
+      in Analyzing Generalized Duffing–Harmonic–Rayleigh–Liénard Oscillator
+    year: '2024'
