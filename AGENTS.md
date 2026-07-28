@@ -279,3 +279,29 @@ rm -rf .git-broken
 \caption{Homoclinic orbit of the oscillator. Solid: Runge--Kutta. Dotted: GPA method.}
 ```
 所有编号由 LaTeX 自动处理，与正文中的 `\ref{}` 交叉引用保持一致。
+
+### 25. 从论文 PDF 中精确截图的经验总结
+
+**问题**：从论文 PDF 中截图用于精华 PDF 时，容易出现截错图、截多截少、截图含标题文字、双栏排版定位偏差、"Division by 0" 编译错误等问题。
+
+**核心原则**：用 PyMuPDF（fitz）两步定位法——先找图片标题位置，再获取图片精确坐标。
+
+**标准流程**：
+
+1. **获取页面结构**：`page.get_text("blocks")` 获取所有文字块，按 Y 坐标排序，找到 "Fig." / "图" 标题的 Y 坐标位置。`page.get_images(full=True)` 获取嵌入图片的引用号（xref）。
+
+2. **精确获取图片位置**：用 `page.get_image_rects(xref)` 获取嵌入图片在页面上的精确坐标 `Rect(x0, y0, x1, y1)`。这是位图在 PDF 中的实际放置位置——比 `get_drawings()` 的矢量包围盒更准确。
+
+3. **验证对应关系**：标题必须在图片**下方**一定距离（5-20px）。若标题在图片上方说明截错了图。逐一核对每张图片附近 Fig 标题的内容是否真正描述了该图片。
+
+4. **精确裁剪**：`clip = fitz.Rect(img_rect.x0, img_rect.y0, img_rect.x1, img_rect.y1)`，直接用嵌入图片的精确坐标，不要包含标题文字（LaTeX 的 `\caption{}` 会单独生成标题）。
+
+5. **双栏排版**：双栏论文的图通常限在单栏内（约 184pt 宽），用 API 返回的 rect 直接裁剪即可，不要跨栏。
+
+6. **常见错误**：
+   - 截多截少 → 不要手动猜坐标，用 `get_image_rects()` API 返回的精确 rect
+   - 截错图片 → 逐一检查每张图片附近 Fig 标题的位置和内容
+   - "Division by 0" 编译错误 → PyMuPDF 生成的 PNG 可能带有不被 xelatex 识别的元数据，用 PIL 重新 `Image.open().save()` 或 `convert` 转 jpg 再转回 png
+   - 图片在 tex 中找不到 → 将图片复制到 .tex 文件所在目录（XeLaTeX 在工作目录查找图片文件）
+
+7. **PyMuPDF vs pdfimages**：`pdfimages` 提取原始嵌入文件（可能含碎片、蒙版），矢量图形无法提取；PyMuPDF 的 `get_pixmap(matrix, clip=Rect)` 渲染指定区域的最终视觉效果，准确可靠。
