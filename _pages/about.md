@@ -23,7 +23,7 @@ announcements:
 latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 5 # leave blank to include all the blog posts
 ---
 
 I am a researcher at the School of Mathematics and Physics, University of South China (南华大学), and a member of the Hunan Key Laboratory of Mathematical Modeling and Scientific Computing. My research focuses on **nonlinear dynamics and bifurcation analysis**, particularly on the quantitative study of limit cycles and homoclinic-heteroclinic orbits in strongly nonlinear oscillators using analytical perturbation methods. My recent work has appeared in *Physica Scripta*, *International Journal of Non-Linear Mechanics*, and other journals.
@@ -32,3 +32,5 @@ I am a researcher at the School of Mathematics and Physics, University of South 
 
 **研究兴趣 Research interests**：非线性动力学 · 分岔与混沌 · 摄动方法 · 耦合 SD 振子 · 极限环稳定性分析
 Nonlinear dynamics · Bifurcation & chaos · Perturbation methods · Coupled SD oscillators · Limit cycle stability
+
+[→ 全部论文笔记 / All Paper Notes](/blog/)
