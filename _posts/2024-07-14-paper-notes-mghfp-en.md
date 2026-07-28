@@ -2,7 +2,7 @@
 layout: post
 title: "Paper Notes — The MGHFP Method: A Symbolic Upgrade to the Generalized Harmonic Function Perturbation Framework"
 date: 2024-07-14 10:00:00+0800
-description: Introducing composite Simpson integration into the GHFP framework for purely symbolic global dynamic analysis — the foundational paper of the MGHFP series
+description: Introducing composite Simpson integration into the GHFP framework for purely symbolic global dynamic analysis — the first follow-up application of the MGHFP method
 tags: [paper-notes]
 categories: [notes]
 featured: true

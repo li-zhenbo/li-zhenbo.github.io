@@ -2,7 +2,7 @@
 layout: post
 title: 论文笔记：MGHFP 方法的提出——广义谐波函数摄动法的符号化改进
 date: 2024-07-14 10:00:00+0800
-description: 引入复合 Simpson 积分实现 GHFP 方法的纯符号化执行，MGHFP 系列方法的开篇之作
+description: 引入复合 Simpson 积分实现 GHFP 方法的纯符号化执行，MGHFP 方法在有理非线性振子上的第一个后续应用
 tags: [paper-notes]
 categories: [notes]
 featured: true
@@ -17,7 +17,7 @@ toc:
 
 这是 MGHFP 方法的**第一个重要后续应用**——将复合 Simpson 积分思想首次推广至有理恢复力振子。核心创新是将复合 Simpson 积分公式嵌入经典广义谐波函数摄动法（GHFP），使其首次能够在复杂非线性振子上**纯符号化执行**——不需要预设任何系统参数即可推导出振幅与参数的解析关系。（方法本身最早由 Phys. Scr. 2024 提出）。后续 IJNLM 2025（Padé 增强）、Phys. Scr. 2026（耦合 SD 振子）在此基础上继续推进。
 
-This is the foundational paper of the MGHFP series. Its core innovation — embedding the composite Simpson quadrature formula into the classical GHFP framework — enables purely symbolic execution for the first time, without requiring any system parameter pre-assignment. All subsequent MGHFP work (IJNLM 2025, Phys. Scr. 2026) builds on this foundation.
+This is the first follow-up application of the MGHFP method. Its core innovation — embedding the composite Simpson quadrature formula into the classical GHFP framework — enables purely symbolic execution for the first time, without requiring any system parameter pre-assignment. All subsequent MGHFP work (IJNLM 2025, Phys. Scr. 2026) builds on this foundation.
 
 ## 研究动机
 
