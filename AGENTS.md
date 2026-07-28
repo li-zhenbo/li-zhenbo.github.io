@@ -265,3 +265,17 @@ rm -rf .git-broken
 - 文件夹内包含：`.tex` 源文件 + 编译所需的图片等资料文档（如 `.png`、`.eps`）
 - 编译完成后**不要删除 `.tex` 源文件**，连同 PDF 一起提交到仓库
 - 编译产生的辅助文件（`.aux`、`.log`、`.out`、`.synctex.gz`）已由 `.gitignore` 排除，无需手动清理
+
+### 24. LaTeX 图题（Caption）中不要重复 "Figure X"
+
+**问题**：LaTeX 的 `\caption{}` 命令会自动在编译后的 PDF 中生成 "Figure X:" 前缀标签（X 为图号）。如果在 caption 文本中再手动写 `\textbf{Figure 1.}` 等字样，最终输出会变成 **"Figure 1: Figure 1. ..."**——重复的图号标签。
+
+**解决**：`\caption{}` 内只写图题的纯文本描述，不写 Figure 编号：
+```latex
+% 错误：
+\caption{\textbf{Figure 1.} Homoclinic orbit of the oscillator.}
+
+% 正确：
+\caption{Homoclinic orbit of the oscillator. Solid: Runge--Kutta. Dotted: GPA method.}
+```
+所有编号由 LaTeX 自动处理，与正文中的 `\ref{}` 交叉引用保持一致。
