@@ -28,10 +28,10 @@ This paper proposes a **modified generalized harmonic function perturbation meth
 The generalized mixed Rayleigh–Liénard oscillator:
 
 $$
-\ddot{x} + g(x) = \varepsilon(\mu + \mu_2 x^2 + \mu_4 x^4 + \mu_{1r} \dot{x}^2 + \mu_{2r} x\dot{x}^2 + \mu_{3r} x^3\dot{x}^2)\dot{x}
+\ddot{x} + c_1 x + c_3 x^3 + c_5 x^5 = \varepsilon(\mu + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4 + \mu_{22} \dot{x}^2)\dot{x}
 $$
 
-where $g(x)$ is the restoring force, $\mu$ is the control parameter, and $\mu_2$, $\mu_4$, $\mu_{1r}$, $\mu_{2r}$, $\mu_{3r}$ are damping coefficients. The mixed Rayleigh–Liénard damping structure is precisely what makes classical methods struggle.
+where $c_1$, $c_3$, $c_5$ are stiffness parameters (restoring force includes cubic and quintic terms), $\mu$ is the control parameter, $\mu_1\sim\mu_4$ are Liénard-type damping coefficients, and $\mu_{22}$ is the Rayleigh-type damping coefficient.
 
 ![Potential portrait](/assets/img/publication_preview/p4-fig1.png){: width="70%"}
 
@@ -58,7 +58,7 @@ With eight equal subintervals, the Fourier coefficients $p_{2i}$ become **explic
 ### Amplitude–Parameter Relation
 
 $$
-\boxed{\mu = -\frac{1}{a_0^2(2p_0 - p_4)}\Big(E_2\mu_2 + E_4\mu_4 + E_{1r}\mu_{1r} + E_{2r}\mu_{2r} + E_{3r}\mu_{3r}\Big)}
+\boxed{\mu = \frac{4}{\pi a_0^2(2p_0 - p_4)}\Big(E_1\mu_1 + E_2\mu_2 + E_3\mu_3 + E_4\mu_4 + E_{22}\mu_{22}\Big)}
 $$
 
 where $p_{2i}$ are computed via composite Simpson integration. Given parameters, the limit cycle amplitude is obtained analytically.
@@ -66,10 +66,10 @@ where $p_{2i}$ are computed via composite Simpson integration. Given parameters,
 ### Stability Criterion
 
 $$
-\boxed{h_0 = \frac{1}{\pi}\int_0^\pi \Big[\mu + \sum\mu_i(a_0\cos^2\varphi + b)^i + \sum\mu_{jr}(a_0\cos^2\varphi + b)^j(\dot{x}_0)^2\Big]d\varphi}
+\boxed{h_0 = \frac{1}{\pi}\int_0^\pi \Phi_0\Big(\mu + \sum_{i=1}^{4}\mu_i(a_0\cos^2\varphi + b)^i + 3\mu_{22}(-2a_0\Phi_0\cos\varphi\sin\varphi)^2\Big)d\varphi}
 $$
 
-$h_0 > 0$: unstable; $h_0 = 0$: semi-stable; $h_0 < 0$: stable.
+where $h_0 = H_0/arepsilon$. $h_0 > 0$: unstable; $h_0 = 0$: semi-stable; $h_0 < 0$: stable.
 
 ## Key Results
 

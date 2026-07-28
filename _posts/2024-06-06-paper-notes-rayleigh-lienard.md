@@ -23,17 +23,17 @@ This is the **first publication** of the MGHFP methodology — introducing compo
 
 推导极限环振幅与系统参数之间的解析关系，是非线性动力学定量分析的核心任务。但当恢复力或非线性阻尼比较复杂时（例如同时包含 Rayleigh 型和 Liénard 型阻尼项），许多现有的分析方法**无法纯符号化地执行其流程**——必须预先对系统参数赋值，结果退化为半解析，只能获得参数空间中的孤立解快照。
 
-本文的目标是**提出一种改进的广义谐波函数摄动法**，通过引入复合 Simpson 积分公式来解决上述符号化执行的问题。为验证方法的有效性，本文选择了一个**含三次和五次非线性的混合 Rayleigh–Liénard 振子**作为测试案例——这个振子的阻尼项同时包含 Rayleigh 型（$\dot{x}^2$ 项）和 Liénard 型（$x^2$、$x^4$ 项），是检验方法能力的理想平台。
+本文的目标是**提出一种改进的广义谐波函数摄动法**，通过引入复合 Simpson 积分公式来解决上述符号化执行的问题。为验证方法的有效性，本文选择了一个**含三次和五次非线性的混合 Rayleigh–Liénard 振子**作为测试案例——这个振子的阻尼项同时包含 Lienard 型（$x^2$、$x^4$ 项）和 Rayleigh 型（$\dot{x}^2$ 项），是检验方法能力的理想平台。
 
 ## 系统模型
 
 广义混合 Rayleigh–Liénard 振子含三次和五次非线性：
 
 $$
-\ddot{x} + g(x) = \varepsilon(\mu + \mu_2 x^2 + \mu_4 x^4 + \mu_{1r} \dot{x}^2 + \mu_{2r} x\dot{x}^2 + \mu_{3r} x^3\dot{x}^2)\dot{x}
+\ddot{x} + c_1 x + c_3 x^3 + c_5 x^5 = \varepsilon(\mu + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4 + \mu_{22} \dot{x}^2)\dot{x}
 $$
 
-其中 $g(x)$ 为恢复力，$\mu$ 为控制参数，$\mu_2$、$\mu_4$ 为 Liénard 型阻尼系数，$\mu_{1r}$、$\mu_{2r}$、$\mu_{3r}$ 为 Rayleigh 型阻尼系数。阻尼项的混合特性使得经典方法难以处理。
+其中 $c_1$、$c_3$、$c_5$ 为刚度参数，$\mu$ 为控制参数，$\mu_1\sim\mu_4$ 为 Liénard 型阻尼系数，$\mu_{22}$ 为 Rayleigh 型阻尼系数。
 
 ![势能图](/assets/img/publication_preview/p4-fig1.png){: width="70%"}
 
@@ -62,7 +62,7 @@ $$
 极限环振幅 $A$ 与控制参数 $\mu$ 的解析关系：
 
 $$
-\boxed{\mu = -\frac{1}{a_0^2(2p_0 - p_4)}\Big(E_2\mu_2 + E_4\mu_4 + E_{1r}\mu_{1r} + E_{2r}\mu_{2r} + E_{3r}\mu_{3r}\Big)}
+\boxed{\mu = \frac{4}{\pi a_0^2(2p_0 - p_4)}\Big(E_1\mu_1 + E_2\mu_2 + E_3\mu_3 + E_4\mu_4 + E_{22}\mu_{22}\Big)}
 $$
 
 其中 $p_{2i}$ 由复合 Simpson 公式计算，$E_i$ 为 $a_0$、$b$、$p_{2i}$ 的函数。给定参数即可直接获得极限环振幅。
@@ -70,10 +70,10 @@ $$
 ### 稳定性判据
 
 $$
-\boxed{h_0 = \frac{1}{\pi}\int_0^\pi \Big[\mu + \sum\mu_i(a_0\cos^2\varphi + b)^i + \sum\mu_{jr}(a_0\cos^2\varphi + b)^j(\dot{x}_0)^2\Big]d\varphi}
+\boxed{h_0 = \frac{1}{\pi}\int_0^\pi \Phi_0\Big(\mu + \sum_{i=1}^{4}\mu_i(a_0\cos^2\varphi + b)^i + 3\mu_{22}(-2a_0\Phi_0\cos\varphi\sin\varphi)^2\Big)d\varphi}
 $$
 
-$h_0 > 0$：不稳定；$h_0 = 0$：半稳定（分岔点）；$h_0 < 0$：稳定。
+其中 $h_0 = H_0/arepsilon$。$h_0 > 0$：不稳定；$h_0 = 0$：半稳定（分岔点）；$h_0 < 0$：稳定。
 
 ## 核心结论
 
