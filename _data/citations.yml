@@ -16,3 +16,8 @@ papers:
     title: A Modified Generalized Harmonic Function Perturbation Method and Its Application
       in Analyzing Generalized Duffing–Harmonic–Rayleigh–Liénard Oscillator
     year: '2024'
+  li2024modified2:
+    citations: 0
+    title: A Modified Perturbation Method for Global Dynamic Analysis of Generalized
+      Mixed Rayleigh–Liénard Oscillator with Cubic and Quintic Nonlinearities
+    year: '2024'
