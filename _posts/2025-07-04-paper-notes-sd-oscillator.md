@@ -21,7 +21,7 @@ Introducing Padé approximation into the MGHFP framework simplifies the previous
 
 ## 研究动机
 
-SD 振子（Smooth and Discontinuous Oscillator）是典型的无理非线性振子，但**含非线性阻尼的 SD 振子**研究很少。已有工作主要关注 SD–van der Pol 振子（仅含二次阻尼），对含四次非线性阻尼（\(\mu_4 x^4\dot{x}\)）的情况无人触及。四次阻尼在高阶非线性系统（如 MEMS 微梁谐振器、高阻尼隔振器）中普遍存在，绕不开。
+SD 振子（Smooth and Discontinuous Oscillator）是典型的无理非线性振子，但**含非线性阻尼的 SD 振子**研究很少。已有工作主要关注 SD–van der Pol 振子（仅含二次阻尼），对含四次非线性阻尼（$\mu_4 x^4\dot{x}$）的情况无人触及。四次阻尼在高阶非线性系统（如 MEMS 微梁谐振器、高阻尼隔振器）中普遍存在，绕不开。
 
 此外，作者此前发展的 MGHFP 方法虽然能解决问题，但输出表达式过于复杂——系数函数包含嵌套的 Simpson 积分，用户必须先给系统参数赋值，表达式退化为半解析，只能单参数分析。引入 Padé 近似就是为了打破这个限制。
 
@@ -29,31 +29,31 @@ SD 振子（Smooth and Discontinuous Oscillator）是典型的无理非线性振
 
 研究含四次非线性阻尼的 SD 振子：
 
-\[
+$$
 \ddot{x} + \omega_0^2 x\left(1 - \frac{1}{\sqrt{x^2+\alpha^2}}\right) = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4)\dot{x}
-\]
+$$
 
-其中 \(\alpha\) 是光滑参数（\(\alpha\to 0\) 退化为非光滑），\(\omega_0\) 是固有频率，\(\varepsilon\) 是小扰动参数，\(\mu_c\) 为控制参数。无理恢复力来自斜弹簧几何构型。
+其中 $\alpha$ 是光滑参数（$\alpha\to 0$ 退化为非光滑），$\omega_0$ 是固有频率，$\varepsilon$ 是小扰动参数，$\mu_c$ 为控制参数。无理恢复力来自斜弹簧几何构型。
 
 ![势能图](/assets/img/publication_preview/p2-fig2-potential.png){: width="70%"}
 
-*Figure 2: SD 振子的双阱势能图。\(\alpha\) 从 1 降至 0，系统从单阱过渡到双阱，形成同宿轨道。*
+*Figure 2: SD 振子的双阱势能图。$\alpha$ 从 1 降至 0，系统从单阱过渡到双阱，形成同宿轨道。*
 
 ## 方法创新：MGHFP + Padé 近似
 
 ### MGHFP 三步走
 
-1. **非线性时间变换** \(d\varphi/dt = \Phi(\varphi)\)，假设解 \(x = a\cos^2\Phi + b\)
-2. **摄动展开** \(a = a_0 + \varepsilon a_1 + \cdots\)
+1. **非线性时间变换** $d\varphi/dt = \Phi(\varphi)$，假设解 $x = a\cos^2\Phi + b$
+2. **摄动展开** $a = a_0 + \varepsilon a_1 + \cdots$
 3. **复合 Simpson 积分**离散化无理解析无法处理的无理非线性项积分
 
 ### Padé 近似 —— 本次的关键改进
 
-MGHFP 输出的系数函数（如 \(f_{2i}(\alpha, A)\)）形式复杂，包含嵌套积分，不便于直接分析。本文引入 Padé 近似将这些系数函数拟合为**有理函数**：
+MGHFP 输出的系数函数（如 $f_{2i}(\alpha, A)$）形式复杂，包含嵌套积分，不便于直接分析。本文引入 Padé 近似将这些系数函数拟合为**有理函数**：
 
-\[
+$$
 f(\alpha, A) \approx \frac{P_n(\alpha, A)}{Q_m(\alpha, A)}
-\]
+$$
 
 相比于作者此前尝试的最小二乘多项式逼近（需先赋参数值 → 退化半解析 → 只能单参数讨论），Padé 的结果是**完全解析的**，可以直接讨论多个参数同时变化时极限环的演化行为。
 
@@ -61,54 +61,54 @@ f(\alpha, A) \approx \frac{P_n(\alpha, A)}{Q_m(\alpha, A)}
 
 ### 振幅—参数关系
 
-极限环振幅 \(A\) 与控制参数 \(\mu_c\) 的解析关系：
+极限环振幅 $A$ 与控制参数 $\mu_c$ 的解析关系：
 
-\[
+$$
 \boxed{\mu_c = -\frac{4}{a_0^2(2p_0 - p_4)}\Big(\tilde{E}_1\mu_1 + \tilde{E}_2\mu_2 + \tilde{E}_3\mu_3 + \tilde{E}_4\mu_4\Big)}
-\]
+$$
 
-其中 \(\tilde{E}_i\) 现在是 Padé-近似的有理函数——**比原始 MGHFP 表达式简洁得多**，且支持多参数分析。\(p_{2i}\) 仍通过复合 Simpson 公式计算。
+其中 $\tilde{E}_i$ 现在是 Padé-近似的有理函数——**比原始 MGHFP 表达式简洁得多**，且支持多参数分析。$p_{2i}$ 仍通过复合 Simpson 公式计算。
 
 ![振幅—参数关系](/assets/img/publication_preview/p2-fig3-amplitude.png){: width="70%"}
 
-*Figure 3: (上) \(\mu_c\)–\(A\) 曲线。(下) \(H_0\)–\(A\) 曲线。(底行) 不同 \(\mu_c\) 下的相图。实线/虚线：MGHFP。圆点：Runge–Kutta。极限环从产生、分岔到收敛全过程定量可视化。*
+*Figure 3: (上) $\mu_c$–$A$ 曲线。(下) $H_0$–$A$ 曲线。(底行) 不同 $\mu_c$ 下的相图。实线/虚线：MGHFP。圆点：Runge–Kutta。极限环从产生、分岔到收敛全过程定量可视化。*
 
 ### 稳定性判据
 
-\[
+$$
 \boxed{H_0 = \frac{1}{\pi}\int_0^\pi \left[\mu_c + \sum_{i=1}^{4}\mu_i(a_0\cos^2\varphi + b)^i\right]d\varphi}
-\]
+$$
 
-\(H_0 > 0\)：不稳定；\(H_0 = 0\)：半稳定（分岔点）；\(H_0 < 0\)：稳定。
+$H_0 > 0$：不稳定；$H_0 = 0$：半稳定（分岔点）；$H_0 < 0$：稳定。
 
 ### 同宿分岔阈值
 
-令 \(b = h\)（鞍点纵坐标）代入振幅—参数关系，即得同宿分岔的临界参数 \(\mu_c^{\mathrm{hom}}\)——极限环与鞍点碰撞并消失的时刻。
+令 $b = h$（鞍点纵坐标）代入振幅—参数关系，即得同宿分岔的临界参数 $\mu_c^{\mathrm{hom}}$——极限环与鞍点碰撞并消失的时刻。
 
 ## 核心结论
 
-### 算例 1：单阱（\(\alpha = 2\)）
+### 算例 1：单阱（$\alpha = 2$）
 
-参数 \(\mu_1=-1, \mu_2=1.5, \mu_3=1, \mu_4=-1\)，Figure 3 揭示了完整的极限环生命周期：
+参数 $\mu_1=-1, \mu_2=1.5, \mu_3=1, \mu_4=-1$，Figure 3 揭示了完整的极限环生命周期：
 
-- 低于临界值 \(\mu_c\)：**无极限环**
+- 低于临界值 $\mu_c$：**无极限环**
 - 临界点：**半稳定**极限环产生
-- \(\mu_c\) 继续增大：分裂为一个**稳定**（\(H_0 < 0\)）和一个**不稳定**（\(H_0 > 0\)）极限环
+- $\mu_c$ 继续增大：分裂为一个**稳定**（$H_0 < 0$）和一个**不稳定**（$H_0 > 0$）极限环
 - 不稳定环最终**坍缩**至平衡点；稳定环持续增大
 
-### 算例 2：不同参数集（\(\alpha = 0.65\)）
+### 算例 2：不同参数集（$\alpha = 0.65$）
 
-参数 \(\mu_1=-0.5, \mu_2=1, \mu_3=1, \mu_4=-0.1\)，解析与数值一致性好。
+参数 $\mu_1=-0.5, \mu_2=1, \mu_3=1, \mu_4=-0.1$，解析与数值一致性好。
 
 ![另一个参数集](/assets/img/publication_preview/p2-fig8-amplitude2.png){: width="70%"}
 
-*Figure 8: 不同参数集下的 \(\mu_c\)–\(A\) 和 \(H_0\)–\(A\) 曲线。方法在参数空间内准确捕捉极限环演化和稳定性过渡。*
+*Figure 8: 不同参数集下的 $\mu_c$–$A$ 和 $H_0$–$A$ 曲线。方法在参数空间内准确捕捉极限环演化和稳定性过渡。*
 
 ### 极限环解析解
 
 ![解析解对比](/assets/img/publication_preview/p2-fig7-solutions.png){: width="70%"}
 
-*Figure 7: 不同 \(\mu_c\) 下极限环的解析解与 Runge–Kutta 数值解对比。验证了 MGHFP+Padé 方法的精度和可靠性。*
+*Figure 7: 不同 $\mu_c$ 下极限环的解析解与 Runge–Kutta 数值解对比。验证了 MGHFP+Padé 方法的精度和可靠性。*
 
 ## 5 条核心发现
 
@@ -120,9 +120,9 @@ f(\alpha, A) \approx \frac{P_n(\alpha, A)}{Q_m(\alpha, A)}
 
 ## 方法的局限
 
-- 大扰动（\(\varepsilon > 0.5\)）精度下降，需提高截断阶数
-- 极限环穿越鞍点时速度急剧下降，Fourier 截断（\(m = 4\)）可能不够
-- 非光滑势阱（\(\alpha = 0\)）影响精度
+- 大扰动（$\varepsilon > 0.5$）精度下降，需提高截断阶数
+- 极限环穿越鞍点时速度急剧下降，Fourier 截断（$m = 4$）可能不够
+- 非光滑势阱（$\alpha = 0$）影响精度
 
 ## 与系列工作的关系
 

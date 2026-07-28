@@ -23,11 +23,11 @@ For the first time, the MGHFP method achieves a complete quantitative framework 
 
 研究的耦合 SD 振子含高阶非线性阻尼：
 
-\[
+$$
 \ddot{x} + (x+\beta)\frac{1}{\sqrt{(x+\beta)^2+\alpha^2}} + (x-\beta)\frac{1}{\sqrt{(x-\beta)^2+\alpha^2}} = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2 + \mu_3 x^3 + \mu_4 x^4)\dot{x}
-\]
+$$
 
-其中 \(\alpha\) 为光滑参数（\(\alpha=0\) 退化为非光滑），\(\beta\) 为耦合参数，\(\mu_c\) 为控制参数，\(\mu_1\)–\(\mu_4\) 为非线性阻尼系数。两个无理非线性项来自斜弹簧的几何构型，是分析的主要难点。
+其中 $\alpha$ 为光滑参数（$\alpha=0$ 退化为非光滑），$\beta$ 为耦合参数，$\mu_c$ 为控制参数，$\mu_1$–$\mu_4$ 为非线性阻尼系数。两个无理非线性项来自斜弹簧的几何构型，是分析的主要难点。
 
 ![三阱势能](/assets/img/publication_preview/fig5-potential.png){: width="70%"}
 
@@ -37,37 +37,37 @@ For the first time, the MGHFP method achieves a complete quantitative framework 
 
 ### 1. 解析的振幅—参数关系
 
-MGHFP 方法的核心输出是极限环振幅 \(A\) 与控制参数 \(\mu_c\) 的解析关系：
+MGHFP 方法的核心输出是极限环振幅 $A$ 与控制参数 $\mu_c$ 的解析关系：
 
-\[
+$$
 \boxed{\mu_c = -\frac{4}{a_0^2(2p_0 - p_4)}\Big(E_1\mu_1 + E_2\mu_2 + E_3\mu_3 + E_4\mu_4\Big)}
-\]
+$$
 
-其中 \(p_{2i}\) 由复合 Simpson 公式计算，\(E_i\) 为 \(a_0\)、\(b\)、\(p_{2i}\) 的函数。给定系统参数，就可以直接算出有多少个极限环、每个的振幅多大、何时出现何时消失，不需要反复打数值搜索。
+其中 $p_{2i}$ 由复合 Simpson 公式计算，$E_i$ 为 $a_0$、$b$、$p_{2i}$ 的函数。给定系统参数，就可以直接算出有多少个极限环、每个的振幅多大、何时出现何时消失，不需要反复打数值搜索。
 
 ![振幅—参数关系图](/assets/img/publication_preview/fig1-amplitude.png){: width="70%"}
 
-*Figure 1: (上) 极限环振幅 \(A\) 与控制参数 \(\mu_c\) 的关系。(下) 特征量 \(h_0\)（决定稳定性）。关键分岔点：\(\mu^{(0)}=-0.1249\)（半稳定环产生），\(\mu^{(1)}=-0.05\)（分裂为稳定+不稳定），\(\mu^{(2)}=0.02\)（不稳定环坍缩至奇点）。*
+*Figure 1: (上) 极限环振幅 $A$ 与控制参数 $\mu_c$ 的关系。(下) 特征量 $h_0$（决定稳定性）。关键分岔点：$\mu^{(0)}=-0.1249$（半稳定环产生），$\mu^{(1)}=-0.05$（分裂为稳定+不稳定），$\mu^{(2)}=0.02$（不稳定环坍缩至奇点）。*
 
 ### 2. 稳定性判据首次建立
 
-极限环稳定性由特征量 \(h_0\) 判定：
+极限环稳定性由特征量 $h_0$ 判定：
 
-\[
+$$
 \boxed{h_0 = \frac{1}{\pi}\int_0^\pi \left[\mu_c + \sum_{i=1}^{4}\mu_i(a_0\cos^2\varphi + b)^i\right]d\varphi}
-\]
+$$
 
 基于常微分方程定性理论：
 
-- \(h_0 > 0\)：极限环**不稳定**
-- \(h_0 = 0\)：极限环**半稳定**（分岔点）
-- \(h_0 < 0\)：极限环**稳定**
+- $h_0 > 0$：极限环**不稳定**
+- $h_0 = 0$：极限环**半稳定**（分岔点）
+- $h_0 < 0$：极限环**稳定**
 
 尤其可以判别不稳定极限环和半稳定极限环——后者纯数值手段几乎捕捉不到，对理解系统的全局动力学结构意义重大。
 
 ![极限环相图](/assets/img/publication_preview/fig2-limitcycles.png){: width="70%"}
 
-*Figure 2: 不同 \(\mu_c\) 值下的极限环相图（\(\varepsilon=0.2\)）。实线：Runge–Kutta 数值积分。虚线：MGHFP 解析方法。*
+*Figure 2: 不同 $\mu_c$ 值下的极限环相图（$\varepsilon=0.2$）。实线：Runge–Kutta 数值积分。虚线：MGHFP 解析方法。*
 
 ### 3. 单阱 + 三阱两种构型全覆盖
 
@@ -75,15 +75,15 @@ MGHFP 方法的核心输出是极限环振幅 \(A\) 与控制参数 \(\mu_c\) �
 
 ![三阱极限环](/assets/img/publication_preview/fig7-triplewell.png){: width="70%"}
 
-*Figure 7: 三阱耦合 SD 振子在不同 \(\mu_c\) 下的极限环（\(\varepsilon = 1\)）。实线：Runge–Kutta。虚线：MGHFP。即使在大扰动参数下，解析结果仍与数值结果高度吻合。*
+*Figure 7: 三阱耦合 SD 振子在不同 $\mu_c$ 下的极限环（$\varepsilon = 1$）。实线：Runge–Kutta。虚线：MGHFP。即使在大扰动参数下，解析结果仍与数值结果高度吻合。*
 
 ### 4. 方法适用范围明确
 
-论文坦诚地给出了精度退化条件。当 \(\lvert\varepsilon\mu_i\rvert > 0.5\)（大扰动参数或强非线性阻尼），一阶展开精度下降；当极限环穿越鞍点时，需提高 Fourier 截断阶数（本文默认 m=4）。
+论文坦诚地给出了精度退化条件。当 $\lvert\varepsilon\mu_i\rvert > 0.5$（大扰动参数或强非线性阻尼），一阶展开精度下降；当极限环穿越鞍点时，需提高 Fourier 截断阶数（本文默认 m=4）。
 
 ## 方法要点 Method Highlights
 
-**非线性时间变换**：引入 \(\frac{d\varphi}{dt} = \Phi(\varphi)\) 转换系统方程 → Fourier 展开解 \(x = a\cos^2\Phi + b\) → 摄动展开 \(a = a_0 + \varepsilon a_1 + \cdots\) ——MGHFP 的改进核心在于**引入复合 Simpson 公式**把两个无理非线性项涉及的积分离散化，使得整个摄动流程可以走通。
+**非线性时间变换**：引入 $\frac{d\varphi}{dt} = \Phi(\varphi)$ 转换系统方程 → Fourier 展开解 $x = a\cos^2\Phi + b$ → 摄动展开 $a = a_0 + \varepsilon a_1 + \cdots$ ——MGHFP 的改进核心在于**引入复合 Simpson 公式**把两个无理非线性项涉及的积分离散化，使得整个摄动流程可以走通。
 
 **同异宿分岔参数**：在振幅—参数关系式中令振幅趋于鞍点能量对应值，即可预测对应的分岔参数。对于三阱系统，同一鞍点可以同时存在同宿和异宿轨道，这在以前分析方法中是一大难题。
 
