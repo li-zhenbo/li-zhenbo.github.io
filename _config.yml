@@ -3,11 +3,11 @@
 # -----------------------------------------------------------------------------
 
 title: blank # the website title (if blank, full name will be used instead)
-first_name: Zhenbo # TODO-HOMEPAGE: 改成你的名字（拼音或英文名）
+first_name: Zhenbo
 middle_name:
-last_name: Li # TODO-HOMEPAGE: 改成你的姓
+last_name: Li
 contact_note: >
-  欢迎通过邮件交流探讨合作。Feel free to reach out by email for collaboration. # TODO-HOMEPAGE
+  欢迎通过邮件交流探讨合作。Feel free to reach out by email for collaboration.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Zhenbo Li 的个人学术主页：非线性动力学与分岔分析、极限环与同异宿轨道、摄动方法与定量分析。
   Personal academic homepage of Zhenbo Li: nonlinear dynamics, bifurcation analysis, limit cycles, homoclinic-heteroclinic orbits, and perturbation methods.
@@ -123,7 +123,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Research Notes · 研究笔记 # blog_name will be displayed in your blog page
-blog_description: 论文解读与研究随笔 · Paper reading notes and research essays # TODO-HOMEPAGE
+blog_description: 论文解读与研究随笔 · Paper reading notes and research essays
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -326,8 +326,8 @@ display_categories: [] # these categories will be displayed on the front page of
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Li] # TODO-HOMEPAGE: 你的姓（用于在论文作者列表中加粗高亮你自己）
-  first_name: [Zhenbo, Z.] # TODO-HOMEPAGE: 你的名字在论文中的常见写法
+  last_name: [Li]
+  first_name: [Zhenbo, Z.]
 
   style: apa
   locale: en

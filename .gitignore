@@ -13,5 +13,9 @@ assets/rendercv/rendercv_output/*.typ
 al-folio-upgrade-report.md
 node_modules/
 output/playwright/
+assets/pdf/*.aux
+assets/pdf/*.log
+assets/pdf/*.out
+assets/pdf/*.synctex.gz
 test-results/
 vendor
