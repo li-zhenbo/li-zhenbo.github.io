@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zhenbo Li — 个人学术主页预览</title>
+<style>
+  :root { color-scheme: light; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+    background: #f5f5f5; color: #212529; line-height: 1.6;
+  }
+  .navbar {
+    background: #fff; border-bottom: 1px solid #e0e0e0; padding: 12px 24px;
+    display: flex; gap: 24px; align-items: center; position: sticky; top: 0; z-index: 10;
+  }
+  .navbar .brand { font-weight: 700; font-size: 1.15rem; margin-right: auto; }
+  .navbar a { color: #5a6e7f; text-decoration: none; font-size: 0.92rem; }
+  .navbar a:hover { color: #212529; }
+  .container { max-width: 930px; margin: 0 auto; padding: 24px; }
+  .hero { background: #fff; border-radius: 8px; padding: 32px; margin-bottom: 24px; display: flex; gap: 32px; }
+  .hero .avatar { flex-shrink: 0; }
+  .hero .avatar .placeholder { width: 140px; height: 140px; background: #e0e0e0; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.85rem; text-align: center; }
+  .hero-text h1 { font-size: 1.75rem; margin-bottom: 4px; }
+  .hero-text .subtitle { color: #5a6e7f; font-size: 0.92rem; margin-bottom: 12px; }
+  .hero-text .subtitle a { color: #3b82f6; text-decoration: none; }
+  .hero-text p { margin-bottom: 8px; font-size: 0.93rem; }
+  .hero-text .en { color: #666; font-size: 0.88rem; margin-bottom: 4px; font-style: italic; }
+  .hero-text .zh { font-size: 0.91rem; }
+  .socials { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+  .socials a { color: #5a6e7f; text-decoration: none; font-size: 0.85rem; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px 12px; }
+  .socials a:hover { border-color: #999; }
+  .section-card { background: #fff; border-radius: 8px; padding: 28px; margin-bottom: 20px; }
+  .section-card h2 { font-size: 1.2rem; margin-bottom: 16px; color: #333; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+  .news-item { padding: 6px 0; font-size: 0.9rem; border-bottom: 1px dashed #eee; }
+  .news-item .date { color: #999; margin-right: 12px; white-space: nowrap; }
+  .pub-item { padding: 16px 0; border-bottom: 1px solid #eee; }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-item .pub-title { font-weight: 600; font-size: 0.95rem; color: #212529; }
+  .pub-item .pub-authors { font-size: 0.85rem; color: #555; margin: 4px 0; }
+  .pub-item .pub-venue { font-size: 0.82rem; color: #888; }
+  .pub-item .pub-abstract { font-size: 0.84rem; color: #666; margin-top: 8px; line-height: 1.5; }
+  .pub-item .pub-links { margin-top: 8px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .pub-item .pub-links a { font-size: 0.78rem; color: #3b82f6; text-decoration: none; border: 1px solid #ddd; border-radius: 4px; padding: 2px 10px; }
+  .pub-item .pub-links a:hover { background: #e8f0fe; }
+  .tag { display: inline-block; background: #e8f0fe; color: #3b82f6; font-size: 0.72rem; border-radius: 4px; padding: 1px 8px; margin-right: 6px; }
+  .abbr-badge { display: inline-block; background: #3b82f6; color: #fff; font-size: 0.7rem; border-radius: 3px; padding: 1px 6px; margin-right: 8px; vertical-align: middle; font-weight: 600; text-transform: uppercase; }
+  .project-card { border: 1px solid #eee; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+  .project-card h3 { font-size: 0.95rem; margin-bottom: 4px; }
+  .project-card p { font-size: 0.82rem; color: #888; }
+  .project-card .placeholder-img { width: 100%; height: 120px; background: #e8e8e8; border-radius: 4px; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.82rem; }
+  .post-item { padding: 12px 0; border-bottom: 1px dashed #eee; }
+  .post-item:last-child { border-bottom: none; }
+  .post-item .post-title { font-weight: 600; font-size: 0.92rem; color: #212529; }
+  .post-item .post-meta { font-size: 0.78rem; color: #999; }
+  .post-item .post-desc { font-size: 0.82rem; color: #666; margin-top: 4px; }
+  .footer { text-align: center; color: #999; font-size: 0.78rem; padding: 24px; }
+  .footer a { color: #3b82f6; }
+  .preview-banner { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 6px; padding: 10px 16px; margin-bottom: 20px; font-size: 0.85rem; color: #92400e; }
+  .columns-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="brand">🔬 Zhenbo Li</div>
+  <a href="#">About 简介</a>
+  <a href="#pub">Papers 论文</a>
+  <a href="#projects">Code 代码</a>
+  <a href="#blog">Notes 笔记</a>
+  <a href="#cv">CV 简历</a>
+</div>
+
+<div class="container">
+
+  <!-- 首页 / About -->
+  <div class="hero">
+    <div class="avatar">
+      <div class="placeholder">📷<br>把 prof_pic.jpg<br>放到 assets/img/</div>
+    </div>
+    <div class="hero-text">
+      <h1>Zhenbo Li</h1>
+      <div class="subtitle"><a href="#">某某大学 / Some University</a> · 研究方向 / Research Direction</div>
+      <p class="en">I am a [position] at [institution]. My research focuses on [research direction]. I received my [degree] from [university] in [year]. My work has been published in [journals/conferences].</p>
+      <p class="zh">我是[单位]的[职位]，研究方向为[研究方向]。[年份]年获[大学][学位]。研究成果发表于[期刊/会议名称]。</p>
+      <p><strong>Research interests 研究兴趣</strong>: 方向一 · 方向二 · 方向三</p>
+      <div class="socials">
+        <a href="#">📧 Email 邮箱</a>
+        <a href="#">GitHub</a>
+        <a href="#">Google Scholar</a>
+        <a href="#">🏠 Gitee 国内镜像</a>
+        <a href="#">📄 CV PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="preview-banner">
+    ⚠️ 这是静态预览页面（因本地无法运行 al-folio 的 Jekyll 构建）。实际上线后的 <b>al-folio 完整效果</b> 会更好——有深色模式切换、论文条目可展开引用 BibTeX、Google Scholar 引用数徽章、响应式卡片布局、数学公式渲染等。预览的目的只是让你看到页面结构和中英对照的呈现方式。
+  </div>
+
+  <!-- 动态 News -->
+  <div class="section-card">
+    <h2>📰 Latest News 最新动态</h2>
+    <div class="news-item"><span class="date">Jul 27, 2026</span>个人主页上线啦！🎉 My academic homepage is now online.</div>
+    <div class="news-item"><span class="date">Jul 01, 2026</span>示例动态：论文被 <em>Journal of Sample Research</em> 接收 / Our paper was accepted by <em>JSR</em>.</div>
+  </div>
+
+  <!-- 精选论文 Selected Papers -->
+  <div class="section-card" id="pub">
+    <h2>⭐ Selected Publications 精选论文</h2>
+    <div class="pub-item">
+      <div class="pub-title">
+        <span class="abbr-badge">示例期刊</span>
+        A Sample Journal Paper Title: Replace Me with Your Published Work
+      </div>
+      <div class="pub-authors"><strong>Zhenbo Li</strong>, San Zhang, Wu Wang</div>
+      <div class="pub-venue">Journal of Sample Research · 2026 · Vol. 10(2), pp. 100–115</div>
+      <div class="pub-abstract">
+        <strong>英文</strong>: Replace this with the English abstract of your paper.<br>
+        <strong>中文</strong>: 在这里替换为论文的中文摘要。
+      </div>
+      <div class="pub-abstract" style="margin-top:6px">
+        <strong>核心结论 Key findings</strong>：(1) 第一条核心结论……；(2) 第二条核心结论……；(3) 第三条核心结论……。
+      </div>
+      <div class="pub-links">
+        <a href="#">📄 PDF</a>
+        <a href="#">💻 Code 代码</a>
+        <a href="#">🔬 DOI</a>
+        <a href="#">📋 BibTeX</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-title"><span class="abbr-badge">SampleConf</span>Another Sample Paper: A Conference Paper Example</div>
+      <div class="pub-authors"><strong>Zhenbo Li</strong>, San Zhang</div>
+      <div class="pub-venue">Proceedings of the Sample Conference on Research · 2025</div>
+      <div class="pub-abstract"><strong>English / 中文</strong>: English abstract goes here. 中文摘要写在这里。</div>
+      <div class="pub-links"><a href="#">📄 PDF</a><a href="#">💻 Code 代码</a></div>
+    </div>
+    <p style="margin-top:16px; font-size:0.82rem; color:#888;">→ 全部论文列表见 <a href="#" style="color:#3b82f6">Publications 论文</a> 页面（每篇论文在 <code>_bibliography/papers.bib</code> 中添加条目即可自动生成）</p>
+  </div>
+
+  <!-- 项目 Projects -->
+  <div class="section-card" id="projects">
+    <h2>💻 Projects 代码</h2>
+    <div class="columns-3">
+      <div class="project-card">
+        <div class="placeholder-img">🖼 在 assets/img/ 放项目配图</div>
+        <h3>sample-repo</h3>
+        <p>示例项目：论文 "A Sample Journal Paper Title" 的官方实现</p>
+      </div>
+      <div class="project-card">
+        <div class="placeholder-img">🖼 或设为外链直接跳转</div>
+        <h3>another-tool</h3>
+        <p>示例项目（卡片可直达 GitHub 仓库）</p>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:0.82rem; color:#888;">在 <code>_projects/</code> 目录添加 .md 文件即可新增项目卡片。想让卡片直接跳转外部链接，在 front matter 加 <code>redirect: 你的链接</code> 即可。</p>
+  </div>
+
+  <!-- 博客笔记 -->
+  <div class="section-card" id="blog">
+    <h2>📝 Latest Notes 最新笔记</h2>
+    <div class="post-item">
+      <div class="post-title"><a href="#" style="color:#212529; text-decoration:none">📌 论文笔记模板：如何写一篇 Paper Note</a></div>
+      <div class="post-meta">Jul 27, 2026 · 3 min read · <span class="tag">paper-notes</span></div>
+      <div class="post-desc">推荐的研究笔记结构：核心结论、方法要点、个人思考（中英对照示例）</div>
+    </div>
+    <div class="post-item">
+      <div class="post-title"><a href="#" style="color:#212529; text-decoration:none">如何更新这个主页（写作指南）</a></div>
+      <div class="post-meta">Jul 27, 2026 · 2 min read · <span class="tag">research-notes</span></div>
+      <div class="post-desc">添加论文、项目、动态和博客文章的速查说明 / A cheat sheet for updating this site</div>
+    </div>
+    <p style="margin-top:16px; font-size:0.82rem; color:#888;">→ 在 <code>_posts/</code> 目录新建 <code>YYYY-MM-DD-标题.md</code> 文件即可发布新笔记，支持数学公式和代码块。复制《论文笔记模板》修改即可。（实际 al-folio 有完整的分页、标签归档等功能）</p>
+  </div>
+
+  <!-- CV -->
+  <div class="section-card" id="cv">
+    <h2>📄 CV 简历</h2>
+    <div style="font-size:0.9rem; line-height:1.7">
+      <strong>Zhenbo Li</strong> · Researcher / 科研人员<br><br>
+      <strong>教育经历 Education</strong><br>
+      2018–2022: 博士 PhD · 某某大学 / Some University · 专业 / Major<br>
+      2014–2018: 学士 BSc · 某某大学 / Some University · 专业 / Major<br><br>
+      <strong>工作经历 Experience</strong><br>
+      2022–至今 Present: 职位 / Position · 某某大学 / Some Institution<br><br>
+      <strong>奖励 Awards</strong><br>
+      2024: 奖项名称 / Award Name<br><br>
+      <div style="margin-top:12px">
+        <a href="#" style="color:#3b82f6; font-size:0.85rem;">📥 下载 CV PDF</a>
+        &nbsp;<span style="font-size:0.78rem; color:#888;">（在线版由 _data/cv.yml 自动生成 / Online version auto-generated by _data/cv.yml）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页面导航对比 -->
+  <div class="section-card" style="background:#fafafa;">
+    <h2>🗂 全部页面 Pages 页面导航一览</h2>
+    <table style="width:100%; font-size:0.88rem; border-collapse:collapse">
+      <tr style="border-bottom:1px solid #eee"><td style="padding:6px 0"><strong>About 简介</strong></td><td>/</td><td>首页：自我介绍 + 最新动态 + 精选论文 + 最新笔记</td></tr>
+      <tr style="border-bottom:1px solid #eee"><td style="padding:6px 0"><strong>Publications 论文</strong></td><td>/publications/</td><td>全量论文列表（BibTeX 自动生成，按年份倒序）</td></tr>
+      <tr style="border-bottom:1px solid #eee"><td style="padding:6px 0"><strong>Projects 代码</strong></td><td>/projects/</td><td>代码项目卡片（_projects/ 目录）</td></tr>
+      <tr style="border-bottom:1px solid #eee"><td style="padding:6px 0"><strong>Blog 笔记</strong></td><td>/blog/</td><td>研究笔记 / 论文解读（分页 + 标签归档）</td></tr>
+      <tr><td style="padding:6px 0"><strong>CV 简历</strong></td><td>/cv/</td><td>学术简历（在线版 + PDF 下载）</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    实际效果预览 · 上线后为完整 al-folio 主题（深色模式、论文引用徽章、响应式布局等）。<br>
+    Powered by Jekyll with <a href="https://github.com/alshedivat/al-folio">al-folio</a>. GitHub Pages (境外) &amp; Gitee Pages (国内).
+  </div>
+
+</div>
+
+</body>
+</html>

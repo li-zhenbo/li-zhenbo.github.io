@@ -1,0 +1,137 @@
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "assets/**"
+      - "**.bib"
+      - "**.html"
+      - "**.js"
+      - "**.liquid"
+      - "**/*.md"
+      - "**.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "!.github/workflows/axe.yml"
+      - "!.github/workflows/broken-links.yml"
+      - "!.github/workflows/deploy-docker-tag.yml"
+      - "!.github/workflows/deploy-image.yml"
+      - "!.github/workflows/docker-slim.yml"
+      - "!.github/workflows/lighthouse-badger.yml"
+      - "!.github/workflows/prettier.yml"
+      - "!lighthouse_results/**"
+      - "!docs/CONTRIBUTING.md"
+      - "!docs/CUSTOMIZE.md"
+      - "!docs/FAQ.md"
+      - "!docs/INSTALL.md"
+      - "!README.md"
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - "assets/**"
+      - "**.bib"
+      - "**.html"
+      - "**.js"
+      - "**.liquid"
+      - "**/*.md"
+      - "**.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "!.github/workflows/axe.yml"
+      - "!.github/workflows/broken-links.yml"
+      - "!.github/workflows/deploy-docker-tag.yml"
+      - "!.github/workflows/deploy-image.yml"
+      - "!.github/workflows/docker-slim.yml"
+      - "!.github/workflows/lighthouse-badger.yml"
+      - "!.github/workflows/prettier.yml"
+      - "!lighthouse_results/**"
+      - "!docs/CONTRIBUTING.md"
+      - "!docs/CUSTOMIZE.md"
+      - "!docs/FAQ.md"
+      - "!docs/INSTALL.md"
+      - "!README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    # available images: https://github.com/actions/runner-images#available-images
+    runs-on: ubuntu-latest
+    env:
+      # Gitee 国内镜像配置：在 GitHub 仓库 Settings → Secrets and variables → Actions 中添加
+      # GITEE_REPO（形如 用户名/仓库名）、GITEE_SSH_PRIVATE_KEY、GITEE_TOKEN 三个 secret 后即自动启用
+      GITEE_REPO: ${{ secrets.GITEE_REPO }}
+      GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+      - name: Setup Ruby 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+      - name: Setup Python 🐍
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: "pip" # caching pip dependencies
+      - name: Setup Node 🧰
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install JS deps 📦
+        run: npm ci
+      - name: Install and Build 🔧
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+          export JEKYLL_ENV=production
+          bundle exec jekyll build
+      - name: Purge unused CSS 🧹
+        run: |
+          npm install -g purgecss
+          purgecss -c purgecss.config.js
+      - name: Deploy 🚀
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+
+      # ------------------------------------------------------------------
+      # Gitee 国内镜像：把构建好的静态文件推送到 Gitee 仓库的 gh-pages 分支，
+      # 并调用 Gitee API 触发 Pages 重新部署。未配置 secrets 时自动跳过。
+      # ------------------------------------------------------------------
+      - name: Setup SSH for Gitee 🔑
+        if: github.event_name != 'pull_request' && env.GITEE_REPO != ''
+        run: |
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          echo "${{ secrets.GITEE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan gitee.com >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Push built site to Gitee 🪞
+        if: github.event_name != 'pull_request' && env.GITEE_REPO != ''
+        run: |
+          cd _site
+          git init -q
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Deploy from GitHub Actions $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git remote add gitee "git@gitee.com:${{ secrets.GITEE_REPO }}.git"
+          git push -f gitee HEAD:gh-pages
+
+      - name: Trigger Gitee Pages rebuild 🔄
+        if: github.event_name != 'pull_request' && env.GITEE_REPO != '' && env.GITEE_TOKEN != ''
+        run: |
+          curl -sf -X POST "https://gitee.com/api/v5/repos/${{ secrets.GITEE_REPO }}/pages/builds" \
+            -d "access_token=${{ secrets.GITEE_TOKEN }}" \
+            || echo "::warning::Gitee Pages 自动更新触发失败，请到 Gitee 仓库的「服务 → Gitee Pages」手动点击更新"

@@ -1,0 +1,73 @@
+# =============================================================================
+# 学术简历数据：CV 页面（/cv/）由本文件自动生成
+# TODO-HOMEPAGE: 把下面的示例内容全部替换为你自己的履历。
+# 字段结构遵循 RenderCV 格式，不想要的 section 整段删除即可。
+# =============================================================================
+cv:
+  name: Zhenbo Li # TODO-HOMEPAGE
+  label: Researcher / 科研人员 # TODO-HOMEPAGE
+  email: zhenbo.li@example.com # TODO-HOMEPAGE
+  location: Beijing, China # TODO-HOMEPAGE
+  image: ""
+  summary: 研究方向为 XXX，致力于解决 XXX 问题 / Researcher working on XXX # TODO-HOMEPAGE
+
+  social_networks:
+    - network: GitHub
+      username: your-github-username # TODO-HOMEPAGE
+    - network: Google Scholar
+      username: your-scholar-id # TODO-HOMEPAGE
+
+  sections:
+    教育经历 Education:
+      - institution: 某某大学 / Some University # TODO-HOMEPAGE
+        location: City, Country
+        area: 专业 / Major
+        studyType: 博士 PhD
+        start_date: 2018
+        end_date: 2022
+        highlights:
+          - 导师：XXX / Advisor: XXX
+          - 研究方向：XXX
+
+      - institution: 某某大学 / Some University
+        location: City, Country
+        area: 专业 / Major
+        studyType: 学士 BSc
+        start_date: 2014
+        end_date: 2018
+
+    工作经历 Experience:
+      - company: 某某大学 / 研究所 / Some Institution # TODO-HOMEPAGE
+        position: 职位 / Position
+        location: City, Country
+        start_date: 2022
+        end_date: present
+        summary: 主要工作内容与研究方向 / What you work on
+        highlights:
+          - 主持 XXX 项目
+          - 讲授 XXX 课程
+
+    代表性论文 Selected Publications:
+      - title: A Sample Journal Paper Title # TODO-HOMEPAGE
+        authors:
+          - Zhenbo Li
+          - San Zhang
+        publisher: Journal of Sample Research
+        releaseDate: 2026-01-01
+        summary: 一句话说明论文的核心贡献 / One-sentence summary of the contribution
+
+    获奖情况 Awards:
+      - title: 奖项名称 / Award Name # TODO-HOMEPAGE
+        date: 2024
+        awarder: 颁发机构 / Issuing Organization
+        summary: 获奖原因简述 / Brief description
+
+    技能 Skills:
+      - name: 编程 Programming
+        keywords: "Python, C++, MATLAB"
+
+    语言 Languages:
+      - name: 中文 Chinese
+        summary: 母语 Native
+      - name: English
+        summary: 工作语言 Working proficiency
