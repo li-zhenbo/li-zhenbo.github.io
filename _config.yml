@@ -9,12 +9,12 @@ last_name: Li # TODO-HOMEPAGE: 改成你的姓
 contact_note: >
   欢迎通过邮件交流探讨合作。Feel free to reach out by email for collaboration. # TODO-HOMEPAGE
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Zhenbo Li 的个人学术主页：发表论文、核心结论、代码与研究笔记。
-  Personal academic homepage of Zhenbo Li: publications, key findings, code and research notes. # TODO-HOMEPAGE
+  Zhenbo Li 的个人学术主页：非线性动力学与分岔分析、极限环与同异宿轨道、摄动方法与定量分析。
+  Personal academic homepage of Zhenbo Li: nonlinear dynamics, bifurcation analysis, limit cycles, homoclinic-heteroclinic orbits, and perturbation methods.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   境外镜像 <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> · 国内镜像 <a href="https://gitee.com/" target="_blank">Gitee Pages</a>.
-keywords: academic-homepage, publications, research, code, 学术主页, 论文, 科研 # add your own keywords or leave empty
+keywords: nonlinear-dynamics, bifurcation, limit-cycle, perturbation-method, sd-oscillator, 非线性动力学, 分岔, 极限环, 摄动法, 耦合SD振子 # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🔬 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 

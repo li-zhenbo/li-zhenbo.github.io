@@ -1,73 +1,77 @@
 # =============================================================================
 # 学术简历数据：CV 页面（/cv/）由本文件自动生成
-# TODO-HOMEPAGE: 把下面的示例内容全部替换为你自己的履历。
 # 字段结构遵循 RenderCV 格式，不想要的 section 整段删除即可。
 # =============================================================================
 cv:
-  name: Zhenbo Li # TODO-HOMEPAGE
-  label: Researcher / 科研人员 # TODO-HOMEPAGE
-  email: zhenbo.li@example.com # TODO-HOMEPAGE
-  location: Beijing, China # TODO-HOMEPAGE
+  name: Zhenbo Li
+  label: Researcher in Nonlinear Dynamics / 非线性动力学研究者
+  email: lizhenbo@usc.edu.cn
+  location: Hengyang, Hunan, China / 湖南衡阳
   image: ""
-  summary: 研究方向为 XXX，致力于解决 XXX 问题 / Researcher working on XXX # TODO-HOMEPAGE
+  summary: 研究方向为非线性动力学与分岔分析，聚焦于强非线性振子的极限环与同异宿轨道定量研究 / Research focuses on nonlinear dynamics and bifurcation analysis; quantitative study of limit cycles and homoclinic-heteroclinic orbits in strongly nonlinear oscillators using analytical perturbation methods.
 
   social_networks:
     - network: GitHub
-      username: your-github-username # TODO-HOMEPAGE
-    - network: Google Scholar
-      username: your-scholar-id # TODO-HOMEPAGE
+      username: li-zhenbo
 
   sections:
     教育经历 Education:
-      - institution: 某某大学 / Some University # TODO-HOMEPAGE
-        location: City, Country
-        area: 专业 / Major
+      - institution: 南华大学 / University of South China
+        location: Hengyang, Hunan, China
+        area: 应用数学 / Applied Mathematics
         studyType: 博士 PhD
-        start_date: 2018
-        end_date: 2022
+        start_date: 2020
+        end_date: 2024
         highlights:
-          - 导师：XXX / Advisor: XXX
-          - 研究方向：XXX
+          - 导师 / Advisor: TODO-HOMEPAGE
+          - 研究方向：非线性动力学、分岔分析、摄动方法
 
-      - institution: 某某大学 / Some University
-        location: City, Country
-        area: 专业 / Major
+      - institution: TODO-HOMEPAGE 某某大学 / Some University
+        location: City, China
+        area: 数学与应用数学 / Mathematics
         studyType: 学士 BSc
-        start_date: 2014
-        end_date: 2018
+        start_date: 2016
+        end_date: 2020
 
     工作经历 Experience:
-      - company: 某某大学 / 研究所 / Some Institution # TODO-HOMEPAGE
-        position: 职位 / Position
-        location: City, Country
-        start_date: 2022
+      - company: 南华大学 数理学院 / University of South China, School of Mathematics and Physics
+        position: 教师 / Faculty
+        location: Hengyang, Hunan, China
+        start_date: 2024
         end_date: present
-        summary: 主要工作内容与研究方向 / What you work on
+        summary: 主要研究方向：耦合 SD 振子非线性动力学、极限环全局演化、改进广义谐波函数摄动法（MGHFP）/ Research on: nonlinear dynamics of coupled SD oscillators, global evolution of limit cycles, MGHFP method.
         highlights:
-          - 主持 XXX 项目
-          - 讲授 XXX 课程
+          - 主持湖南省教育厅科研项目 (No. 25C0246)
+          - 湖南省数学建模与科学计算重点实验室成员
 
     代表性论文 Selected Publications:
-      - title: A Sample Journal Paper Title # TODO-HOMEPAGE
+      - title: Quantitative Analysis of Dynamical Bifurcations in a Coupled Smooth and Discontinuous Oscillator with High-order Nonlinear Damping
         authors:
           - Zhenbo Li
-          - San Zhang
-        publisher: Journal of Sample Research
-        releaseDate: 2026-01-01
-        summary: 一句话说明论文的核心贡献 / One-sentence summary of the contribution
+          - Linxia Hou
+          - Ruyue Peng
+        publisher: Physica Scripta, Vol. 101, 125205
+        releaseDate: 2026-03-25
+        summary: 提出 MGHFP 方法定量分析耦合 SD 振子的极限环全局演化，建立稳定性解析判据，预测同异宿分岔参数。
 
-    获奖情况 Awards:
-      - title: 奖项名称 / Award Name # TODO-HOMEPAGE
+    主持项目 Grants:
+      - title: 湖南省教育厅科研项目 / Scientific Research Project of Education Department of Hunan Province
+        date: 2025
+        summary: Project No. 25C0246 — 非线性动力学与分岔分析
+
+      - title: 南华大学博士科研启动基金 / Scientific Research Foundation for Doctors of University of South China
         date: 2024
-        awarder: 颁发机构 / Issuing Organization
-        summary: 获奖原因简述 / Brief description
+        summary: Project No. 5524QD126
 
     技能 Skills:
+      - name: 理论研究 Theoretical
+        keywords: "Nonlinear dynamics, Bifurcation analysis, Perturbation methods, MGHFP, Melnikov method"
+
       - name: 编程 Programming
-        keywords: "Python, C++, MATLAB"
+        keywords: "MATLAB, Python, Mathematica, Runge-Kutta numerical methods"
 
     语言 Languages:
       - name: 中文 Chinese
         summary: 母语 Native
       - name: English
-        summary: 工作语言 Working proficiency
+        summary: 学术写作与交流 Academic writing and communication
