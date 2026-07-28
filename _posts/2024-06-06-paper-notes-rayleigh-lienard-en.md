@@ -15,7 +15,7 @@ toc:
 
 ## TL;DR
 
-This is the **first public introduction** of the MGHFP methodology — embedding the composite Simpson quadrature formula into the classical GHFP framework to enable purely symbolic execution for complicated nonlinear oscillators. All subsequent MGHFP work (IJNLM 2024, IJNLM 2025, Phys. Scr. 2026) traces its origin to this paper.
+This is the **first-ever publication** of the MGHFP methodology — embedding the composite Simpson quadrature formula into the classical GHFP framework to enable purely symbolic execution for complicated nonlinear oscillators. All subsequent MGHFP work (IJNLM 2024, IJNLM 2025, Phys. Scr. 2026) traces its origin to this paper.
 
 ## Motivation
 

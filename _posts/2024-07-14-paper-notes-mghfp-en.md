@@ -15,7 +15,7 @@ toc:
 
 ## TL;DR
 
-This is the **foundational paper** of the MGHFP method series. Its core innovation — embedding the composite Simpson quadrature formula into the classical GHFP framework — enables purely symbolic execution for the first time, eliminating the need for any system parameter pre-assignment. All subsequent MGHFP work (IJNLM 2025 with Padé enhancement; Phys. Scr. 2026 on coupled SD oscillators) builds directly on this foundation.
+The MGHFP method was first published in Physica Scripta (June 2024). This IJNLM paper is the first application of MGHFP to an oscillator with rational restoring force — a more complex test case that validates the method's versatility. It directly follows the original Physica Scripta 2024 publication and precedes the Padé-enhanced version (IJNLM 2025) and the coupled SD oscillator application (Phys. Scr. 2026).
 
 ## Motivation
 

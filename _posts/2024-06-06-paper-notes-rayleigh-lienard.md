@@ -15,7 +15,7 @@ toc:
 
 ## TL;DR 一句话总结
 
-这是 **MGHFP 方法的首次公开发表**——在经典广义谐波函数摄动法中引入复合 Simpson 积分公式，使方法能够在复杂非线性振子上纯符号化执行，无需预设任何系统参数即可推导振幅与参数的解析关系。后续 IJNLM 2024（DHRL 振子）、IJNLM 2025（SD 振子四次阻尼）、Phys. Scr. 2026（耦合 SD 振子）均从此处起源。
+这是 **MGHFP 方法的第一次公开发表**——在经典广义谐波函数摄动法中引入复合 Simpson 积分公式，使方法能够在复杂非线性振子上纯符号化执行，无需预设任何系统参数即可推导振幅与参数的解析关系。后续 IJNLM 2024（DHRL 振子）、IJNLM 2025（SD 振子四次阻尼）、Phys. Scr. 2026（耦合 SD 振子）均从此处起源。
 
 This is the **first publication** of the MGHFP methodology — introducing composite Simpson integration into the classical GHFP framework to enable purely symbolic execution. All subsequent MGHFP work (IJNLM 2024, IJNLM 2025, Phys. Scr. 2026) originates from this paper.
 

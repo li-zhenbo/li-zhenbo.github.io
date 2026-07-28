@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-新论文发表在 IJNLM：MGHFP 方法的开篇之作 / The foundational paper of the MGHFP method series is now published in IJNLM. [DOI](https://doi.org/10.1016/j.ijnonlinmec.2024.104832)
+MGHFP 方法的第一个后续应用：DHRL 振子全局动力学分析 / First follow-up application of the MGHFP method — global analysis of the DHRL oscillator — now published in IJNLM. [DOI](https://doi.org/10.1016/j.ijnonlinmec.2024.104832)
