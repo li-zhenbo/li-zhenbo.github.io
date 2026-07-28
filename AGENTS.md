@@ -169,3 +169,43 @@ papers = {
 5. **动态**：在 `_news/` 新建 `.md` 文件 announcing 论文发表。
 6. **引用数**：在 `update-dimensions-citations.yml` 的 `papers` 字典里加新论文的 DOI。在 `_data/citations.yml` 里加初始引用数。
 7. **提交推送**：`git add -A && git commit && git push`。
+
+### 14. LaTeX 公式渲染
+
+**问题**：post 里的公式（`$$...$$` 和 `$...$`）不渲染，显示为原始文本。
+
+**根因**：Jekyll 的 Kramdown Markdown 引擎需要显式配置 `math_engine` 才能将公式块传递给 MathJax。al-folio 默认只加载了 MathJax JS 脚本，但没有在 Kramdown 里声明数学引擎。
+
+**解决**：在 `_config.yml` 的 `kramdown` 配置块中加入 `math_engine: mathjax`：
+```yaml
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter_opts:
+    ...
+```
+
+**公式分隔符规范**：al-folio 的 MathJax 只认这两种：
+- 行内公式：`$...$`（不要用 `\(...\)`）
+- 显示公式：`$$...$$`（不要用 `\[...\]`）
+
+### 15. Post 图片排版
+
+**图题位置问题**：图片和斜体图注 `*Figure X: ...*` 必须**在同一行内用空行隔开**，否则 Markdown 渲染器会把图注当成图片的内联 companion 放在右侧。正确格式：
+```markdown
+![alt](path){: width="70%"}
+
+*Figure X: caption text*
+```
+
+**图片尺寸**：用 `{: width="70%"}` 限制宽度为文本宽的 70%，避免撑满页面。
+
+### 16. 首页 latest_posts 和 More 链接
+
+**显示篇数**：在 `_pages/about.md` 的 front matter 中 `latest_posts.limit` 控制，当前设为 5。
+
+**More 链接**：在 `_pages/about.md` 正文末尾添加 `[→ 全部论文笔记 / All Paper Notes](/blog/)` 即可，al-folio 在 latest_posts 模块后会继续渲染 about.md 的正文内容，这个链接会显示在文章列表下方。
+
+### 17. 页面最大宽度
+
+**配置**：`_config.yml` 中 `max_width: 1200px`。小于此宽度时自适应，超过后固定在 1200px 不再增大。CSS 变量 `--max-content-width` 自动引用此值。
