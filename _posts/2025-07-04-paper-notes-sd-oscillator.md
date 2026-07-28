@@ -35,7 +35,7 @@ SD 振子（Smooth and Discontinuous Oscillator）是典型的无理非线性振
 
 其中 \(\alpha\) 是光滑参数（\(\alpha\to 0\) 退化为非光滑），\(\omega_0\) 是固有频率，\(\varepsilon\) 是小扰动参数，\(\mu_c\) 为控制参数。无理恢复力来自斜弹簧几何构型。
 
-![势能图](/assets/img/publication_preview/p2-fig2-potential.png)
+![势能图](/assets/img/publication_preview/p2-fig2-potential.png){: width="70%"}
 *Figure 2: SD 振子的双阱势能图。\(\alpha\) 从 1 降至 0，系统从单阱过渡到双阱，形成同宿轨道。*
 
 ## 方法创新：MGHFP + Padé 近似
@@ -68,7 +68,7 @@ f(\alpha, A) \approx \frac{P_n(\alpha, A)}{Q_m(\alpha, A)}
 
 其中 \(\tilde{E}_i\) 现在是 Padé-近似的有理函数——**比原始 MGHFP 表达式简洁得多**，且支持多参数分析。\(p_{2i}\) 仍通过复合 Simpson 公式计算。
 
-![振幅—参数关系](/assets/img/publication_preview/p2-fig3-amplitude.png)
+![振幅—参数关系](/assets/img/publication_preview/p2-fig3-amplitude.png){: width="70%"}
 *Figure 3: (上) \(\mu_c\)–\(A\) 曲线。(下) \(H_0\)–\(A\) 曲线。(底行) 不同 \(\mu_c\) 下的相图。实线/虚线：MGHFP。圆点：Runge–Kutta。极限环从产生、分岔到收敛全过程定量可视化。*
 
 ### 稳定性判据
@@ -98,12 +98,12 @@ f(\alpha, A) \approx \frac{P_n(\alpha, A)}{Q_m(\alpha, A)}
 
 参数 \(\mu_1=-0.5, \mu_2=1, \mu_3=1, \mu_4=-0.1\)，解析与数值一致性好。
 
-![另一个参数集](/assets/img/publication_preview/p2-fig8-amplitude2.png)
+![另一个参数集](/assets/img/publication_preview/p2-fig8-amplitude2.png){: width="70%"}
 *Figure 8: 不同参数集下的 \(\mu_c\)–\(A\) 和 \(H_0\)–\(A\) 曲线。方法在参数空间内准确捕捉极限环演化和稳定性过渡。*
 
 ### 极限环解析解
 
-![解析解对比](/assets/img/publication_preview/p2-fig7-solutions.png)
+![解析解对比](/assets/img/publication_preview/p2-fig7-solutions.png){: width="70%"}
 *Figure 7: 不同 \(\mu_c\) 下极限环的解析解与 Runge–Kutta 数值解对比。验证了 MGHFP+Padé 方法的精度和可靠性。*
 
 ## 5 条核心发现
