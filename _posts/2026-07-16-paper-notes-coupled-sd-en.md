@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Paper Notes — Quantitative Analysis of Dynamical Bifurcations in a Coupled SD Oscillator with High-order Nonlinear Damping
-date: 2026-07-16 10:00:00+0000
+date: 2026-07-16 10:00:00+0800
 description: MGHFP method for global limit cycle evolution and homo-heteroclinic bifurcation in coupled SD oscillators with two irrational nonlinearities
 tags: [paper-notes]
 categories: [notes]
