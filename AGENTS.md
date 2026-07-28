@@ -131,6 +131,41 @@ preview = {physica-scripta-cover.png},
 
 ### 10. 论文版权
 
-**问题**：用户不能在网站上随意传播论文原文 PDF（IOP 版权协议）。
+**问题**：用户不能在网站上随意传播论文原文 PDF（IOP/Elsevier 版权协议）。
 
-**解决**：网站上的 PDF 按钮链接的是作者自行整理的**精华汇总 PDF**（含核心公式、关键图片、结论解读），不是论文原文。论文原文 PDF 已从网站目录删除。LaTeX 源码在 `assets/pdf/essential-summary.tex`，修改后用 `xelatex` 编译两遍。
+**解决**：网站上的 PDF 按钮链接的是作者自行整理的**精华汇总 PDF**（含核心公式、关键图片、结论解读），不是论文原文。论文原文 PDF 已从网站目录删除。LaTeX 源码在 `assets/pdf/essential-summary.tex`（第一篇）和 `assets/pdf/essential-summary-p2.tex`（第二篇），修改后用 `xelatex` 编译两遍。每篇论文的精华 PDF 命名规则：`essential-summary.pdf`、`essential-summary-p2.pdf`、`essential-summary-p3.pdf`…
+
+### 11. 引用徽章（Dimensions/Altmetric）不显示
+
+**问题**：al-folio v1.x 的 bib 模板通过 gem 引用，`dimensions = {true}` 和 `altmetric = {true}` 写在 `papers.bib` 里后，页面加载了 `badge.dimensions.ai/badge.js` 和 Altmetric 的 `embed.js`，但论文条目 HTML 里没有渲染出徽章容器（`__dimensions_embed_js__`）。这是 al-folio v1.x 插件层面的模板问题，gem 源码不在本地，无法直接覆盖修复。
+
+**解决**：不依赖客户端 JavaScript 徽章。改为在 `_data/citations.yml` 里手动写入引用数（静态渲染），并通过自动化工作流定期更新（见第 12 条）。Dimensions 和 Altmetric 的 `true` 字段保留在 `papers.bib` 中不影响构建，但不会显示。Google Scholar 徽章需要 `google_scholar_id` 字段，但用户在中国大陆无法创建 Google 账号，此路不通。
+
+### 12. 引用数自动更新工作流
+
+**机制**：`.github/workflows/update-dimensions-citations.yml` 每周一北京时间 8 点自动运行，从 Dimensions 网站抓取每篇论文的引用数，比对 `_data/citations.yml` 旧数据，有变化则自动提交推送，触发网站重新构建。
+
+**添加新论文到自动更新**：在工作流 Python 脚本的 `papers` 字典里加一行：
+```python
+papers = {
+    "li2026quantitative": "10.1088/1402-4896/ae5134",
+    "li2025global": "10.1016/j.ijnonlinmec.2025.105185",
+    "新论文bib_key": "新论文DOI",  # 加在这里
+}
+```
+
+**抓取原理**：Dimensions 的 badge 页面 `https://badge.dimensions.ai/details/doi/{DOI}` 内嵌了引用数数据。用 Python `urllib` 请求该页面，正则 `badge\?count=(\d+)` 提取引用数。不需要 API key，不需要注册，GitHub Actions 服务器可正常访问。
+
+**手动触发**：在 GitHub Actions 页面找到 "Update Citations from Dimensions" 工作流，点 "Run workflow" 即可立即执行。
+
+### 13. 添加新论文的标准流程
+
+每篇新论文需完成以下步骤（参考前两篇的实现）：
+
+1. **读论文**：用 `pdftotext -layout` 提取全文，通读摘要、方法、结论。用 PyMuPDF（`fitz`）精确裁剪关键图片（先 `page.get_text("blocks")` 找 Figure 标题 Y 坐标，再 `page.get_pixmap(matrix=Matrix(300/72, 300/72), clip=Rect(...))` 裁剪）。
+2. **写 BibTeX 条目**：在 `_bibliography/papers.bib` 中新增条目，字段包括 `abbr`、`bibtex_show`、`title`、`author`、`journal`、`volume`、`pages`、`year`、`doi`、`dimensions`、`altmetric`、`pdf`、`preview`、`abstract`（只放英文原文摘要）、`additional_info`（一句话概括+提示精华PDF）、`selected`。
+3. **期刊封面图**：IOP/Elsevier 官网封面图下载不了（返回 HTML），用 Python PIL 生成期刊风格封面图（顶部品牌色横栏+标题+作者+DOI），放到 `assets/img/publication_preview/`，文件名要短。
+4. **精华汇总 PDF**：用 XeLaTeX 编写英文精华汇总（含核心公式带方框、关键图片、方法要点、核心结论、局限性、应用前景），编译两遍，放到 `assets/pdf/`。LaTeX 排版注意：图片用 `[htbp]` 浮动+`height=0.38\textheight,keepaspectratio` 限制高度+放宽浮动阈值（`\textfraction=0.07` 等），避免大段空白。
+5. **动态**：在 `_news/` 新建 `.md` 文件 announcing 论文发表。
+6. **引用数**：在 `update-dimensions-citations.yml` 的 `papers` 字典里加新论文的 DOI。在 `_data/citations.yml` 里加初始引用数。
+7. **提交推送**：`git add -A && git commit && git push`。
