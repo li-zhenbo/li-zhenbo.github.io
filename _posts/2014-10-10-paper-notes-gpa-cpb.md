@@ -53,17 +53,33 @@ $$\ddot{x} + c_1 x + c_3 x^3 + c_5 x^5 = 0, \qquad c_1=2, c_3=-10, c_5=9$$
 
 系统有 5 个不动点（3 个中心、2 个鞍点），同时存在两条同宿轨（绕两个外围中心）和一对异宿轨（连接两个鞍点）。GPA[$4/4$] 捕捉同宿轨，GPA[$7/7$] 捕捉异宿轨——这是**首次在同一系统中同时获得同宿和异宿解的 GPA 应用**。
 
+![同宿和异宿轨相图](/assets/img/publication_preview/p8-fig1.png){: width="70%"}
+
+*Figure 1: (Original Fig. 1) Homoclinic and heteroclinic orbits of the cubic–quintic Duffing oscillator. Solid: Runge–Kutta. Dotted: GPA method.*
+
 ### 算例 2: $\Phi^6$ 势振子
 
 $$\ddot{x} + c_1 x + c_2 x^2 + c_3 x^3 + c_4 x^4 + c_5 x^5 = 0$$
 
 五项不对称多项式保守系统，参数 $c_1=c_3=c_5=1, c_2=c_4=-1.5$ 时三个鞍点同时支持同宿和异宿轨道。**GPA 在同阶逼近下精度显著高于经典 Padé 逼近**——论文中的 Fig. 3 对比了两种逼近方法与 Runge–Kutta 的吻合程度，GPA 的优势清晰可见。
 
+![Phi-6振子相图](/assets/img/publication_preview/p8-fig3.png){: width="70%"}
+
+*Figure 2: (Original Fig. 3) Homoclinic and heteroclinic orbits of the $\Phi^6$ oscillator. Solid: Runge–Kutta. Dotted: GPA. Dashed: classical Padé approximant.*
+
 ### 算例 3: 广义 Duffing–Harmonic 振子
 
 $$\ddot{x} + \frac{\lambda x + \mu x^3}{1 + \nu x^2} = 0$$
 
 这是有理恢复力振子的标准 benchmark。$\lambda=-1, \mu=5, \nu=5$：GPA[$3/3$] 捕捉两条同宿轨。$\lambda=3, \mu=-5, \nu=2$：GPA[$8/8$] 捕捉异宿轨。该振子的精确解不存在于初等函数中——而 GPA 对有理分式恢复力的处理与多项式无本质区别。
+
+![同宿轨相图](/assets/img/publication_preview/p8-fig4.png){: width="70%"}
+
+*Figure 3: (Original Fig. 4) Homoclinic orbits for $\lambda=-1, \mu=5, \nu=5$. Solid: Runge–Kutta. Dotted: GPA[$3/3$].*
+
+![异宿轨相图](/assets/img/publication_preview/p8-fig5.png){: width="70%"}
+
+*Figure 4: (Original Fig. 5) Heteroclinic orbits for $\lambda=3, \mu=-5, \nu=2$. Solid: Runge–Kutta. Dotted: GPA[$8/8$].*
 
 ## 5 条核心发现
 

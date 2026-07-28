@@ -69,17 +69,29 @@ $$\text{GPA}[2/2] = \frac{0.005\operatorname{sech} t + 0.07\operatorname{sech}^2
 
 解析解与 Runge–Kutta 数值解吻合极好。
 
+![同宿轨相图](/assets/img/publication_preview/p7-fig1.png){: width="70%"}
+
+*Figure 1: (Original Fig. 1) Homoclinic orbit of the Helmholtz–Duffing oscillator with $c_1=-3, c_2=100$. Solid: Runge–Kutta. Dotted: GPA[$2/2$].*
+
 ### 算例 2: Helmholtz–Duffing 振子 ($c_1 = -2, c_2 = 5, c_3 = 15$)
 
 $$\ddot{x} + c_1 x + c_2 x^2 + c_3 x^3 = 0$$
 
 $L=M=2$ 同时获得鞍点左右两侧的同宿轨，展示了方法对不对称三次—二次非线性的处理能力。
 
+![同宿轨相图](/assets/img/publication_preview/p7-fig2.png){: width="70%"}
+
+*Figure 2: (Original Fig. 2) Homoclinic orbits for $c_1=-2, c_2=5, c_3=15$. Solid: Runge–Kutta. Dotted: GPA[$2/2$].*
+
 ### 算例 3: Duffing–Harmonic 振子
 
 $$\ddot{x} + \frac{\lambda x + \mu x^3}{1 + \nu x^2} = 0, \quad \lambda=-1, \mu=1, \nu=1$$
 
 $L=M=3$ 的 GPA 成功捕捉了有理恢复力振子的同宿轨——该系统的精确解无法用初等函数或经典椭圆函数表示。
+
+![同宿轨相图](/assets/img/publication_preview/p7-fig3.png){: width="70%"}
+
+*Figure 3: (Original Fig. 3) Homoclinic orbits of the Duffing-harmonic oscillator. Solid: Runge–Kutta. Dotted: GPA[$3/3$].*
 
 ## 5 条核心发现
 
