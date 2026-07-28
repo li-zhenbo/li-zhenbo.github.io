@@ -255,3 +255,13 @@ rm -rf .git-broken
 **问题**：Post 的 `featured: false` 会导致该文章不出现在博客首页的精选卡片区域，只在分页列表里显示。用户可能以为文章丢失了。
 
 **解决**：需要精選展示的文章设 `featured: true`，不需要首页展示的设 `false`。当前所有 6 篇 post 均设为 `true`，全部显示在博客首页。如果未来文章数量多到首页装不下，应把次要文章设为 `false`。
+
+### 23. LaTeX 源文件管理规范
+
+**问题**：多次出现 LaTeX 源文件（`.tex`）在编译成 PDF 后被删除或丢失，导致后期无法修改、只能从 PDF 反编译重建。例如 `mghfp-review.tex` 编译后源文件未保留，后来需要修复标题行距时就找不到源文件了。
+
+**解决**：
+- 每个 LaTeX 文档在 `assets/` 下新建独立文件夹，以项目命名（如 `assets/mghfp-review/`、`assets/essential-summary/`）
+- 文件夹内包含：`.tex` 源文件 + 编译所需的图片等资料文档（如 `.png`、`.eps`）
+- 编译完成后**不要删除 `.tex` 源文件**，连同 PDF 一起提交到仓库
+- 编译产生的辅助文件（`.aux`、`.log`、`.out`、`.synctex.gz`）已由 `.gitignore` 排除，无需手动清理

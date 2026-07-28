@@ -19,3 +19,4 @@ assets/pdf/*.out
 assets/pdf/*.synctex.gz
 test-results/
 vendor
+*.aux
