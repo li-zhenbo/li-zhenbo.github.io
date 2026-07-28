@@ -318,6 +318,27 @@ rm -rf .git-broken
 
 **为什么这个规则最重要**：不遵守会导致无效循环、浪费上下文、严重影响用户体验。
 
-### 27. 前四篇封面不可修改
+### 27. 精华 PDF 公式排版规范
+
+**问题**：精华 PDF 中的公式写成内联形式（嵌入段落中），没有独立成行、没有编号，可读性差。
+
+**解决**：
+- 所有需要引用的核心公式（系统模型、振幅--参数关系、稳定性判据、分岔参数）必须用 `\begin{equation}...\end{equation}` 或 `\begin{equation*}...\end{equation*}` 单独成行
+- 中间推导过程的公式根据重要性选择性使用 `\displaystyle` 内联或 `\begin{equation}` 独立成行
+- 带编号的公式用 `\boxed{}` 包裹以突出显示
+- 示例：
+```latex
+% 错误 —— 内联，不可读
+The central result is $\mu_c = -\frac{4}{a_0^2(2p_0-p_4)}(E_1\mu_1 + \cdots)$ where ...
+
+% 正确 —— 独立成行带编号
+The central result is given by:
+\begin{equation}
+\boxed{\mu_c = -\frac{4}{a_0^2(2p_0-p_4)}\Big(E_1\mu_1 + E_2\mu_2 + E_3\mu_3 + E_4\mu_4\Big)}
+\label{eq:amplitude}
+\end{equation}
+```
+
+### 28. 前四篇封面不可修改
 前四篇论文的封面（physica-scripta-cover.png、ijnlm-cover.png、ijnlm-cover-p3.png、physica-scripta-cover-p4.png）为原始版本，任何时候都不应修改。后续论文的封面生成时，不要将前四篇包含在批量操作中。
 后四篇重新生成的封面（QTDS/JSV/CPB/力学学报）使用 `gen_back4.py` 脚本生成，调用方式见脚本注释。
