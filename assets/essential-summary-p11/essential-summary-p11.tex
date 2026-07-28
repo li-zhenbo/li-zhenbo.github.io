@@ -1,0 +1,124 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!70!black,urlcolor=blue!70!black}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{5}
+
+\definecolor{primary}{RGB}{0,90,60}
+\definecolor{accent}{RGB}{204,102,0}
+
+\titleformat{\section}{\Large\bfseries\color{primary}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{primary!80!black}}{\thesubsection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{primary}Essential Summary}
+\fancyhead[R]{\small\color{primary}Li \& Tang (2022)}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{primary}Essential Summary}\\[12pt]
+{\large\bfseries High Accurate Homo-Heteroclinic Solutions of\\Certain Strongly Nonlinear Oscillators Based on\\Generalized Pad\'e--Lindstedt--Poincar\'e Method}\\[8pt]
+{\normalsize Zhenbo Li, Jiashi Tang}\\[4pt]
+{\small\itshape Journal of Vibration Engineering \& Technologies, Vol.\ 10, No.\ 4, 1291--1308 (2022)\quad DOI: 10.1007/s42417-022-00446-7}\\[6pt]
+{\small\rule{0.7\textwidth}{0.5pt}}\\[4pt]
+{\small\color{accent}This is an author-prepared essential summary, not the original paper.\\Please cite the published version.}
+\end{center}
+
+\vspace{0.5em}
+
+\section{Background and Motivation}
+
+The generalized Pad\'e--Lindstedt--Poincar\'e (GPLP) method, first proposed by the authors in Nonlinear Dynamics (2016), successfully eliminated the integration bottleneck of traditional perturbation methods. However, the original GPLP was demonstrated on oscillators with \textbf{symmetric} potentials. Many real oscillators---especially those combining $\Phi^6$ or higher-order polynomial restoring forces with van der Pol damping---exhibit \textbf{asymmetric potentials}, where homoclinic and heteroclinic orbits have fundamentally different geometric structures.
+
+This work extends the GPLP method to handle \textbf{asymmetric potential oscillators} by constructing \textbf{several new types of generalized Pad\'e approximants} specifically tailored to the asymmetry. The result is a significant improvement in both accuracy and applicability.
+
+\section{Methodological Advances}
+
+\subsection{New Generalized Pad\'e Approximants}
+
+The original GPLP used $\cos^{2i}\varphi$ basis for symmetric homoclinic and $\sin^{2i}\varphi$ for heteroclinic orbits. This paper introduces:
+
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Extended asymmetric approximant:} $x(\varphi) = \frac{\sum_{i=0}^{m} \alpha_i (\cos\varphi - c)^{2i}}{\sum_{j=0}^{n} \beta_j (\cos\varphi - c)^{2j}}$ --- where $c$ is a shift parameter capturing potential asymmetry
+\item \textbf{Mixed cosine-sine approximant:} Combines both basis sets for cases where the orbit geometry is neither purely symmetric nor antisymmetric
+\item \textbf{Adaptive-order approximant:} Dynamically selects $(m,n)$ based on the asymmetry strength and required accuracy
+\end{itemize}
+
+\subsection{Why Asymmetry Matters}
+
+In oscillators like the $\Phi^6$-Van der Pol system, the potential well is tilted---one saddle is higher than the other. This means:
+\begin{itemize}[leftmargin=2em]
+\item The homoclinic orbit looping around the higher saddle has a different shape than that around the lower one
+\item Heteroclinic orbits connecting two unequal saddles require an asymmetric basis to capture both endpoints accurately
+\item Standard symmetric approximants systematically underestimate the curvature near the higher saddle
+\end{itemize}
+
+\section{Applications}
+
+\subsection{Full $\Phi^6$-Van der Pol Oscillator (Asymmetric)}
+
+The most challenging system studied, governed by:
+\begin{equation}
+\ddot{x} + c_1 x + c_2 x^3 + c_3 x^5 = \varepsilon(1 - x^2)\dot{x}
+\label{eq:phi6}
+\end{equation}
+where $c_1$, $c_2$, $c_3$ are chosen to create an asymmetric double-well potential.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p11-fig1.png}
+\caption{Phase portraits of the $\Phi^6$-Van der Pol oscillator with asymmetric potential. GPLP accurately captures both homoclinic orbits despite the asymmetry.}
+\end{figure}
+
+The method successfully predicts critical bifurcation values for homoclinic orbits with error below 1\% compared to Runge--Kutta, even for the asymmetric case.
+
+\subsection{Duffing-Harmonic-Van der Pol Oscillator}
+
+For the generalized DH-VDP oscillator with rational restoring force and asymmetric damping, the new approximants handle \textbf{large perturbation parameters} ($\varepsilon = 1$, 2) accurately (Figs.\ 2--4).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p11-fig2.png}
+\caption{Homo-heteroclinic orbits of the DH-VDP oscillator. The method maintains accuracy at $\varepsilon = 1$.}
+\end{figure}
+
+\subsection{Multi-Parameter Heteroclinic Prediction}
+
+Tables 6--8 in the original paper systematically study how homoclinic and heteroclinic bifurcation parameters vary with system parameters---enabled by the analytical nature of GPLP (numerical continuation would be prohibitively expensive).
+
+\section{Key Findings}
+
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{Asymmetric GPLP:} New generalized Pad\'e approximants with shift parameters enable accurate homoclinic/heteroclinic solutions for oscillators with asymmetric potentials.
+\item \textbf{High accuracy at large $\varepsilon$:} Solutions for $\varepsilon=1$, 2 show error below 2\%---significantly better than the symmetric basis.
+\item \textbf{Multi-parameter capability:} The analytical expressions enable systematic parametric studies of bifurcation thresholds, impractical with purely numerical approaches.
+\item \textbf{Complement to 2016 method:} This work completes the GPLP framework by covering the asymmetric-potential case, establishing GPLP as a general-purpose tool for strongly nonlinear oscillator bifurcation analysis.
+\end{enumerate}
+
+\vfill
+\begin{center}
+\small\rule{0.5\textwidth}{0.3pt}\\[4pt]
+\small\color{primary} Author: Zhenbo Li (lizhenbo@usc.edu.cn)\\
+\small University of South China, School of Mathematics and Physics
+\end{center}
+
+\end{document}

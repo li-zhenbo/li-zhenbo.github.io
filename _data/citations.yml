@@ -35,3 +35,11 @@ papers:
     citations: 0
     title: A Cosine Generalized Padé Approximation Method and Its Application in Solving Periodic Solutions of Strongly Nonlinear Oscillators
     year: '2019'
+  li2016generalized:
+    citations: 0
+    title: A Generalized Padé–Lindstedt–Poincaré Method for Predicting Homoclinic and Heteroclinic Bifurcations of Strongly Nonlinear Autonomous Oscillators
+    year: '2016'
+  li2022high:
+    citations: 0
+    title: High Accurate Homo-Heteroclinic Solutions of Certain Strongly Nonlinear Oscillators Based on Generalized Padé–Lindstedt–Poincaré Method
+    year: '2022'
