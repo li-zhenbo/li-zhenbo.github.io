@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 综述：广义Padé逼近法系列——从同宿轨到周期解的五篇论文回顾
-date: 2026-07-30 10:00:00+0800
+date: 2026-07-26 10:00:00+0800
 description: 回顾广义Padé逼近法系列五篇论文（2013–2022）的发展历程、核心思想、关键结论与未来展望
 tags: [research-notes]
 categories: [notes]
@@ -12,7 +12,11 @@ toc:
 
 > **正式综述 PDF**: [Generalized Padé Approximation Methods for Strongly Nonlinear Oscillators: A Personal Retrospective](/assets/pdf/gpa-review.pdf)
 > 
-> 这是一篇英文 LaTeX 正式综述，共 14 页，包含完整的公式推导、插图对比、参考文献和发展脉络总结。
+> 这是一篇英文 LaTeX 正式综述，共 15 页，包含技术路线图、完整公式推导、插图对比、参考文献和发展脉络总结。
+
+![技术路线图](/assets/mghfp-review/gpa-review/gpa-roadmap.png){: width="100%"}
+
+*Figure: GPA系列五篇论文的技术路线图。从2013年的定义推广到2022年的非对称精化，核心设计原则（左栏：基函数匹配轨道几何）贯穿始终。底部时间线总结了整个系列的基-几何对应关系。*
 
 ## TL;DR
 
