@@ -21,6 +21,14 @@ assets/mghfp-review/*.aux
 assets/mghfp-review/*.log
 assets/mghfp-review/*.out
 assets/mghfp-review/*.synctex.gz
+assets/essential-summary-p5/*.aux
+assets/essential-summary-p5/*.log
+assets/essential-summary-p5/*.out
+assets/essential-summary-p5/*.synctex.gz
+assets/essential-summary-p6/*.aux
+assets/essential-summary-p6/*.log
+assets/essential-summary-p6/*.out
+assets/essential-summary-p6/*.synctex.gz
 test-results/
 vendor
 *.aux
