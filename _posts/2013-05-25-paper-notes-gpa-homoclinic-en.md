@@ -43,6 +43,18 @@ The $L+M+1$ coefficients are determined by Taylor-expanding at $t=0$ and matchin
 
 Three examples demonstrate the method: (1) A strongly asymmetric Helmholtz–Duffing oscillator ($c_2=100 \gg 1$) where GPA[$2/2$] matches Runge–Kutta; (2) A cubic–quadratic Helmholtz–Duffing with both left and right homoclinic orbits captured simultaneously; (3) A Duffing-harmonic oscillator with rational restoring force, where GPA[$3/3$] succeeds despite the system's exact solution being non-elementary.
 
+![Homoclinic orbit](/assets/img/publication_preview/p7-fig1.png){: width="70%"}
+
+*Figure 1: (Original Fig. 1) Homoclinic orbit for $c_1=-3, c_2=100$. Solid: Runge–Kutta. Dotted: GPA[$2/2$].*
+
+![Homoclinic orbits](/assets/img/publication_preview/p7-fig2.png){: width="70%"}
+
+*Figure 2: (Original Fig. 2) Homoclinic orbits for $c_1=-2, c_2=5, c_3=15$. Solid: Runge–Kutta. Dotted: GPA[$2/2$].*
+
+![Homoclinic orbits](/assets/img/publication_preview/p7-fig3.png){: width="70%"}
+
+*Figure 3: (Original Fig. 3) Homoclinic orbits of the Duffing-harmonic oscillator. Solid: Runge–Kutta. Dotted: GPA[$3/3$].*
+
 ## Five Key Findings
 
 1. **Unifying framework:** GPA subsumes all existing Padé-type modifications — classical Padé, quasi-Padé, and exponential-function approximants — as special cases.

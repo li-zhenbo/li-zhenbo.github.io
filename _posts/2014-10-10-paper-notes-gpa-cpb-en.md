@@ -40,11 +40,27 @@ The $\tanh^i t$ basis satisfies the asymmetric boundary condition $\tanh(\pm\inf
 ### Cubic–Quintic Duffing
 With $c_1=2, c_3=-10, c_5=9$, the system possesses five fixed points (three centers, two saddles). Two homoclinic orbits (GPA[$4/4$]) and one heteroclinic pair (GPA[$7/7$]) are captured simultaneously — the first demonstration of unified homoclinic–heteroclinic treatment.
 
+![Cubic-quintic orbits](/assets/img/publication_preview/p8-fig1.png){: width="70%"}
+
+*Figure 1: (Original Fig. 1) Homoclinic and heteroclinic orbits of the cubic–quintic Duffing oscillator. Solid: Runge–Kutta. Dotted: GPA method.*
+
 ### $\Phi^6$ Potential Oscillator
 Five-term asymmetric polynomial. GPA[$5/5$] and GPA[$7/7$] capture both orbit types, with accuracy **demonstrably higher than the classical Padé approximant** at the same order — since polynomial bases struggle with exponential decay asymptotics.
 
+![Phi-6 orbits](/assets/img/publication_preview/p8-fig3.png){: width="70%"}
+
+*Figure 2: (Original Fig. 3) Homoclinic and heteroclinic orbits of the $\Phi^6$ oscillator. Solid: Runge–Kutta. Dotted: GPA. Dashed: classical Padé approximant.*
+
 ### Duffing-Harmonic Oscillator
 Rational restoring force benchmark. Homoclinic: GPA[$3/3$] with $\lambda=-1, \mu=5, \nu=5$. Heteroclinic: GPA[$8/8$] with $\lambda=3, \mu=-5, \nu=2$. The computational pipeline is unchanged from polynomial cases.
+
+![DH homoclinic](/assets/img/publication_preview/p8-fig4.png){: width="70%"}
+
+*Figure 3: (Original Fig. 4) Homoclinic orbits for $\lambda=-1, \mu=5, \nu=5$. Solid: Runge–Kutta. Dotted: GPA[$3/3$].*
+
+![DH heteroclinic](/assets/img/publication_preview/p8-fig5.png){: width="70%"}
+
+*Figure 4: (Original Fig. 5) Heteroclinic orbits for $\lambda=3, \mu=-5, \nu=2$. Solid: Runge–Kutta. Dotted: GPA[$8/8$].*
 
 ## Five Key Findings
 
