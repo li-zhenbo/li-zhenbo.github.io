@@ -31,3 +31,7 @@ papers:
     title: Predicting Homoclinic and Heteroclinic Bifurcation of Generalized Duffing–Harmonic–van
       de Pol Oscillator
     year: '2016'
+  li2019cosine:
+    citations: 0
+    title: A Cosine Generalized Padé Approximation Method and Its Application in Solving Periodic Solutions of Strongly Nonlinear Oscillators
+    year: '2019'
