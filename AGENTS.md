@@ -209,3 +209,49 @@ kramdown:
 ### 17. 页面最大宽度
 
 **配置**：`_config.yml` 中 `max_width: 1200px`。小于此宽度时自适应，超过后固定在 1200px 不再增大。CSS 变量 `--max-content-width` 自动引用此值。
+
+### 18. Post 英文标题中的冒号会破坏 YAML 解析
+
+**问题**：英文 post 的 YAML front matter 里标题含未加引号的英文冒号+空格（如 `title: Paper Notes — The MGHFP Method: A Symbolic Upgrade...`），Jekyll 的 YAML 解析器会把 `Method: A Symbolic Upgrade...` 误解析为新键值对。轻则标题截断，重则整个 front matter 损坏——日期重置为当前时间、标题变空白、featured 失效。
+
+**解决**：含冒号的英文标题必须用双引号包裹：
+```yaml
+title: "Paper Notes — The MGHFP Method: A Symbolic Upgrade..."
+```
+这和 `cv.yml` 里中文内容中夹杂的英文冒号问题（见第 1 条）是同一个根因。
+
+### 19. Post 日期时区会导致显示缺失
+
+**问题**：英文 post 的 `date` 字段写成 UTC（`+0000`）而中文 post 用北京时间（`+0800`）。Jekyll 按日期排序时，UTC 日期的 post 可能被排到"未来"或"今天"，导致页面显示异常（标题空白、日期错乱）。
+
+**解决**：所有 post 统一用北京时间 `+0800`：
+```yaml
+date: 2024-07-14 10:00:00+0800
+```
+
+### 20. 从论文 PDF 截图用于 LaTeX 时的排版限制
+
+**问题**：从 PDF 提取的页面截图（光栅图）通常接近正方形宽高比（如 2230×2058，aspect 1.08），和原始矢量图（PDF/EPS，由 matplotlib/MATLAB 生成，宽高比已达视觉最佳）完全不同。把正方形截图塞进 LaTeX 做图文混排时，图片高度太大，LaTeX 浮动机制无法在文字段落间找到合适位置，导致大段空白。
+
+**解决**：不能把截图当矢量图处理。两种路径：(1) 让用户提供原始矢量图（PDF/EPS），正常用 `\includegraphics[width=\textwidth]{fig.eps}` 即可完美混排；(2) 如果只有截图，必须限制高度到 `0.38–0.45\textheight`，且用 `keepaspectratio`。同时需要放宽浮点参数（`\textfraction=0.05`、`\floatpagefraction=0.5`），并加 `\raggedbottom`。这不是 LaTeX 的问题，是图片本身的宽高比决定的。
+
+### 21. Git 仓库损坏时的处理
+
+**问题**：`git push` 时报 `fatal: loose object ... is corrupt`，Git 仓库内部对象损坏（通常由频繁 force push 或并发写入导致），无法正常提交和推送。
+
+**解决**：先 `git fsck && git gc --prune=now` 尝试修复。如果无效，最快的方案是备份工作区文件、重建 `.git`：
+```bash
+mv .git .git-broken
+git init -b main
+git remote add origin https://github.com/li-zhenbo/li-zhenbo.github.io.git
+git add -A && git commit -m "重建仓库"
+git push -f origin main
+rm -rf .git-broken
+```
+注意 `push -f` 会覆盖远程仓库历史，操作前确认远程端没有需要保留的新提交。
+
+### 22. Post 的 `featured: true` 配置
+
+**问题**：Post 的 `featured: false` 会导致该文章不出现在博客首页的精选卡片区域，只在分页列表里显示。用户可能以为文章丢失了。
+
+**解决**：需要精選展示的文章设 `featured: true`，不需要首页展示的设 `false`。当前所有 6 篇 post 均设为 `true`，全部显示在博客首页。如果未来文章数量多到首页装不下，应把次要文章设为 `false`。
