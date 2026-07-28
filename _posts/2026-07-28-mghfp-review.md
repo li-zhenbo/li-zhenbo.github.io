@@ -37,7 +37,7 @@ MGHFP 的统一框架包含四个步骤：
 这一框架依序产生两个核心公式：**振幅—参数关系**（控制参数 $\mu$ 作为振幅 $A$ 及所有其他系统参数的显式函数）与**稳定性特征量** $h_0(A)$。以两者为基础，令 $A$ 等于鞍点坐标即可进一步获得同宿或异宿分岔的临界参数。
 
 
-![MGHFP 方法演进总览](/assets/img/publication_preview/mghfp-flowchart.png)
+![MGHFP 方法演进总览](/assets/img/publication_preview/mghfp-flowchart.png){: width="85%"}
 
 
 ## 3. 四篇论文的分阶段详述

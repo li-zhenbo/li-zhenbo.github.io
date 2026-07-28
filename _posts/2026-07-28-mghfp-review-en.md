@@ -37,7 +37,7 @@ The unified MGHFP framework consists of four steps:
 This framework yields two core formulas: the **amplitude–parameter relation** (control parameter $\mu$ as an explicit function of amplitude $A$ and all system parameters) and the **stability characteristic quantity** $h_0(A)$. Setting $A$ equal to the saddle point coordinate further yields the critical homoclinic or heteroclinic bifurcation parameters.
 
 
-![MGHFP Method Evolution Overview](/assets/img/publication_preview/mghfp-flowchart.png)
+![MGHFP Method Evolution Overview](/assets/img/publication_preview/mghfp-flowchart.png){: width="85%"}
 
 
 ## 3. Detailed Progression of the Four Papers
