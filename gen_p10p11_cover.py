@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""生成 P10/P11 封面"""
+"""更新P10/P11封面配图为精确裁剪版"""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gen_back4 import *
 
 ESS = "/sessions/beautiful-inspiring-keller/mnt/个人主页/assets"
 
-# P10: Nonlinear Dynamics (2016) - Springer
+# P10: 用精确裁剪的 p10-fig1, p10-fig2, p10-fig3
 make("nody-cover.png",
-    "Springer",
-    "Nonlinear Dynamics",
-    "Nonlinear Dyn.",
+    "Springer", "Nonlinear Dynamics", "Nonlinear Dyn.",
     "Vol.84 · No.3", "2016",
     "A Generalized Padé–Lindstedt–Poincaré Method for Predicting Homoclinic and Heteroclinic Bifurcations",
     "Zhenbo Li, Jiashi Tang",
@@ -21,11 +19,9 @@ make("nody-cover.png",
     555,
     f"{ESS}/essential-summary-p10/p10-fig1.png")
 
-# P11: J. Vib. Eng. Technol. (2022) - Springer
+# P11
 make("jvet-cover.png",
-    "Springer",
-    "J. Vib. Eng. Technol.",
-    "J. Vib. Eng. Technol.",
+    "Springer", "J. Vib. Eng. Technol.", "J. Vib. Eng. Technol.",
     "Vol.10 · No.4", "2022",
     "High Accurate Homo-Heteroclinic Solutions Based on Generalized Padé–Lindstedt–Poincaré Method",
     "Zhenbo Li, Jiashi Tang",
