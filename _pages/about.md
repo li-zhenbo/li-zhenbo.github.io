@@ -14,6 +14,7 @@ profile:
 
 selected_papers: true
 social: true
+news: true
 
 announcements:
   enabled: true
