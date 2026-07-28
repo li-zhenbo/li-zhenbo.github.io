@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 00:16
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -461,13 +461,13 @@ LaTeX Info: Redefining \nameref on input line 36.
 \@outlinefile=\write3
 \openout3 = `essential-summary-p8.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -475,43 +475,42 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ]
-File: p8-fig1-cubic-quintic.jpg Graphic file (type bmp)
-<p8-fig1-cubic-quintic.jpg>
+File: p8-fig1.png Graphic file (type bmp)
+<p8-fig1.png>
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
+(hyperref)                removing `math shift' on input line 91.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Phi' on input line 97.
+(hyperref)                removing `\Phi' on input line 91.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 97.
+(hyperref)                removing `superscript' on input line 91.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
+(hyperref)                removing `math shift' on input line 91.
 
-[2]
-File: p8-fig3-phi6.jpg Graphic file (type bmp)
-<p8-fig3-phi6.jpg>
-File: p8-fig4-dh-homoclinic.jpg Graphic file (type bmp)
-<p8-fig4-dh-homoclinic.jpg>
-File: p8-fig5-dh-heteroclinic.jpg Graphic file (type bmp)
-<p8-fig5-dh-heteroclinic.jpg>
- [3] [4] [5] (./essential-summary-p8.aux)
+File: p8-fig3.png Graphic file (type bmp)
+<p8-fig3.png>
+File: p8-fig4.png Graphic file (type bmp)
+<p8-fig4.png>
+File: p8-fig5.png Graphic file (type bmp)
+<p8-fig5.png>
+[2] [3] [4] (./essential-summary-p8.aux)
 Package rerunfilecheck Info: File `essential-summary-p8.out' has not changed.
-(rerunfilecheck)             Checksum: FE9DD4BFA7B71F958901A8F5404CA9FF;2106.
+(rerunfilecheck)             Checksum: 49DFB1AE6507A20A0104C1871393B803;1986.
  ) 
 Here is how much of TeX's memory you used:
- 11165 strings out of 478190
- 172973 string characters out of 5854828
- 490917 words of memory out of 5000000
- 31608 multiletter control sequences out of 15000+600000
- 475916 words of font info for 66 fonts, out of 8000000 for 9000
+ 11160 strings out of 478190
+ 172500 string characters out of 5854828
+ 490709 words of memory out of 5000000
+ 31604 multiletter control sequences out of 15000+600000
+ 475908 words of font info for 65 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,12n,64p,704b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,11n,64p,499b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on essential-summary-p8.pdf (5 pages).
+Output written on essential-summary-p8.pdf (4 pages).
