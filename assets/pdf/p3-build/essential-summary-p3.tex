@@ -53,10 +53,11 @@ The generalized Duffing--Harmonic--Rayleigh--Li\'enard (DHRL) oscillator (Eq.\ 1
 \end{equation}
 where $\lambda$, $\mu$, $\nu$ are stiffness parameters, and the right side contains a \textbf{6-term generalized nonlinear damping} combining Rayleigh terms ($\dot{x}^2$, $\dot{x}^4$) and Li\'enard terms ($x^2$, $x^4$, $x^6$). The rational restoring force makes this oscillator a maximally challenging test case.
 
-\begin{center}
-\includegraphics[width=0.85\textwidth]{p3-fig-p13.png}\\
-\captionof{figure}{\textbf{Figure 6.} Potential portrait of the DHRL oscillator. The rich potential landscape enables homoclinic and heteroclinic bifurcations, making this an ideal testbed for the MGHFP method.}
-\end{center}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{p3-fig-p13.png}\\
+\caption{\textbf{Figure 6.} Potential portrait of the DHRL oscillator. The rich potential landscape enables homoclinic and heteroclinic bifurcations, making this an ideal testbed for the MGHFP method.}
+\end{figure}
 
 \section{The MGHFP Method}
 
@@ -116,17 +117,19 @@ Setting the limit cycle amplitude equal to the saddle point coordinate in Eq.\ \
 
 The following parameters are used: $\lambda=2$, $\mu=1$, $\nu=5$, $\mu_2=-0.88$, $\mu_4=0.39$, $\mu_6=-0.1$, $\mu_{22}=0.17$, $\mu_{24}=0.18$.
 
-\begin{center}
-\includegraphics[width=0.75\textwidth]{p3-fig2.png}\\
-\captionof{figure}{\textbf{Figure 2.} Evolution of limit cycles in the parametric plane ($\mu_c$--$A$ curve). Four regions (I--IV) identified. Semi-stable bifurcation points A and B mark transitions between regions.}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{p3-fig2.png}\\
+\caption{\textbf{Figure 2.} Evolution of limit cycles in the parametric plane ($\mu_c$--$A$ curve). Four regions (I--IV) identified. Semi-stable bifurcation points A and B mark transitions between regions.}
 \label{fig:fig2}
-\end{center}
+\end{figure}
 
-\begin{center}
-\includegraphics[width=0.85\textwidth]{p3-fig3.png}\\
-\captionof{figure}{\textbf{Figure 3.} Phase portraits corresponding to the four regions in Figure~2. The method accurately captures transitions between stability regimes.}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{p3-fig3.png}\\
+\caption{\textbf{Figure 3.} Phase portraits corresponding to the four regions in Figure~2. The method accurately captures transitions between stability regimes.}
 \label{fig:fig3}
-\end{center}
+\end{figure}
 
 Figure~2 reveals the complete limit cycle lifecycle: Region I (no limit cycle), Point A (semi-stable emergence), Region II (stable+unstable coexistence), Point B (second semi-stable bifurcation), Region III (one stable+one unstable), Region IV (single stable cycle persists). Figure~3 provides corresponding phase portraits.
 
@@ -134,17 +137,19 @@ Figure~2 reveals the complete limit cycle lifecycle: Region I (no limit cycle), 
 
 The heteroclinic bifurcation analysis focuses on deriving \textbf{analytical expressions} for $\mu_c^{\mathrm{hetero}}$, enabling quantitative study of its variation with system parameters.
 
-\begin{center}
+\begin{figure}[htbp]
+\centering
 \includegraphics[width=0.85\textwidth]{p3-fig8.png}\\
-\captionof{figure}{\textbf{Figure 8.} Variation of the heteroclinic bifurcation parameter $\mu_c^{\mathrm{hetero}}$ with system parameters in different conditions. Each subfigure shows how $\mu_c^{\mathrm{hetero}}$ changes as one damping coefficient is varied while others are fixed.}
+\caption{\textbf{Figure 8.} Variation of the heteroclinic bifurcation parameter $\mu_c^{\mathrm{hetero}}$ with system parameters in different conditions. Each subfigure shows how $\mu_c^{\mathrm{hetero}}$ changes as one damping coefficient is varied while others are fixed.}
 \label{fig:fig8}
-\end{center}
+\end{figure}
 
-\begin{center}
+\begin{figure}[htbp]
+\centering
 \includegraphics[width=0.85\textwidth]{p3-fig9.png}\\
-\captionof{figure}{\textbf{Figure 9.} Phase portraits of heteroclinic solutions with different parameters. Each subfigure compares the analytical MGHFP solution with the Runge--Kutta numerical reference, validating the method's accuracy for heteroclinic orbit prediction.}
+\caption{\textbf{Figure 9.} Phase portraits of heteroclinic solutions with different parameters. Each subfigure compares the analytical MGHFP solution with the Runge--Kutta numerical reference, validating the method's accuracy for heteroclinic orbit prediction.}
 \label{fig:fig9}
-\end{center}
+\end{figure}
 
 \section{Key Findings}
 
