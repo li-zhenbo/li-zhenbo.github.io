@@ -30,6 +30,7 @@ For the first time, the MGHFP method achieves a complete quantitative framework 
 其中 \(\alpha\) 为光滑参数（\(\alpha=0\) 退化为非光滑），\(\beta\) 为耦合参数，\(\mu_c\) 为控制参数，\(\mu_1\)–\(\mu_4\) 为非线性阻尼系数。两个无理非线性项来自斜弹簧的几何构型，是分析的主要难点。
 
 ![三阱势能](/assets/img/publication_preview/fig5-potential.png){: width="70%"}
+
 *Figure 5: 三阱势能图。五个平衡点形成复杂势能面，同宿与异宿轨道可共存于同一鞍点。*
 
 ## 核心结论 Key Findings
@@ -45,6 +46,7 @@ MGHFP 方法的核心输出是极限环振幅 \(A\) 与控制参数 \(\mu_c\) �
 其中 \(p_{2i}\) 由复合 Simpson 公式计算，\(E_i\) 为 \(a_0\)、\(b\)、\(p_{2i}\) 的函数。给定系统参数，就可以直接算出有多少个极限环、每个的振幅多大、何时出现何时消失，不需要反复打数值搜索。
 
 ![振幅—参数关系图](/assets/img/publication_preview/fig1-amplitude.png){: width="70%"}
+
 *Figure 1: (上) 极限环振幅 \(A\) 与控制参数 \(\mu_c\) 的关系。(下) 特征量 \(h_0\)（决定稳定性）。关键分岔点：\(\mu^{(0)}=-0.1249\)（半稳定环产生），\(\mu^{(1)}=-0.05\)（分裂为稳定+不稳定），\(\mu^{(2)}=0.02\)（不稳定环坍缩至奇点）。*
 
 ### 2. 稳定性判据首次建立
@@ -64,6 +66,7 @@ MGHFP 方法的核心输出是极限环振幅 \(A\) 与控制参数 \(\mu_c\) �
 尤其可以判别不稳定极限环和半稳定极限环——后者纯数值手段几乎捕捉不到，对理解系统的全局动力学结构意义重大。
 
 ![极限环相图](/assets/img/publication_preview/fig2-limitcycles.png){: width="70%"}
+
 *Figure 2: 不同 \(\mu_c\) 值下的极限环相图（\(\varepsilon=0.2\)）。实线：Runge–Kutta 数值积分。虚线：MGHFP 解析方法。*
 
 ### 3. 单阱 + 三阱两种构型全覆盖
@@ -71,6 +74,7 @@ MGHFP 方法的核心输出是极限环振幅 \(A\) 与控制参数 \(\mu_c\) �
 单阱条件关心的是包围平衡点的大极限环的振幅—参数依赖；三阱条件更复杂——系统可以同时存在小极限环（被同宿轨道包围）、大极限环（包围所有平衡点），以及同宿轨道和异宿轨道（连接不同鞍点）。
 
 ![三阱极限环](/assets/img/publication_preview/fig7-triplewell.png){: width="70%"}
+
 *Figure 7: 三阱耦合 SD 振子在不同 \(\mu_c\) 下的极限环（\(\varepsilon = 1\)）。实线：Runge–Kutta。虚线：MGHFP。即使在大扰动参数下，解析结果仍与数值结果高度吻合。*
 
 ### 4. 方法适用范围明确
