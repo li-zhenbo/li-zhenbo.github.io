@@ -5,7 +5,7 @@ date: 2025-07-04 10:00:00+0000
 description: Padé-enhanced MGHFP method for global limit cycle evolution and homoclinic bifurcation in SD oscillators with quartic damping — first multi-parameter analysis
 tags: [paper-notes]
 categories: [notes]
-featured: false
+featured: true
 toc:
   sidebar: left
 ---

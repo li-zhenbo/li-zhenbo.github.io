@@ -5,7 +5,7 @@ date: 2024-07-14 10:00:00+0000
 description: Introducing composite Simpson integration into the GHFP framework for purely symbolic global dynamic analysis — the foundational paper of the MGHFP series
 tags: [paper-notes]
 categories: [notes]
-featured: false
+featured: true
 toc:
   sidebar: left
 ---
