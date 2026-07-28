@@ -3,7 +3,7 @@
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 cv_pdf: /assets/pdf/example_pdf.pdf # TODO-HOMEPAGE: 把你的 CV PDF 放到 assets/pdf/ 后，把这里改成对应路径（如 /assets/pdf/cv.pdf）
 email: zhenbo.li@example.com # TODO-HOMEPAGE: 你的邮箱
-github_username: Hebeunited # TODO-HOMEPAGE: 你的 GitHub 用户名
+github_username: li-zhenbo # TODO-HOMEPAGE: 你的 GitHub 用户名
 scholar_userid: # TODO-HOMEPAGE: 你的 Google Scholar ID（个人主页链接中 user= 后面的字符串）
 orcid_id: # TODO-HOMEPAGE: 你的 ORCID（格式如 0000-0002-1825-0097）
 rss_icon: true # comment this line to hide the RSS icon

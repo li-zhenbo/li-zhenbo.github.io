@@ -18,7 +18,7 @@ keywords: academic-homepage, publications, research, code, 学术主页, 论文,
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🔬 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
-url: https://hebeunited.github.io # the base hostname & protocol for your site
+url: https://li-zhenbo.github.io # the base hostname & protocol for your site
 baseurl: # 根路径部署（GitHub 与 Gitee 两边都是根路径）。若用项目仓库（非 username.github.io），这里填 /仓库名
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
