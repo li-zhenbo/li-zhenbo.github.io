@@ -1,0 +1,80 @@
+name: Update Citations from Dimensions
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"  # Every Monday at 00:00 UTC (08:00 Beijing time)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-citations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch citation counts from Dimensions
+        id: fetch
+        run: |
+          python3 << 'PYEOF'
+          import urllib.request, re, yaml, os
+
+          # Papers to update: bib_key -> DOI
+          papers = {
+              "li2026quantitative": "10.1088/1402-4896/ae5134",
+              "li2025global": "10.1016/j.ijnonlinmec.2025.105185",
+          }
+
+          results = {}
+          for key, doi in papers.items():
+              url = f"https://badge.dimensions.ai/details/doi/{doi}"
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                  html = urllib.request.urlopen(req, timeout=30).read().decode("utf-8")
+                  # Extract count from badge image URL in the page
+                  matches = re.findall(r'badge\?count=(\d+)', html)
+                  if matches:
+                      results[key] = int(matches[0])
+                      print(f"{key}: {matches[0]} citations")
+                  else:
+                      print(f"{key}: could not extract citation count")
+                      results[key] = -1
+              except Exception as e:
+                  print(f"{key}: error - {e}")
+                  results[key] = -1
+
+          # Read existing citations.yml
+          with open("_data/citations.yml", "r", encoding="utf-8") as f:
+              data = yaml.safe_load(f) or {}
+
+          if "papers" not in data:
+              data["papers"] = {}
+
+          from datetime import date
+          data["metadata"] = {"last_updated": date.today().isoformat()}
+
+          for key, count in results.items():
+              if count >= 0:
+                  if key in data["papers"] and isinstance(data["papers"][key], dict):
+                      data["papers"][key]["citations"] = count
+                  else:
+                      data["papers"][key] = {"citations": count}
+
+          with open("_data/citations.yml", "w", encoding="utf-8") as f:
+              yaml.dump(data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
+
+          print("Updated _data/citations.yml")
+          PYEOF
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add _data/citations.yml
+          git diff --staged --quiet || (
+            echo "Committing updated citation counts"
+            git commit -m "Auto-update citation counts from Dimensions"
+            git push
+          )
