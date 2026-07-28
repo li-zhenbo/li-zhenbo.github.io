@@ -319,4 +319,5 @@ rm -rf .git-broken
 **为什么这个规则最重要**：不遵守会导致无效循环、浪费上下文、严重影响用户体验。
 
 ### 27. 前四篇封面不可修改
-前四篇论文的封面（jsv-cover.png、ijnlm-cover.png、physica-scripta-cover.png、qtds-cover.png）为原始版本，任何时候都不应修改。后续论文的封面生成时，不要将前四篇包含在批量操作中。
+前四篇论文的封面（physica-scripta-cover.png、ijnlm-cover.png、ijnlm-cover-p3.png、physica-scripta-cover-p4.png）为原始版本，任何时候都不应修改。后续论文的封面生成时，不要将前四篇包含在批量操作中。
+后四篇重新生成的封面（QTDS/JSV/CPB/力学学报）使用 `gen_back4.py` 脚本生成，调用方式见脚本注释。
