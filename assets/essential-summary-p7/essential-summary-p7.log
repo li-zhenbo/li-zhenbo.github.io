@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 00:00
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -380,32 +380,32 @@ File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
 ) (./essential-summary-p7.aux)
 \openout1 = `essential-summary-p7.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-5.
+6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -441,7 +441,7 @@ LaTeX Font Info:    ... okay on input line 35.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 35.
+Package hyperref Info: Link coloring ON on input line 36.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -453,259 +453,53 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
-LaTeX Info: Redefining \nameref on input line 35.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
 
 (./essential-summary-p7.out) (./essential-summary-p7.out)
 \@outlinefile=\write3
 \openout3 = `essential-summary-p7.out'.
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
 
-Missing character: There is no 求 (U+6C42) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 强 (U+5F3A) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 非 (U+975E) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 线 (U+7EBF) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 性 (U+6027) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 自 (U+81EA) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 治 (U+6CBB) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 振 (U+632F) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 子 (U+5B50) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 同 (U+540C) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 宿 (U+5BBF) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 轨 (U+8F68) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 的 (U+7684) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 广 (U+5E7F) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 义 (U+4E49) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 逼 (U+903C) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 近 (U+8FD1) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 方 (U+65B9) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 法 (U+6CD5) in font [lmroman12-bold]:mapping=tex-
-text;!
-Missing character: There is no 李 (U+674E) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 震 (U+9707) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 波 (U+6CE2) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 唐 (U+5510) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 驾 (U+9A7E) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 时 (U+65F6) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 蔡 (U+8521) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 萍 (U+840D) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 力 (U+529B) in font [lmroman10-italic]:mapping=te
-x-text;!
-Missing character: There is no 学 (U+5B66) in font [lmroman10-italic]:mapping=te
-x-text;!
-Missing character: There is no 学 (U+5B66) in font [lmroman10-italic]:mapping=te
-x-text;!
-Missing character: There is no 报 (U+62A5) in font [lmroman10-italic]:mapping=te
-x-text;!
-LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (8.30774pt too wide) in paragraph at lines 71--72
-[]\TU/lmr/bx/n/10.95 Definition (Generalized Padeé Approximation): \TU/lmr/m/n/
-10.95 If there exists a rational function $\OML/cmm/m/it/10.95 P[]=Q[] \OMS/cms
-y/m/n/10.95 2
- []
-
-[1
+) [1
 
 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 104.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 104.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 104.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 104.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 104.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nu' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 120.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 120.
-
-[2]
-Overfull \hbox (23.27742pt too wide) in paragraph at lines 131--132
+File: p7-fig1-homoclinic.png Graphic file (type bmp)
+<p7-fig1-homoclinic.png>
+File: p7-fig2-homoclinic.png Graphic file (type bmp)
+<p7-fig2-homoclinic.png>
+ [2]
+File: p7-fig3-duffing-harmonic.png Graphic file (type bmp)
+<p7-fig3-duffing-harmonic.png>
+ [3]
+Overfull \hbox (23.27742pt too wide) in paragraph at lines 130--131
 []\TU/lmr/bx/n/10.95 Computational efficiency: \TU/lmr/m/n/10.95 The $[][] \OML
 /cmm/m/it/10.95 t$ \TU/lmr/m/n/10.95 basis produces simpler Taylor expansions t
 han exponential-
  []
 
-Missing character: There is no 李 (U+674E) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 震 (U+9707) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 波 (U+6CE2) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 南 (U+5357) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 华 (U+534E) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 大 (U+5927) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 学 (U+5B66) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 数 (U+6570) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 理 (U+7406) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 学 (U+5B66) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 院 (U+9662) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 数 (U+6570) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 学 (U+5B66) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 建 (U+5EFA) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 模 (U+6A21) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 与 (U+4E0E) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 科 (U+79D1) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 学 (U+5B66) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 计 (U+8BA1) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 算 (U+7B97) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 湖 (U+6E56) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 南 (U+5357) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 省 (U+7701) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 重 (U+91CD) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 点 (U+70B9) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 实 (U+5B9E) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 验 (U+9A8C) in font [lmroman10-regular]:mapping=t
-ex-text;!
-Missing character: There is no 室 (U+5BA4) in font [lmroman10-regular]:mapping=t
-ex-text;!
-[3] (./essential-summary-p7.aux)
+[4] (./essential-summary-p7.aux)
 Package rerunfilecheck Info: File `essential-summary-p7.out' has not changed.
-(rerunfilecheck)             Checksum: 63E1A941A298B81015CA83CEF8CF7A52;3071.
+(rerunfilecheck)             Checksum: 1DDCFC099D5667B682D0770DE5B1CB36;2926.
  ) 
 Here is how much of TeX's memory you used:
- 11126 strings out of 478190
- 172028 string characters out of 5854828
- 492805 words of memory out of 5000000
- 31575 multiletter control sequences out of 15000+600000
- 475916 words of font info for 66 fonts, out of 8000000 for 9000
+ 11148 strings out of 478190
+ 172664 string characters out of 5854828
+ 494716 words of memory out of 5000000
+ 31594 multiletter control sequences out of 15000+600000
+ 474371 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,12n,64p,644b,341s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,64p,746b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on essential-summary-p7.pdf (3 pages).
+Output written on essential-summary-p7.pdf (4 pages).

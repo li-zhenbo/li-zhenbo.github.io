@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 00:00
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -380,32 +380,32 @@ File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
 ) (./essential-summary-p8.aux)
 \openout1 = `essential-summary-p8.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-5.
+6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -441,7 +441,7 @@ LaTeX Font Info:    ... okay on input line 35.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 35.
+Package hyperref Info: Link coloring ON on input line 36.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -453,21 +453,21 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
-LaTeX Info: Redefining \nameref on input line 35.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
 
 (./essential-summary-p8.out) (./essential-summary-p8.out)
 \@outlinefile=\write3
 \openout3 = `essential-summary-p8.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -475,33 +475,43 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 92.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Phi' on input line 92.
+File: p8-fig1-cubic-quintic.jpg Graphic file (type bmp)
+<p8-fig1-cubic-quintic.jpg>
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 92.
+(hyperref)                removing `math shift' on input line 97.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 92.
+(hyperref)                removing `\Phi' on input line 97.
 
-[2] [3] (./essential-summary-p8.aux)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 97.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 97.
+
+[2]
+File: p8-fig3-phi6.jpg Graphic file (type bmp)
+<p8-fig3-phi6.jpg>
+File: p8-fig4-dh-homoclinic.jpg Graphic file (type bmp)
+<p8-fig4-dh-homoclinic.jpg>
+File: p8-fig5-dh-heteroclinic.jpg Graphic file (type bmp)
+<p8-fig5-dh-heteroclinic.jpg>
+ [3] [4] [5] (./essential-summary-p8.aux)
 Package rerunfilecheck Info: File `essential-summary-p8.out' has not changed.
-(rerunfilecheck)             Checksum: FB281447A2B1F5A4925687D6EEB17868;2454.
+(rerunfilecheck)             Checksum: FE9DD4BFA7B71F958901A8F5404CA9FF;2106.
  ) 
 Here is how much of TeX's memory you used:
- 11124 strings out of 478190
- 171975 string characters out of 5854828
- 492188 words of memory out of 5000000
- 31574 multiletter control sequences out of 15000+600000
- 475908 words of font info for 65 fonts, out of 8000000 for 9000
+ 11165 strings out of 478190
+ 172973 string characters out of 5854828
+ 490917 words of memory out of 5000000
+ 31608 multiletter control sequences out of 15000+600000
+ 475916 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,12n,64p,771b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,64p,704b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on essential-summary-p8.pdf (3 pages).
+Output written on essential-summary-p8.pdf (5 pages).
