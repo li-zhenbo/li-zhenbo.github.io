@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 00:16
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -475,31 +475,24 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 ]
-File: p7-fig1-homoclinic.png Graphic file (type bmp)
-<p7-fig1-homoclinic.png>
-File: p7-fig2-homoclinic.png Graphic file (type bmp)
-<p7-fig2-homoclinic.png>
- [2]
-File: p7-fig3-duffing-harmonic.png Graphic file (type bmp)
-<p7-fig3-duffing-harmonic.png>
- [3]
-Overfull \hbox (23.27742pt too wide) in paragraph at lines 130--131
-[]\TU/lmr/bx/n/10.95 Computational efficiency: \TU/lmr/m/n/10.95 The $[][] \OML
-/cmm/m/it/10.95 t$ \TU/lmr/m/n/10.95 basis produces simpler Taylor expansions t
-han exponential-
- []
-
-[4] (./essential-summary-p7.aux)
+File: p7-fig1.png Graphic file (type bmp)
+<p7-fig1.png>
+File: p7-fig2.png Graphic file (type bmp)
+<p7-fig2.png>
+File: p7-fig3.png Graphic file (type bmp)
+<p7-fig3.png>
+ [2] [3] [4]
+(./essential-summary-p7.aux)
 Package rerunfilecheck Info: File `essential-summary-p7.out' has not changed.
-(rerunfilecheck)             Checksum: 1DDCFC099D5667B682D0770DE5B1CB36;2926.
+(rerunfilecheck)             Checksum: C99B193C4C6CD2C91753E9E18892DBD4;2195.
  ) 
 Here is how much of TeX's memory you used:
- 11148 strings out of 478190
- 172664 string characters out of 5854828
- 494716 words of memory out of 5000000
- 31594 multiletter control sequences out of 15000+600000
+ 11146 strings out of 478190
+ 172336 string characters out of 5854828
+ 491918 words of memory out of 5000000
+ 31592 multiletter control sequences out of 15000+600000
  474371 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,12n,64p,746b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,64p,445b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on essential-summary-p7.pdf (4 pages).

@@ -48,103 +48,94 @@
 
 \section{Background and Motivation}
 
-The classical Pade\'{e} approximation has been widely applied in nonlinear dynamics, with various researchers extending it by replacing polynomial components with exponential functions to better capture asymptotic homoclinic decay. However, these modifications were proposed case-by-case, without a \textbf{unifying theoretical framework}.
+Classical Pade\'{e} approximation has been widely applied in nonlinear dynamics. Various researchers extended it by replacing polynomial components with exponential functions to better capture asymptotic homoclinic decay. However, these modifications were proposed case-by-case without a \textbf{unifying theoretical framework}.
 
-This paper (the English version of the GPA method) proposes an intrinsic extension: numerator and denominator are generalized from polynomials to \textbf{series of any function type}. This unifies all prior modifications and extends the method to \textbf{both homoclinic and heteroclinic orbits} across three fundamentally different oscillator classes: cubic--quintic Duffing, $\Phi^6$ potential, and Duffing-harmonic.
+This paper (the English version of the GPA method) proposes an intrinsic extension: numerator and denominator are generalized from polynomials to \textbf{series of any function type}, unifying all prior modifications. It further extends the scope to \textbf{both homoclinic and heteroclinic orbits} across three oscillator classes.
 
 \section{Core Innovation}
 
-\subsection{The Generalized Definition}
+\subsection{Generalized Definition}
 
-Let $\widehat{H}_m = \{P: P(z)=\sum_{i=0}^m a_i g_i(z)^i\}$ extend the polynomial space $H_m$. The \textbf{Generalized Pade\'{e} Approximant} GPA[$L/M$]$_f$ is $P_L/Q_M\in G(L,M)$ satisfying
-\begin{equation}
-f(z) - \frac{P_L(z)}{Q_M(z)} = \mathcal{O}(z^{L+M+1}).
-\end{equation}
-All quasi-Pade\'{e} variants (Mikhlin 1995, Manucharyan \& Mikhlin 2005, Zhang et al.\ 2011) become special cases.
+Let $\widehat{H}_m = \{P: P(z)=\sum_{i=0}^m a_i g_i(z)^i\}$ extend $H_m$. The \textbf{GPA}[$L/M$]$_f$ is $P_L/Q_M\in G(L,M)$ satisfying $f(z) - P_L/Q_M = \mathcal{O}(z^{L+M+1})$. Classical Pade\'{e} ($g_i(z)=z^i$) and all quasi-Pade\'{e} variants become special cases.
 
-\subsection{Two Novel Approximants}
+\subsection{Two Novel Hyperbolic-Function Approximants}
 
-For $\ddot{x} + g(x) = 0$ with saddle $H(h,0)$, the procedure: (1) derive power series coefficients $a_i$ via substitution; (2) determine initial amplitude $a$ from the energy integral $\int_h^a g(x)dx = 0$; (3) construct the GPA using hyperbolic functions that match the boundary conditions:
+For $\ddot{x} + g(x) = 0$ with saddle $H(h,0)$:
 
-\textbf{Homoclinic orbits} ($x(\pm\infty)=h$):
+\textbf{Homoclinic} ($x(\pm\infty)=h$):
 \begin{equation}
 \boxed{\text{GPA}_{\text{hom}}[L/M] = \frac{\displaystyle\sum_{i=0}^{L} \alpha_i \operatorname{sech}^i t}{\displaystyle 1 + \sum_{i=1}^{M} \beta_i \operatorname{sech}^i t}}.
 \end{equation}
 
-\textbf{Heteroclinic orbits} ($x(\pm\infty)=h_{1,2}$):
+\textbf{Heteroclinic} ($x(\pm\infty)=h_{1,2}$):
 \begin{equation}
 \boxed{\text{GPA}_{\text{het}}[L/M] = \frac{\displaystyle\sum_{i=0}^{L} \alpha_i \tanh^i t}{\displaystyle 1 + \sum_{i=1}^{M} \beta_i \tanh^i t}}.
 \end{equation}
 
-The $L+M+1$ unknown coefficients $\{\alpha_i,\beta_i\}$ are found by Taylor-expanding the GPA around $t=0$ and matching with the power series $\{a_i\}$. The hyperbolic basis functions automatically satisfy the asymptotic boundary conditions ($\operatorname{sech}^i t \to 0$ at $\pm\infty$; $\tanh^i t \to \pm 1$ at $\pm\infty$).
+Coefficients $\{\alpha_i,\beta_i\}$ are found by Taylor-expanding at $t=0$ and matching with the power series $\{a_i\}$ from substituting $x(t)=\sum a_i t^i$ into $\ddot{x}+g(x)=0$, with the initial amplitude from $\int_h^a g(x)dx = 0$. The hyperbolic basis functions automatically satisfy the asymptotic boundary conditions.
 
-The coefficient-matching problem yields a system of $L+M$ linear equations (from Taylor matching) plus one nonlinear condition (from the energy integral), solved by standard numerical methods.
-
-\section{Key Results: Three Oscillator Classes}
+\section{Key Results}
 
 \subsection{Cubic--Quintic Duffing Equation}
 \begin{equation}
 \ddot{x} + c_1 x + c_3 x^3 + c_5 x^5 = 0,\qquad c_1=2,\; c_3=-10,\; c_5=9.
 \end{equation}
-Five fixed points (three centers, two saddles). Two homoclinic orbits around outer centers and one heteroclinic pair linking the two saddles coexist. GPA[$4/4$] for homoclinic and GPA[$7/7$] for heteroclinic capture all orbits accurately.
+Five fixed points: three centers, two saddles. Two homoclinic orbits and one heteroclinic pair coexist. GPA[$4/4$] and GPA[$7/7$] capture all orbits.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth,height=0.45\textheight,keepaspectratio]{p8-fig1-cubic-quintic.jpg}
-\caption{\textbf{Figure 1.} (Original Fig.\ 1) Homoclinic and heteroclinic orbits of the cubic--quintic Duffing oscillator. Solid: Runge--Kutta. Dotted: GPA method. The quasi-Pade\'{e} solution of Feng et al.\ is also shown for comparison.}
+\includegraphics[width=\textwidth]{p8-fig1.png}
+\caption{\textbf{Figure 1.} (Original Fig.\ 1) Homoclinic and heteroclinic orbits of the cubic--quintic Duffing oscillator. Solid: Runge--Kutta. Dotted: GPA method.}
 \end{figure}
 
 \subsection{Duffing Equation with $\Phi^6$ Potential}
 \begin{equation}
 \ddot{x} + c_1 x + c_2 x^2 + c_3 x^3 + c_4 x^4 + c_5 x^5 = 0.
 \end{equation}
-With $c_1=c_3=c_5=1, c_2=c_4=-1.5$, three saddle points enable both homoclinic and heteroclinic orbits simultaneously. GPA[$5/5$] and GPA[$7/7$] are compared with classical Pade\'{e} approximants and the Runge--Kutta method.
+With $c_1=c_3=c_5=1, c_2=c_4=-1.5$, three saddle points allow both homoclinic and heteroclinic orbits. GPA[$5/5$] and GPA[$7/7$] outperform the classical Pade\'{e} approximant at the same order.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth,height=0.42\textheight,keepaspectratio]{p8-fig3-phi6.jpg}
-\caption{\textbf{Figure 2.} (Original Fig.\ 3) Homoclinic and heteroclinic orbits of the $\Phi^6$ oscillator. Solid: Runge--Kutta. Dotted: GPA method. Dashed: classical Pade\'{e} approximant. The GPA achieves demonstrably higher accuracy at the same approximation order.}
+\includegraphics[width=\textwidth]{p8-fig3.png}
+\caption{\textbf{Figure 2.} (Original Fig.\ 3) Homoclinic and heteroclinic orbits of the $\Phi^6$ oscillator. Solid: Runge--Kutta. Dotted: GPA. Dashed: classical Pade\'{e} approximant.}
 \end{figure}
 
 \subsection{Generalized Duffing--Harmonic Oscillator}
 \begin{equation}
 \ddot{x} + \frac{\lambda x + \mu x^3}{1 + \nu x^2} = 0.
 \end{equation}
-This rational-restoring-force oscillator is a standard benchmark. With $\lambda=-1, \mu=5, \nu=5$, GPA[$3/3$] captures two homoclinic orbits. With $\lambda=3, \mu=-5, \nu=2$, GPA[$8/8$] captures heteroclinic orbits. The rational restoring force introduces no additional difficulty.
+With $\lambda=-1, \mu=5, \nu=5$: GPA[$3/3$] captures two homoclinic orbits. With $\lambda=3, \mu=-5, \nu=2$: GPA[$8/8$] captures heteroclinic orbits.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\textwidth,height=0.42\textheight,keepaspectratio]{p8-fig4-dh-homoclinic.jpg}
+\includegraphics[width=\textwidth]{p8-fig4.png}
 \caption{\textbf{Figure 3.} (Original Fig.\ 4) Homoclinic orbits of the Duffing-harmonic oscillator ($\lambda=-1, \mu=5, \nu=5$). Solid: Runge--Kutta. Dotted: GPA[$3/3$].}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\textwidth,height=0.42\textheight,keepaspectratio]{p8-fig5-dh-heteroclinic.jpg}
+\includegraphics[width=\textwidth]{p8-fig5.png}
 \caption{\textbf{Figure 4.} (Original Fig.\ 5) Heteroclinic orbits of the Duffing-harmonic oscillator ($\lambda=3, \mu=-5, \nu=2$). Solid: Runge--Kutta. Dotted: GPA[$8/8$].}
 \end{figure}
 
-\section{Significance and Impact}
+\section{Significance}
 
 \begin{enumerate}[leftmargin=2em]
-\item \textbf{Unifying framework:} The GPA definition encompasses the classical Pade\'{e} approximant and all quasi-Pade\'{e} variants as special cases, providing a common theoretical language.
-
-\item \textbf{First simultaneous homoclinic--heteroclinic treatment:} The $\operatorname{sech}^i t$ / $\tanh^i t$ dual approximant construction provides a unified pipeline for both orbit types --- a capability absent from prior Pade\'{e}-based methods.
-
-\item \textbf{Superior accuracy vs.\ classical Pade\'{e}:} At the same approximation order, the hyperbolic-function GPA achieves demonstrably higher accuracy than polynomial-based Pade\'{e} approximants, especially for strongly nonlinear cases where polynomial bases struggle with exponential decay.
+\item \textbf{Unifying framework:} GPA subsumes classical Pade\'{e} and all quasi-Pade\'{e} variants as special cases.
+\item \textbf{Dual homoclinic--heteroclinic pipeline:} $\operatorname{sech}^i t$ / $\tanh^i t$ dual approximant construction handles both orbit types in one framework.
+\item \textbf{Superior accuracy:} Hyperbolic-function GPA achieves demonstrably higher accuracy than polynomial-based Pade\'{e} at the same order, especially for strongly nonlinear cases.
 \end{enumerate}
 
 \section{Limitations}
-
 \begin{itemize}[leftmargin=2em]
-\item Conservative ($\varepsilon=0$) systems only; damped systems require separate methods.
-\item Approximation order chosen empirically; no systematic error bound.
-\item Coefficient matching involves $L+M+1$ nonlinear equations that may become ill-conditioned at high orders.
+\item Conservative systems only ($\varepsilon=0$).
+\item Approximation order empirical; no systematic error bound.
+\item High-order coefficient matching may become ill-conditioned.
 \end{itemize}
 
 \section{Connection to the GHFP/MGHFP Series}
 
-The GPA method and the GHFP/MGHFP family represent two \textbf{complementary methodological families} for strongly nonlinear oscillators. Both share the mathematical toolkit of rational function approximation, but pursue different routes: GPA constructs homoclinic/heteroclinic orbits directly via hyperbolic-function rational approximants in the time domain, while GHFP/MGHFP uses perturbation theory in the angular domain to derive amplitude--parameter relationships and bifurcation thresholds. The $\operatorname{sech}^i t$ basis introduced here also inspired the $x = a\sin^2\varphi + b$ homoclinic construction in the GHFP framework (JSV 2013).
+The GPA method and the GHFP/MGHFP family share the mathematical toolkit of rational function approximation but pursue complementary routes: GPA constructs homoclinic/heteroclinic orbits via hyperbolic-function approximants in the time domain; GHFP/MGHFP uses angular-domain perturbation for amplitude--parameter relationships. The $\operatorname{sech}^i t$ basis introduced here also appears in the GHFP homoclinic construction $x = a\sin^2\varphi + b$.
 
 \vfill
 \begin{center}
@@ -153,14 +144,5 @@ The GPA method and the GHFP/MGHFP family represent two \textbf{complementary met
 \small University of South China, School of Mathematics and Physics\\
 \small Hunan Key Laboratory of Mathematical Modeling and Scientific Computing
 \end{center}
-
-\begin{thebibliography}{3}
-\bibitem{P7}
-Z.\ Li, J.\ Tang, and P.\ Cai, ``Generalized Pad\'e approximation method of solving homoclinic orbit of strongly nonlinear autonomous oscillator,'' \textit{Chinese J.\ Theor.\ Appl.\ Mech.}, vol.\ 45, no.\ 3, pp.\ 461--464, 2013.
-\bibitem{Mikhlin1995}
-Y.V.\ Mikhlin, ``Matching of local expansions in the theory of nonlinear vibrations,'' \textit{J.\ Sound Vib.}, vol.\ 182, pp.\ 577--588, 1995.
-\bibitem{Zhang2011}
-Q.\ Zhang, J.\ Feng, and W.\ Wang, ``The construction of homoclinic and heterclinic orbit in two-dimensional nonlinear system based on the quasi-Pad\'e approximation,'' \textit{Chinese J.\ Theor.\ Appl.\ Mech.}, vol.\ 43, no.\ 5, pp.\ 914--921, 2011.
-\end{thebibliography}
 
 \end{document}
