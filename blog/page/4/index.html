@@ -1,0 +1,341 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Blog 笔记 - page 4 | Zhenbo Li </title> <meta name="author" content="Zhenbo Li"> <meta name="description" content="Zhenbo Li 的个人学术主页：非线性动力学与分岔分析、极限环与同异宿轨道、摄动方法与定量分析。 Personal academic homepage of Zhenbo Li: nonlinear dynamics, bifurcation analysis, limit cycles, homoclinic-heteroclinic orbits, and perturbation methods. "> <meta name="keywords" content="nonlinear-dynamics, bifurcation, limit-cycle, perturbation-method, sd-oscillator, 非线性动力学, 分岔, 极限环, 摄动法, 耦合SD振子"> <meta property="og:site_name" content="Zhenbo Li"> <meta property="og:type" content="article"> <meta property="og:title" content="Zhenbo Li | Blog 笔记 - page 4"> <meta property="og:url" content="https://li-zhenbo.github.io/blog/page/4/"> <meta property="og:description" content="Zhenbo Li 的个人学术主页：非线性动力学与分岔分析、极限环与同异宿轨道、摄动方法与定量分析。 Personal academic homepage of Zhenbo Li: nonlinear dynamics, bifurcation analysis, limit cycles, homoclinic-heteroclinic orbits, and perturbation methods. "> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Blog 笔记 - page 4"> <meta name="twitter:description" content="Zhenbo Li 的个人学术主页：非线性动力学与分岔分析、极限环与同异宿轨道、摄动方法与定量分析。 Personal academic homepage of Zhenbo Li: nonlinear dynamics, bifurcation analysis, limit cycles, homoclinic-heteroclinic orbits, and perturbation methods. "> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 1200px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%94%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://li-zhenbo.github.io/blog/page/4/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Zhenbo</span> Li </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog 笔记 </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications 论文 </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects 代码 </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV 简历 </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <div class="header-bar"> <h1>Research Notes · 研究笔记</h1> <h2>论文解读与研究随笔 · Paper reading notes and research essays</h2> </div> <div class="tag-category-list"> <ul class="p-0 m-0"> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/paper-notes">paper-notes</a> </li> <p>•</p> <li> <i class="fa-solid fa-hashtag fa-sm"></i> <a href="/blog/tag/research-notes">research-notes</a> </li> </ul> </div> <br> <div class="container featured-posts"> <div class="row row-cols-2"> <div class="col mb-4"> <a href="/blog/2026/mghfp-review/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">综述：GHFP/MGHFP 方法从提出到完善的演进路径——基于六篇系列论文的梳理</h3> <p class="card-text">基于六篇系列论文梳理 GHFP/MGHFP 方法从奠基、符号化改进到最复杂应用的完整发展路径，包含演进主线与核心框架。完整 PDF 综述附参考文献可下载阅读。</p> <p class="post-meta"> 5 min read   ·   <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2026/mghfp-review-en/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">Review: Evolution of the GHFP/MGHFP Method — From Foundation to Completion Across Six Papers</h3> <p class="card-text">Tracing the GHFP/MGHFP method from its 2013 foundation through symbolic breakthrough to the most complex dual-irrational coupled application across six sequential papers</p> <p class="post-meta"> 13 min read   ·   <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2026/paper-notes-coupled-sd/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">论文笔记：耦合 SD 振子的极限环全局演化与同异宿分岔定量分析</h3> <p class="card-text">提出 MGHFP 方法，对含高阶非线性阻尼的耦合 SD 振子进行极限环全局演化与同异宿分岔的定量分析</p> <p class="post-meta"> 2 min read   ·   <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2026/paper-notes-coupled-sd-en/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">Paper Notes — Quantitative Analysis of Dynamical Bifurcations in a Coupled SD Oscillator with High-order Nonlinear Damping</h3> <p class="card-text">MGHFP method for global limit cycle evolution and homo-heteroclinic bifurcation in coupled SD oscillators with two irrational nonlinearities</p> <p class="post-meta"> 5 min read   ·   <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2025/paper-notes-sd-oscillator/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">论文笔记：SD 振子的极限环全局演化与同宿分岔——Padé 增强的 MGHFP 方法</h3> <p class="card-text">引入 Padé 近似改进 MGHFP 方法，对含四次非线性阻尼的 SD 振子进行极限环全局演化与同宿分岔定量分析，首次实现多参数讨论</p> <p class="post-meta"> 3 min read   ·   <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2025/paper-notes-sd-oscillator-en/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">Paper Notes — Global Evolution of Limit Cycles and Homoclinic Bifurcation in SD Oscillator with Quartic Nonlinear Damping</h3> <p class="card-text">Padé-enhanced MGHFP method for global limit cycle evolution and homoclinic bifurcation in SD oscillators with quartic damping — first multi-parameter analysis</p> <p class="post-meta"> 6 min read   ·   <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2024/paper-notes-mghfp/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">论文笔记：MGHFP 方法的提出——广义谐波函数摄动法的符号化改进</h3> <p class="card-text">引入复合 Simpson 积分实现 GHFP 方法的纯符号化执行，MGHFP 方法在有理非线性振子上的第一个后续应用</p> <p class="post-meta"> 3 min read   ·   <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2024/paper-notes-mghfp-en/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">Paper Notes — The MGHFP Method: A Symbolic Upgrade to the Generalized Harmonic Function Perturbation Framework</h3> <p class="card-text">Introducing composite Simpson integration into the GHFP framework for purely symbolic global dynamic analysis — the first follow-up application of the MGHFP method</p> <p class="post-meta"> 6 min read   ·   <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2024/paper-notes-rayleigh-lienard/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">论文笔记：MGHFP 方法首次提出——混合 Rayleigh–Liénard 振子的全局动力学定量分析</h3> <p class="card-text">复合 Simpson 积分改进 GHFP 方法的首次公开发表，对含三次和五次非线性的混合 Rayleigh–Liénard 振子进行极限环全局演化与同异宿分岔的定量分析</p> <p class="post-meta"> 3 min read   ·   <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2024/paper-notes-rayleigh-lienard-en/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">Paper Notes — The MGHFP Method: First Public Introduction via a Mixed Rayleigh–Liénard Oscillator</h3> <p class="card-text">First publication of the MGHFP method — composite Simpson integration enables purely symbolic global dynamic analysis of a mixed Rayleigh–Liénard oscillator with cubic and quintic nonlinearities</p> <p class="post-meta"> 5 min read   ·   <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2016/paper-notes-qghfp-duffing-harmonic/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">论文笔记：二次广义谐波函数摄动法——Duffing–Harmonic–van de Pol 振子的同宿与异宿分岔预测</h3> <p class="card-text">GHFP 方法首次拓展至有理恢复力振子——同时预测同宿和异宿分岔的临界参数，方法适用面大幅拓宽</p> <p class="post-meta"> 3 min read   ·   <a href="/blog/2016"> <i class="fa-solid fa-calendar fa-sm"></i> 2016 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2016/paper-notes-qghfp-duffing-harmonic-en/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">Paper Notes — Extending the GHFP Method to Rational Restoring Forces: Homoclinic and Heteroclinic Bifurcation Prediction</h3> <p class="card-text">First application of GHFP to rational restoring forces — simultaneous prediction of homoclinic and heteroclinic bifurcations in Duffing–Harmonic–van de Pol oscillator</p> <p class="post-meta"> 6 min read   ·   <a href="/blog/2016"> <i class="fa-solid fa-calendar fa-sm"></i> 2016 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2013/paper-notes-gpa-homoclinic/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">论文笔记：广义Padé逼近方法的提出——双曲函数构造逼近式求解强非线性振子同宿轨</h3> <p class="card-text">在经典Padé逼近理论基础上提出广义Padé逼近（GPA）方法，利用双曲函数构造新逼近式求解同宿轨道</p> <p class="post-meta"> 3 min read   ·   <a href="/blog/2013"> <i class="fa-solid fa-calendar fa-sm"></i> 2013 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2013/paper-notes-gpa-homoclinic-en/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">Paper Notes — The Generalized Padé Approximation Method: Hyperbolic-Function Approximants for Homoclinic Orbits</h3> <p class="card-text">The first publication of the GPA method — extending classical Padé to arbitrary-function bases with hyperbolic-function approximants</p> <p class="post-meta"> 3 min read   ·   <a href="/blog/2013"> <i class="fa-solid fa-calendar fa-sm"></i> 2013 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2013/paper-notes-ghfp-helmholtz-duffing/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">论文笔记：GHFP 方法的提出——Helmholtz–Duffing 振子极限环与同宿轨道的确定</h3> <p class="card-text">GHFP 方法的首篇论文：引入二次广义谐波函数与非线性时间变换，统一处理极限环与同宿轨道，首次解析预测同宿分岔参数</p> <p class="post-meta"> 3 min read   ·   <a href="/blog/2013"> <i class="fa-solid fa-calendar fa-sm"></i> 2013 </a> </p> </div> </div> </div> </div> </a> </div> <div class="col mb-4"> <a href="/blog/2013/paper-notes-ghfp-helmholtz-duffing-en/"> <div class="card hoverable"> <div class="row g-0"> <div class="col-md-12"> <div class="card-body"> <div class="float-right"> <i class="fa-solid fa-thumbtack fa-xs"></i> </div> <h3 class="card-title text-lowercase">Paper Notes — The GHFP Method: Quadratic Generalized Harmonic Functions for Asymmetric Oscillators</h3> <p class="card-text">The founding paper of the GHFP method — quadratic generalized harmonic functions and nonlinear time transformation for unified limit cycle and homoclinic orbit analysis</p> <p class="post-meta"> 6 min read   ·   <a href="/blog/2013"> <i class="fa-solid fa-calendar fa-sm"></i> 2013 </a> </p> </div> </div> </div> </div> </a> </div> </div> </div> <hr> <ul class="post-list"> <li> <h3> <a class="post-title" href="/blog/2013/paper-notes-ghfp-helmholtz-duffing-en/">Paper Notes — The GHFP Method: Quadratic Generalized Harmonic Functions for Asymmetric Oscillators</a> </h3> <p>The founding paper of the GHFP method — quadratic generalized harmonic functions and nonlinear time transformation for unified limit cycle and homoclinic orbit analysis</p> <p class="post-meta"> 6 min read   ·   May 07, 2013 </p> <p class="post-tags"> <a href="/blog/2013"> <i class="fa-solid fa-calendar fa-sm"></i> 2013 </a>   ·   <a href="/blog/tag/paper-notes"> <i class="fa-solid fa-hashtag fa-sm"></i> paper-notes</a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> notes</a> </p> </li> </ul> <nav aria-label="Blog page navigation"> <ul class="af-pagination"> <li class="af-page-item "> <a class="af-page-link" href="/blog/page/3/" tabindex="-1" aria-disabled="3">&lt;</a> </li> <li class="af-page-item "> <a class="af-page-link" href="/blog/" title="Blog 笔记">1</a> </li> <li class="af-page-item "> <a class="af-page-link" href="/blog/page/2/" title="Blog 笔记 - page 2">2</a> </li> <li class="af-page-item "> <a class="af-page-link" href="/blog/page/3/" title="Blog 笔记 - page 3">3</a> </li> <li class="af-page-item active"> <a class="af-page-link" href="/blog/page/4/" title="Blog 笔记 - page 4">4</a> </li> <li class="af-page-item disabled"> <a class="af-page-link" href="">&gt;</a> </li> </ul> </nav> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Zhenbo Li. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. 境外镜像 <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a> · 国内镜像 <a href="https://gitee.com/" target="_blank" rel="external nofollow noopener">Gitee Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog-笔记",
+          title: "Blog 笔记",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications-论文",
+          title: "Publications 论文",
+          description: "论文列表（按年份倒序，由 _bibliography/papers.bib 自动生成）。每篇论文附核心结论、PDF 与代码链接。Publications in reversed chronological order, generated by jekyll-scholar from papers.bib.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects-代码",
+          title: "Projects 代码",
+          description: "论文配套代码与研究工具。Code accompanying my papers and other research utilities.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv-简历",
+          title: "CV 简历",
+          description: "学术简历（在线版由 _data/cv.yml 生成）。Academic CV — edit _data/cv.yml to update the online version.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-综述-ghfp-mghfp-方法从提出到完善的演进路径-基于六篇系列论文的梳理",
+        
+          title: "综述：GHFP/MGHFP 方法从提出到完善的演进路径——基于六篇系列论文的梳理",
+        
+        description: "基于六篇系列论文梳理 GHFP/MGHFP 方法从奠基、符号化改进到最复杂应用的完整发展路径，包含演进主线与核心框架。完整 PDF 综述附参考文献可下载阅读。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/mghfp-review/";
+          
+        },
+      },{id: "post-review-evolution-of-the-ghfp-mghfp-method-from-foundation-to-completion-across-six-papers",
+        
+          title: "Review: Evolution of the GHFP/MGHFP Method — From Foundation to Completion Across Six...",
+        
+        description: "Tracing the GHFP/MGHFP method from its 2013 foundation through symbolic breakthrough to the most complex dual-irrational coupled application across six sequential papers",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/mghfp-review-en/";
+          
+        },
+      },{id: "post-论文笔记-耦合-sd-振子的极限环全局演化与同异宿分岔定量分析",
+        
+          title: "论文笔记：耦合 SD 振子的极限环全局演化与同异宿分岔定量分析",
+        
+        description: "提出 MGHFP 方法，对含高阶非线性阻尼的耦合 SD 振子进行极限环全局演化与同异宿分岔的定量分析",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/paper-notes-coupled-sd/";
+          
+        },
+      },{id: "post-paper-notes-quantitative-analysis-of-dynamical-bifurcations-in-a-coupled-sd-oscillator-with-high-order-nonlinear-damping",
+        
+          title: "Paper Notes — Quantitative Analysis of Dynamical Bifurcations in a Coupled SD Oscillator...",
+        
+        description: "MGHFP method for global limit cycle evolution and homo-heteroclinic bifurcation in coupled SD oscillators with two irrational nonlinearities",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/paper-notes-coupled-sd-en/";
+          
+        },
+      },{id: "post-论文笔记-sd-振子的极限环全局演化与同宿分岔-padé-增强的-mghfp-方法",
+        
+          title: "论文笔记：SD 振子的极限环全局演化与同宿分岔——Padé 增强的 MGHFP 方法",
+        
+        description: "引入 Padé 近似改进 MGHFP 方法，对含四次非线性阻尼的 SD 振子进行极限环全局演化与同宿分岔定量分析，首次实现多参数讨论",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/paper-notes-sd-oscillator/";
+          
+        },
+      },{id: "post-paper-notes-global-evolution-of-limit-cycles-and-homoclinic-bifurcation-in-sd-oscillator-with-quartic-nonlinear-damping",
+        
+          title: "Paper Notes — Global Evolution of Limit Cycles and Homoclinic Bifurcation in SD...",
+        
+        description: "Padé-enhanced MGHFP method for global limit cycle evolution and homoclinic bifurcation in SD oscillators with quartic damping — first multi-parameter analysis",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/paper-notes-sd-oscillator-en/";
+          
+        },
+      },{id: "post-论文笔记-mghfp-方法的提出-广义谐波函数摄动法的符号化改进",
+        
+          title: "论文笔记：MGHFP 方法的提出——广义谐波函数摄动法的符号化改进",
+        
+        description: "引入复合 Simpson 积分实现 GHFP 方法的纯符号化执行，MGHFP 方法在有理非线性振子上的第一个后续应用",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-mghfp/";
+          
+        },
+      },{id: "post-paper-notes-the-mghfp-method-a-symbolic-upgrade-to-the-generalized-harmonic-function-perturbation-framework",
+        
+          title: "Paper Notes — The MGHFP Method: A Symbolic Upgrade to the Generalized Harmonic...",
+        
+        description: "Introducing composite Simpson integration into the GHFP framework for purely symbolic global dynamic analysis — the first follow-up application of the MGHFP method",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-mghfp-en/";
+          
+        },
+      },{id: "post-论文笔记-mghfp-方法首次提出-混合-rayleigh-liénard-振子的全局动力学定量分析",
+        
+          title: "论文笔记：MGHFP 方法首次提出——混合 Rayleigh–Liénard 振子的全局动力学定量分析",
+        
+        description: "复合 Simpson 积分改进 GHFP 方法的首次公开发表，对含三次和五次非线性的混合 Rayleigh–Liénard 振子进行极限环全局演化与同异宿分岔的定量分析",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-rayleigh-lienard/";
+          
+        },
+      },{id: "post-paper-notes-the-mghfp-method-first-public-introduction-via-a-mixed-rayleigh-liénard-oscillator",
+        
+          title: "Paper Notes — The MGHFP Method: First Public Introduction via a Mixed Rayleigh–Liénard...",
+        
+        description: "First publication of the MGHFP method — composite Simpson integration enables purely symbolic global dynamic analysis of a mixed Rayleigh–Liénard oscillator with cubic and quintic nonlinearities",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-rayleigh-lienard-en/";
+          
+        },
+      },{id: "post-论文笔记-二次广义谐波函数摄动法-duffing-harmonic-van-de-pol-振子的同宿与异宿分岔预测",
+        
+          title: "论文笔记：二次广义谐波函数摄动法——Duffing–Harmonic–van de Pol 振子的同宿与异宿分岔预测",
+        
+        description: "GHFP 方法首次拓展至有理恢复力振子——同时预测同宿和异宿分岔的临界参数，方法适用面大幅拓宽",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2016/paper-notes-qghfp-duffing-harmonic/";
+          
+        },
+      },{id: "post-paper-notes-extending-the-ghfp-method-to-rational-restoring-forces-homoclinic-and-heteroclinic-bifurcation-prediction",
+        
+          title: "Paper Notes — Extending the GHFP Method to Rational Restoring Forces: Homoclinic and...",
+        
+        description: "First application of GHFP to rational restoring forces — simultaneous prediction of homoclinic and heteroclinic bifurcations in Duffing–Harmonic–van de Pol oscillator",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2016/paper-notes-qghfp-duffing-harmonic-en/";
+          
+        },
+      },{id: "post-论文笔记-广义padé逼近方法的提出-双曲函数构造逼近式求解强非线性振子同宿轨",
+        
+          title: "论文笔记：广义Padé逼近方法的提出——双曲函数构造逼近式求解强非线性振子同宿轨",
+        
+        description: "在经典Padé逼近理论基础上提出广义Padé逼近（GPA）方法，利用双曲函数构造新逼近式求解同宿轨道",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2013/paper-notes-gpa-homoclinic/";
+          
+        },
+      },{id: "post-paper-notes-the-generalized-padé-approximation-method-hyperbolic-function-approximants-for-homoclinic-orbits",
+        
+          title: "Paper Notes — The Generalized Padé Approximation Method: Hyperbolic-Function Approximants for Homoclinic Orbits...",
+        
+        description: "The first publication of the GPA method — extending classical Padé to arbitrary-function bases with hyperbolic-function approximants",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2013/paper-notes-gpa-homoclinic-en/";
+          
+        },
+      },{id: "post-论文笔记-ghfp-方法的提出-helmholtz-duffing-振子极限环与同宿轨道的确定",
+        
+          title: "论文笔记：GHFP 方法的提出——Helmholtz–Duffing 振子极限环与同宿轨道的确定",
+        
+        description: "GHFP 方法的首篇论文：引入二次广义谐波函数与非线性时间变换，统一处理极限环与同宿轨道，首次解析预测同宿分岔参数",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2013/paper-notes-ghfp-helmholtz-duffing/";
+          
+        },
+      },{id: "post-paper-notes-the-ghfp-method-quadratic-generalized-harmonic-functions-for-asymmetric-oscillators",
+        
+          title: "Paper Notes — The GHFP Method: Quadratic Generalized Harmonic Functions for Asymmetric Oscillators...",
+        
+        description: "The founding paper of the GHFP method — quadratic generalized harmonic functions and nonlinear time transformation for unified limit cycle and homoclinic orbit analysis",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2013/paper-notes-ghfp-helmholtz-duffing-en/";
+          
+        },
+      },{id: "news-新论文-广义-padé-逼近方法-求解强非线性自治振子同宿轨-力学学报",
+          title: '新论文：广义 Padé 逼近方法——求解强非线性自治振子同宿轨（力学学报）',
+          description: "发表于力学学报，提出广义 Padé 逼近（GPA）方法的首次公开发表，利用双曲函数构造新逼近式求解同宿轨道",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_pade_2013/";
+            },},{id: "news-新论文-ghfp-方法首次提出-广义谐波函数摄动法确定-helmholtz-duffing-振子的极限环与同宿轨道",
+          title: '新论文：GHFP 方法首次提出——广义谐波函数摄动法确定 Helmholtz-Duffing 振子的极限环与同宿轨道',
+          description: "发表于 Journal of Sound and Vibration，提出广义谐波函数摄动法（GHFP），首次对 Helmholtz-Duffing 振子的极限环和同宿分岔进行解析预测。",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_ghfp_2013/";
+            },},{id: "news-new-paper-generalized-padé-approximation-method-for-homoclinic-and-heteroclinic-orbits-chinese-physics-b",
+          title: 'New Paper: Generalized Padé Approximation Method for Homoclinic and Heteroclinic Orbits (Chinese Physics...',
+          description: "Published in Chinese Physics B, extending the GPA method to both homoclinic and heteroclinic orbits with hyperbolic-function approximants",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_pade_2014/";
+            },},{id: "news-新论文-ghfp-方法推广至有理恢复力-预测广义-duffing-harmonic-van-de-pol-振子的同宿与异宿分岔",
+          title: '新论文：GHFP 方法推广至有理恢复力——预测广义 Duffing-Harmonic-van de Pol 振子的同宿与异宿分岔',
+          description: "发表于 Qualitative Theory of Dynamical Systems，将 GHFP 方法推广至有理恢复力振子，同时预测同宿和异宿分岔。",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_qtds_2016/";
+            },},{id: "news-新论文发表在-physica-scripta-mghfp-方法的首次提出-the-first-paper-introducing-the-mghfp-method-is-now-published-in-physica-scripta-doi",
+          title: '新论文发表在 Physica Scripta：MGHFP 方法的首次提出 / The first paper introducing the MGHFP method is...',
+          description: "",
+          section: "News",},{id: "news-mghfp-方法的第一个后续应用-dhrl-振子全局动力学分析-first-follow-up-application-of-the-mghfp-method-global-analysis-of-the-dhrl-oscillator-now-published-in-ijnlm-doi",
+          title: 'MGHFP 方法的第一个后续应用：DHRL 振子全局动力学分析 / First follow-up application of the MGHFP method — global...',
+          description: "",
+          section: "News",},{id: "news-新论文发表在-international-journal-of-non-linear-mechanics-sd-振子极限环全局演化与同宿分岔-new-paper-published-in-ijnlm-global-evolution-of-limit-cycles-and-homoclinic-bifurcation-in-sd-oscillator-with-quartic-nonlinear-damping-doi",
+          title: '新论文发表在 International Journal of Non-Linear Mechanics：SD 振子极限环全局演化与同宿分岔 / New paper published in IJNLM:...',
+          description: "",
+          section: "News",},{id: "news-新论文发表在-physica-scripta-耦合-sd-振子极限环全局定量分析-new-paper-published-in-physica-scripta-quantitative-analysis-of-limit-cycles-in-coupled-sd-oscillator-doi",
+          title: '新论文发表在 Physica Scripta：耦合 SD 振子极限环全局定量分析 / New paper published in Physica Scripta: quantitative...',
+          description: "",
+          section: "News",},{id: "news-个人主页上线啦-my-academic-homepage-is-now-online",
+          title: '个人主页上线啦！🎉 My academic homepage is now online.',
+          description: "",
+          section: "News",},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6C%69%7A%68%65%6E%62%6F@%75%73%63.%65%64%75.%63%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/li-zhenbo", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://gitee.com/your-gitee-username", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
