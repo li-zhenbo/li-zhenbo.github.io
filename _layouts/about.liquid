@@ -56,6 +56,9 @@ layout: default
       {% include latest_posts.liquid %}
     {% endif %}
 
+    <!-- Research Timeline -->
+    {% include timeline.liquid %}
+
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
@@ -72,9 +75,6 @@ layout: default
         <div class="contact-note">{{ site.contact_note }}</div>
       </div>
     {% endif %}
-
-    <!-- Research Timeline -->
-    {% include timeline.liquid %}
 
     {% if site.newsletter.enabled and site.footer_fixed %}
       {% include scripts/newsletter.liquid center=true %}
