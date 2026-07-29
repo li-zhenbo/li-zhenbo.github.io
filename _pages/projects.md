@@ -4,7 +4,7 @@ title: Projects 代码
 permalink: /projects/
 description: 论文配套代码与研究工具。Code accompanying my papers and other research utilities.
 nav: true
-nav_order: 3
+nav_order: 4
 display_categories: [code]
 horizontal: false
 ---
