@@ -54,125 +54,152 @@ This work proposes the \textbf{generalized Pad\'e--Lindstedt--Poincar\'e (GPLP) 
 
 \section{The Generalized Pad\'e Approximation (GPA)}
 
-The authors first generalize the classical Pad\'e definition (Definition~1). In the GPA framework (Definition~2):
+The authors first generalize the classical Pad\'e definition. In the GPA framework (Definition~2):
 
 \begin{itemize}[leftmargin=2em]
 \item The numerator and denominator of the approximant are extended from \textbf{polynomial functions} $P(z)=\sum a_i z^i$ to \textbf{series composed of any continuous function}: $P(z)=\sum a_i\,\boldsymbol{g_i(z)}$ where $g_i:\mathbb{C}\to\mathbb{C}$ can be \textit{any} continuous function.
 \item An \textbf{auxiliary operator} $\Gamma(z)$ (any differentiable function or constant) is introduced.
-\item The classical Pad\'e and all known quasi-Pad\'e variants become special cases of this definition.
+\item The classical Pad\'e and all known quasi-Pad\'e variants (exponential, circular, etc.) become special cases of this definition.
 \end{itemize}
 
-This flexibility is key: different $g_i(z)$ can be chosen to match the geometric character of the solution being approximated (hyperbolic secant for homoclinic, hyperbolic tangent for heteroclinic, etc.).
+This flexibility is key: different $g_i(z)$ can be chosen to match the geometric character of the solution being approximated---hyperbolic secant for homoclinic orbits (symmetric approach to a saddle), hyperbolic tangent for heteroclinic orbits (connection between two different saddles), and polynomial basis for intermediate-order corrections.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p10-fig1.png}
-\caption{Potential energy curve and phase portraits of the Helmholtz--Duffing oscillator (Eq.\ 66) at $\varepsilon=0$. Two homoclinic orbits around the saddle point $H_2$ are symmetric about the $x$-axis but asymmetric about the $\dot{x}$-axis. Arrows denote the time evolution as $t\to\pm\infty$.}
+\caption{Potential energy curve and phase portraits of the Helmholtz--Duffing oscillator (66) at $\varepsilon=0$. The cubic asymmetric potential yields two homoclinic orbits around the saddle point $H_2(0,0)$, symmetric about the $x$-axis but asymmetric about the $\dot{x}$-axis. Arrows: time evolution as $t\to\pm\infty$.}
 \end{figure}
 
 \section{The GPLP Procedure (Four Steps)}
 
-The oscillator is expanded in standard perturbation form: $x=\sum\varepsilon^n x_n$, $\mu_c=\sum\varepsilon^n\mu_{cn}$, etc. This yields a hierarchy of perturbation equations (21)--(24) in the original paper. The GPLP method solves each of them \textbf{without integration}:
+The oscillator is expanded: $x=\sum\varepsilon^n x_n$, $\mu_c=\sum\varepsilon^n\mu_{cn}$, yielding a hierarchy of perturbation equations (21)--(24) in the original paper. The GPLP method solves each without integration:
 
-\subsection{Step I: Zero-order solution $x_0$ (conservative orbit)}
+\subsection{Step I: Zero-order $x_0$ (conservative orbit)}
 
 \begin{itemize}[leftmargin=2em]
-\item Obtain the power series $x_0(t)=\sum a_i t^i$ by substituting into the conservative equation (21). Initial values: $a_1=0$, $a_0$ from $\int_{h_i}^{a_0}g(x)\mathrm{d}x=0$ where $h_i$ is the saddle coordinate.
-\item \textbf{Homoclinic:} construct $\text{GPA}[L_0/M_0]x_0(t)=\frac{\sum_{i=0}^{L_0}\alpha_i\,\text{Sech}^i t}{1+\sum_{i=1}^{M_0}\beta_i\,\text{Sech}^i t}$ ---\ \textbf{Sech} basis respects $x(\pm\infty)=h_i$, $\dot{x}(\pm\infty)=0$.
-\item \textbf{Heteroclinic:} use $\text{Tanh}^i t$ basis instead ---\ \textbf{Tanh} basis respects $x(+\infty)=h_i$, $x(-\infty)=h_j$ ($i\neq j$).
-\item Match Taylor coefficients with the power series to determine $\alpha_i$, $\beta_i$.
+\item Derive power series $x_0(t)=\sum a_i t^i$ from the conservative equation (21). Initial values: $a_1=0$, $a_0$ from $\int_{h_i}^{a_0}g(x)\mathrm{d}x=0$.
+\item \textbf{Homoclinic:} construct $\text{GPA}[L_0/M_0]x_0(t)=\frac{\sum\alpha_i\,\text{Sech}^i t}{1+\sum\beta_i\,\text{Sech}^i t}$ --- Sech basis satisfies $x(\pm\infty)=h_i$, $\dot{x}(\pm\infty)=0$.
+\item \textbf{Heteroclinic:} use $\text{Tanh}^i t$ basis --- satisfies $x(+\infty)=h_i$, $x(-\infty)=h_j$ ($i\neq j$).
+\item Match Taylor coefficients to determine $\alpha_i$, $\beta_i$.
 \end{itemize}
 
 \subsection{Step II: First-order $x_1$ and $\mu_{c0}$}
 
 \begin{itemize}[leftmargin=2em]
-\item Expand $x_1(t)=\sum b_i t^i$ with $b_0=b_1=0$. Substitute into Eq.\ (22) to get $b_i(\mu_{c0})$.
-\item Construct $\text{GPA}[L_1/M_1]x_1(t)=\text{Tanh}(t)\frac{\sum_{i=0}^{L_1}\eta_i t^i}{1+\sum_{i=1}^{M_1}\xi_i t^i}$ --- the Tanh prefactor enforces $x_1(\pm\infty)=0$.
-\item Imposing $\lim_{t\to\pm\infty}x_1(t)=0$ yields $\eta_{L_1}(\mu_{c0})=0$. Solving this gives $\mu_{c0}$ --- the \textbf{zero-order critical bifurcation parameter}. This condition is equivalent to the Melnikov condition (derived in the paper as a consistency check).
+\item Expand $x_1(t)=\sum b_i t^i$, $b_0=b_1=0$. Substitute into Eq.\ (22) to get $b_i(\mu_{c0})$.
+\item Construct $\text{GPA}[L_1/M_1]x_1(t)=\text{Tanh}(t)\frac{\sum\eta_i t^i}{1+\sum\xi_i t^i}$ --- the Tanh prefactor enforces $x_1(\pm\infty)=0$.
+\item $\lim_{t\to\pm\infty}x_1(t)=0$ yields $\eta_{L_1}(\mu_{c0})=0$, giving $\mu_{c0}$ --- the \textbf{zero-order critical bifurcation parameter}. This condition is shown equivalent to the classical Melnikov condition (Eq.\ 40--43).
 \end{itemize}
 
 \subsection{Step III: Second-order $x_2$ and $d_0$/$d_1$}
 
-\begin{itemize}[leftmargin=2em]
-\item Homoclinic: $d_1=0$, $\mu_{c1}=0$. Heteroclinic: $d_0=0$, $\mu_{c1}=0$.
-\item Construct $\text{GPA}[L_2/M_2]x_2(t)=\frac{\sum_{i=0}^{L_2}\lambda_i t^i}{1+\sum_{i=1}^{M_2}\nu_i t^i}$.
-\item $\lim_{t\to\pm\infty}x_2(t)=0\Rightarrow\lambda_{L_2}=0$ determines $d_0$ or $d_1$.
-\end{itemize}
+Homoclinic: $d_1=0$, $\mu_{c1}=0$. Heteroclinic: $d_0=0$, $\mu_{c1}=0$. Construct $\text{GPA}[L_2/M_2]x_2(t)=\frac{\sum\lambda_i t^i}{1+\sum\nu_i t^i}$; $\lambda_{L_2}=0$ determines $d_0$ or $d_1$.
 
 \subsection{Step IV: Third-order $x_3$ and $\mu_{c2}$}
 
-\begin{itemize}[leftmargin=2em]
-\item Similar construction with $\text{GPA}[L_3/M_3]x_3(t)=\frac{\sum\sigma_i t^i}{1+\sum\tau_i t^i}$, $r_0=r_1=0$.
-\item $\sigma_{L_3}(\mu_{c2})=0$ determines the second-order correction to the bifurcation parameter.
-\end{itemize}
+$\text{GPA}[L_3/M_3]x_3(t)=\frac{\sum\sigma_i t^i}{1+\sum\tau_i t^i}$ with $r_0=r_1=0$. $\sigma_{L_3}(\mu_{c2})=0$ yields second-order correction.
 
 \noindent\textbf{Final result:} $x(t)=\sum_{i=0}^{3}\varepsilon^i\,\text{GPA}[L_i/M_i]x_i(t)+O(\varepsilon^4)$, \quad $\mu_c=\mu_{c0}+\varepsilon^2\mu_{c2}+O(\varepsilon^3)$.
+
+\section{Why Three Different Approximant Types?}
+
+A critical design choice in GPLP is using \textbf{different approximant forms} for different orders, rather than a single unified form throughout. The paper provides a detailed rationale (Remark~5, Example~5):
+
+\begin{itemize}[leftmargin=2em]
+\item $x_0$ uses Sech/Tanh basis because these \textbf{exactly respect the asymptotic boundary conditions} of H/H orbits. A polynomial-based GPA for $x_0$ would require many more terms to achieve comparable accuracy.
+\item $x_1$ uses a Tanh-prefixed polynomial form because the first-order correction $x_1$ must satisfy $x_1(\pm\infty)=0$ --- the Tanh prefactor enforces this automatically, while a pure polynomial would require solving an additional constraint equation.
+\item $x_2$, $x_3$ use polynomial-based GPA because by these orders the asymptotic conditions are already embedded in the lower-order solutions, and polynomial forms offer simpler coefficient matching.
+\end{itemize}
+
+The paper explicitly compares the mixed-form approach against using the same approximant throughout (Example~5), confirming that the tailored mixed-form strategy yields substantially higher accuracy.
+
+\section{Applications: Four Oscillator Classes}
+
+\subsection{1. Generalized Helmholtz--Duffing--Van der Pol Oscillator}
+
+Governing equation:
+\begin{equation*}
+\ddot{x} + c_1x + c_2x^2 + c_3x^3 = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2)\dot{x}
+\end{equation*}
+
+\textbf{Example~1} (Eq.\ 66): $c_1=-2$, $c_2=5$, $c_3=5$, $\mu_1=1$, $\mu_2=1$. Saddle point at $H_2(0,0)$, equilibrium at $H_1(-1.3062,0)$ and $H_3(0.3062,0)$. Two asymmetric homoclinic orbits coexist. Key results:
+
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Zero-order GPA solution:}
+\begin{equation*}
+\boxed{\text{GPA}[4/4]x_0(t)=\frac{0.0814\,\text{Sech}\,t+3.2534\,\text{Sech}^2t+16.0572\,\text{Sech}^3t+16.8002\,\text{Sech}^4t}{1+14.2944\,\text{Sech}\,t+39.3405\,\text{Sech}^2t+22.9087\,\text{Sech}^3t+566.4437\,\text{Sech}^4t}}
+\end{equation*}
+\item \textbf{Critical bifurcation parameter:} $\mu_{c0}\approx -6.3941$
+\item \textbf{Accuracy:} maintained at $\varepsilon=2$, 3 (Fig.\ 2) and even at $\varepsilon=50$, 60 for the SD oscillator variant (Fig.\ 4)
+\end{itemize}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p10-fig2.png}
-\caption{Homoclinic orbits of the Helmholtz--Duffing--Van der Pol oscillator (66) for (a) $\varepsilon=2$ and (b) $\varepsilon=3$. Solid: Runge--Kutta. Dash-dot: GPLP. The method maintains accuracy even at moderately large perturbation parameters.}
+\caption{Homoclinic orbits of Eq.\ (66) for (a) $\varepsilon=2$ and (b) $\varepsilon=3$. Solid: Runge--Kutta. Dash-dot: GPLP ($\varepsilon^3$ expansion). Note that the $\varepsilon^3$ solution maintains accuracy even at moderately large perturbation parameters.}
 \end{figure}
 
-\section{Key Equations (Central Results)}
+\subsection{2. Duffing-Harmonic--Van der Pol Oscillator (Rational Restoring Force)}
 
-\subsection{Zero-order homoclinic solution for Eq.\ (66)}
+For $\ddot{x} + \frac{\lambda x + \eta x^3}{1+\nu x^2} = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2)\dot{x}$ with $\lambda=-5$, $\eta=5$, $\nu=5$, $\mu_{c0}=-1.9026$. This demonstrates that GPLP handles rational restoring forces naturally --- the only change is in the coefficients of $g(x)$ expansion.
 
-\begin{equation*}
-\boxed{\text{GPA}[4/4]x_0(t)=\frac{0.0814\,\text{Sech}\,t+3.2534\,\text{Sech}^2t+16.0572\,\text{Sech}^3t+16.8002\,\text{Sech}^4t}{1+14.2944\,\text{Sech}\,t+39.3405\,\text{Sech}^2t+22.9087\,\text{Sech}^3t+566.4437\,\text{Sech}^4t}}
-\end{equation*}
+\subsection{3. SD Oscillator (Irrational Restoring Force)}
 
-\subsection{Zero-order critical bifurcation parameter for Eq.\ (66)}
-
-\begin{equation*}
-\boxed{\mu_{c0}\approx -6.3941}
-\end{equation*}
-
-\noindent The second-order correction gives $\mu_{c2}$, making the total prediction $\mu_c=\mu_{c0}+\varepsilon^2\mu_{c2}$ accurate even at $\varepsilon=2,3$.
-
-\subsection{Homoclinic solution of Duffing-harmonic oscillator (84)}
-
-For $\ddot{x}+\frac{\lambda x+\eta x^3}{1+\nu x^2}=\varepsilon(\mu_c+\mu_1 x+\mu_2 x^2)\dot{x}$ with parameters $\lambda=-5$, $\eta=5$, $\nu=5$, $\mu_1=1$, $\mu_2=1$:
-
-\begin{itemize}[leftmargin=2em]
-\item $\text{GPA}[4/4]x_0(t)$ is a rational function of $\text{Sech}^i t$ (explicit form in paper)
-\item $\mu_{c0}=-1.9026$, valid at $\varepsilon=0.05$ and $0.1$
-\end{itemize}
-
-\section{Applications: Four Oscillator Classes}
-
-The GPLP method is validated on oscillators spanning polynomial, rational, and irrational restoring forces:
-
-\begin{enumerate}[leftmargin=2em]
-\item \textbf{Helmholtz--Duffing--Van der Pol} (Eq.\ 66): asymmetric cubic $g(x)$, homoclinic bifurcation at $\mu_{c0}=-6.3941$. Accuracy maintained at $\varepsilon=2,3$ (Fig.\ 2) and $\varepsilon=50,60$ (Fig.\ 4 in original paper).
-\item \textbf{Duffing-harmonic--Van der Pol} (Eq.\ 84): rational $g(x)=\frac{\lambda x+\eta x^3}{1+\nu x^2}$, demonstrating that the method handles rational restoring forces naturally.
-\item \textbf{SD oscillator} (Eq.\ 85): irrational $g(x)$ from geometric constraint, proving applicability beyond polynomial/rational cases.
-\item \textbf{$\Phi^6$-Van der Pol} (Eq.\ 102): quintic polynomial $g(x)=c_1x+c_3x^3+c_5x^5$ with asymmetric double-well potential ---\ \textbf{simultaneous homoclinic and heteroclinic bifurcation prediction} (Fig.\ 11--12 in original paper).
-\end{enumerate}
+For $\ddot{x} + x\left(1 - \frac{1}{\sqrt{x^2 + \alpha^2}}\right) = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2)\dot{x}$, GPLP successfully predicts homoclinic orbits even at \textbf{extremely large} $\varepsilon=50$, 60 (Fig.\ 4). This is possible because the zero-order GPA solution already closely approximates the exact conservative orbit, and the $\varepsilon^3$ expansion captures higher-order damping effects accurately.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p10-fig3.png}
-\caption{Homoclinic orbits of the SD oscillator (85) at (a,b) $\varepsilon=50$ and (c,d) $\varepsilon=60$. Solid: Runge--Kutta. Dash-dot: GPLP. Note the remarkably large perturbation parameters---demonstrating that the GPLP method is \emph{not} restricted to weakly nonlinear regimes.}
+\caption{Homoclinic orbits of the SD oscillator at (a,b) $\varepsilon=50$ and (c,d) $\varepsilon=60$. Solid: Runge--Kutta. Dash-dot: GPLP. The $\varepsilon^3$ GPLP solution remains accurate at perturbation parameters two orders of magnitude larger than typical ``weakly nonlinear'' regimes.}
+\end{figure}
+
+\subsection{4. $\Phi^6$-Van der Pol Oscillator (Quintic, Simultaneous H/H)}
+
+For $\ddot{x} + c_1x + c_3x^3 + c_5x^5 = \varepsilon(\mu_c + \mu_1 x + \mu_2 x^2)\dot{x}$ with appropriately chosen coefficients, the quintic potential creates a landscape where \textbf{homoclinic and heteroclinic orbits coexist at the same saddle}. GPLP predicts \textbf{both critical parameter values simultaneously} (Figs.\ 10--12 in the original paper).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\textwidth,height=0.38\textheight,keepaspectratio]{p10-fig5.png}
+\caption{Potential energy curve and heteroclinic orbits of the $\Phi^6$-Van der Pol oscillator (102) at $\varepsilon=0$. The quintic potential supports simultaneous homoclinic and heteroclinic orbits.}
+\end{figure}
+
+\subsection{SD Oscillator with Dual-Well Structure (Further Example)}
+
+The SD oscillator with parameters creating a double-well potential (Eq.\ 112) exhibits both homoclinic orbits at different saddle points. GPLP handles this multi-saddle configuration without additional modifications.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.82\textwidth,height=0.40\textheight,keepaspectratio]{p10-fig8.png}
+\caption{Potential energy curve and homoclinic orbits of the SD oscillator (112) with double-well structure. The two homoclinic orbits around different saddles are both accurately captured.}
+\end{figure}
+
+\subsection{Complex Multi-Orbit System}
+
+The most general oscillator studied (Eq.\ 121) features a potential landscape where \textbf{homoclinic and heteroclinic orbits coexist at the same saddle} in a single system. The GPLP framework handles this maximally complex case without any procedural modification (Fig.\ 10).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth,height=0.40\textheight,keepaspectratio]{p10-fig10.png}
+\caption{Potential energy curve and simultaneous homoclinic/heteroclinic orbits of Eq.\ (121) at $\varepsilon=0$. This is the most complex system studied: multiple saddles, coexisting homoclinic and heteroclinic orbits, all captured in a unified GPLP framework.}
 \end{figure}
 
 \section{Key Findings}
 
 \begin{enumerate}[leftmargin=2em]
-\item \textbf{No-integration perturbation method:} GPLP replaces all integration---the computational bottleneck of traditional perturbation methods---with generalized Pad\'e coefficient matching. High-order solutions ($\varepsilon^3$) become computationally accessible for complicated oscillators.
-\item \textbf{Three distinct approximant types} are purpose-built: Sech-based for homoclinic orbits (symmetric approach to a single saddle), Tanh-based for heteroclinic orbits (connection between two distinct saddles), and polynomial-based for intermediate-order corrections.
-\item \textbf{Wide applicability:} Validated on Helmholtz--Duffing (cubic polynomial), $\Phi^6$ (quintic polynomial), Duffing-harmonic (rational restoring force), and SD oscillator (irrational from geometric constraint) --- covering all canonical restoring-force types.
-\item \textbf{Accuracy at large $\varepsilon$:} The $\varepsilon^3$ expansion yields accurate results even at $\varepsilon=50$--$60$ (SD oscillator, Fig.\ 4). This is possible because the zero-order GPA solution already closely matches the exact conservative orbit.
-\item \textbf{Simultaneous H/H bifurcation prediction:} For oscillators where both homoclinic and heteroclinic orbits coexist (e.g., $\Phi^6$-VDP), both critical parameters are predicted analytically within the same framework.
-\item \textbf{Melnikov consistency:} The GPLP condition $\eta_{L_1}(\mu_{c0})=0$ is shown to be equivalent to the classical Melnikov condition (Eq.\ 40--43), providing theoretical justification for the method.
+\item \textbf{No-integration perturbation method:} GPLP replaces all integration---the computational bottleneck of traditional methods---with coefficient matching. High-order $\varepsilon^3$ solutions become accessible for complicated oscillators.
+\item \textbf{Three tailored approximant types:} Sech-based (homoclinic), Tanh-based (heteroclinic), and polynomial-based (intermediate corrections) --- each chosen to exploit the geometric character of the specific solution being approximated. The mixed-form strategy outperforms any single-form approach (Example~5).
+\item \textbf{Universal applicability:} Validated on Helmholtz--Duffing (cubic), $\Phi^6$ (quintic), Duffing-harmonic (rational), and SD (irrational from geometric constraint) --- covering all canonical restoring-force types.
+\item \textbf{Accuracy at large $\varepsilon$:} $\varepsilon^3$ expansion gives accurate results at $\varepsilon=50$--$60$ (SD oscillator, Fig.\ 4). This is possible because the zero-order GPA already closely matches the exact conservative orbit.
+\item \textbf{Simultaneous H/H bifurcation prediction:} For oscillators where both homoclinic and heteroclinic orbits coexist (e.g., $\Phi^6$-VDP, Eq.\ 121), both critical parameters are predicted analytically in one framework.
+\item \textbf{Melnikov consistency:} The GPLP condition $\eta_{L_1}(\mu_{c0})=0$ is proved equivalent to the classical Melnikov condition, providing rigorous theoretical justification.
 \end{enumerate}
 
 \section{Method Limitations (Honest Assessment)}
 
 \begin{itemize}[leftmargin=2em]
-\item System parameters must be set before calculation (unlike algebraic methods such as GHFP). GPLP is not ideal for tracing continuous parameter--solution dependencies.
-\item The ``order'' $L_i$, $M_i$ of the GPA approximant must be manually chosen based on desired accuracy.
-\item Derivations (e.g., Eq.\ 20 for $d^n f/d\varepsilon^n$) become algebraically heavy at higher orders, even though integration is avoided.
+\item System parameters must be set before calculation (unlike algebraic methods such as GHFP). Not ideal for tracing continuous parameter--solution dependencies.
+\item The approximation orders $L_i$, $M_i$ must be manually chosen based on desired accuracy.
+\item Derivations (Eq.\ 20) become algebraically heavy at higher orders, even though integration is avoided.
 \end{itemize}
 
 \vfill
