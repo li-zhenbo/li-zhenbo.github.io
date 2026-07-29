@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 05:10
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.6.9)  29 JUL 2026 05:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -611,19 +611,19 @@ File: p10-fig5.png Graphic file (type bmp)
 [4]
 File: p10-fig8.png Graphic file (type bmp)
 <p10-fig8.png>
-File: p10-fig10.png Graphic file (type bmp)
-<p10-fig10.png>
+File: p10-fig6.png Graphic file (type bmp)
+<p10-fig6.png>
  [5] [6] (./essential-summary-p10.aux)
 Package rerunfilecheck Info: File `essential-summary-p10.out' has not changed.
 (rerunfilecheck)             Checksum: E84EB919EB18EF3F97FE98A2414D94CA;4516.
  ) 
 Here is how much of TeX's memory you used:
  11196 strings out of 478190
- 173064 string characters out of 5854828
+ 173056 string characters out of 5854828
  496377 words of memory out of 5000000
  31628 multiletter control sequences out of 15000+600000
  478686 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,11n,64p,516b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,11n,64p,516b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on essential-summary-p10.pdf (6 pages).
