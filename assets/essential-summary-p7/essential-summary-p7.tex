@@ -1,0 +1,156 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!70!black,urlcolor=blue!70!black}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{5}
+
+\definecolor{primary}{RGB}{0,51,102}
+\definecolor{accent}{RGB}{204,102,0}
+
+\titleformat{\section}{\Large\bfseries\color{primary}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{primary!80!black}}{\thesubsection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{primary}Essential Summary}
+\fancyhead[R]{\small\color{primary}Li et al.\ (2013)}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries\color{primary}Essential Summary}\\[12pt]
+{\large\bfseries 求强非线性自治振子同宿轨的\\广义Pad\'e逼近方法}\\[8pt]
+{\normalsize 李震波, 唐驾时, 蔡萍}\\[4pt]
+{\small\itshape 力学学报, Vol.\ 45, No.\ 3, 461--464 (2013)\quad DOI: 10.6052/0459-1879-12-277}\\[6pt]
+{\small\rule{0.7\textwidth}{0.5pt}}\\[4pt]
+{\small\color{accent}This is an author-prepared essential summary, not the original paper.\\Please cite the published version.}
+\end{center}
+
+\vspace{0.5em}
+
+\section{Background and Motivation}
+
+The determination of homoclinic and heteroclinic orbits is central to understanding global bifurcations, chaos, and solitary wave solutions in nonlinear dynamics. Classical methods---such as Melnikov's method, hyperbolic perturbation, and Pade\'{e} approximation---have been applied with varying success. However, existing Pade\'{e}-based approaches share a common limitation: the numerator and denominator of the approximant are restricted to polynomial functions, which limits their flexibility in capturing the exponential decay behavior characteristic of homoclinic orbits.
+
+This paper introduces the \textbf{generalized Pad\'{e} approximation (GPA) method}, a theoretical extension that removes this restriction by allowing the approximant to be constructed from \emph{any} kind of function series. This provides a unified framework that encompasses all existing Pade\'{e}-type modifications as special cases.
+
+\section{Core Innovation: The Generalized Pad\'{e} Approximation}
+
+\subsection{From Classical to Generalized}
+
+The classical Pad\'{e} approximant of a formal power series $f(z)=\sum_{i=0}^{\infty} a_i z^i$ is a rational function $P_L(z)/Q_M(z)$ where $P_L\in H_L, Q_M\in H_M$ (polynomials of degree $L,M$), satisfying:
+\begin{equation}
+f(z) - \frac{P_L(z)}{Q_M(z)} = \mathcal{O}(z^{L+M+1}), \qquad Q_M(0)=1.
+\end{equation}
+
+The generalized definition replaces the polynomial spaces $H_L$ and $H_M$ with extended function spaces:
+\begin{equation}
+\widehat{H}_m = \Big\{P : P(z)=\sum_{i=0}^m a_i g_i(z)^i,\; g_i:\mathbb{C}\to\mathbb{C},\; a_i\in\mathbb{C}\Big\},
+\end{equation}
+\begin{equation}
+G(m,n) = \big\{R = P/Q : P\in\widehat{H}_m,\; Q\in\widehat{H}_n\setminus\{0\}\big\}.
+\end{equation}
+
+\textbf{Definition (Generalized Pade\'{e} Approximation):} If there exists a rational function $P_L/Q_M\in G(L,M)$ satisfying
+\begin{equation}
+f(z) - \frac{P_L(z)}{Q_M(z)} = \mathcal{O}(z^{L+M+1}),
+\end{equation}
+then $P_L/Q_M$ is called the \textbf{Generalized Pade\'{e} Approximant}, denoted GPA[$L/M$]$_f$.
+
+When $g_i(z)=z^i$ (the classical polynomial basis), the GPA reduces to the classical Pade\'{e} approximant.
+
+\subsection{Homoclinic Orbit Construction via Hyperbolic Functions}
+
+For the autonomous oscillator $\ddot{x} + g(x) = 0$, assume the power series solution:
+\begin{equation}
+x(t) = \sum_{i=0}^{\infty} a_i t^i,
+\end{equation}
+where the coefficients $a_i$ are determined by substituting into the equation and matching powers. For a homoclinic orbit through the saddle $H(h,0)$, the initial condition $a = x(0)$ is determined by the energy integral $\int_h^a g(x)dx = 0$, with $a_1 = \dot{x}(0) = 0$.
+
+Since $\lim_{t\to\pm\infty} x(t) = h$, a power series representation fails to capture the asymptotic behavior. The key innovation: construct a GPA using \textbf{hyperbolic functions} that naturally satisfy the boundary conditions:
+\begin{equation}
+\boxed{\text{GPA}[L/M] = \frac{\displaystyle\sum_{i=0}^{L} \alpha_i \operatorname{sech}^i t}{\displaystyle 1 + \sum_{i=1}^{M} \beta_i \operatorname{sech}^i t}}.
+\end{equation}
+
+The $L+M+1$ unknown coefficients $\{\alpha_i, \beta_i\}$ are determined by expanding the GPA into a Taylor series around $t=0$ and matching the first $L+M+1$ terms with the power series coefficients $\{a_i\}$, together with the boundary condition at infinity (automatically satisfied by $\operatorname{sech}^i t \to 0$ as $t\to\pm\infty$).
+
+\subsection{Advantages of the Hyperbolic-Series Approximant}
+
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{Simpler Taylor expansion:} $\operatorname{sech}^i t$ has a simpler Maclaurin series than exponentials, reducing computational burden at the same approximation order.
+\item \textbf{Automatic boundary condition satisfaction:} The $\operatorname{sech}^i t \to 0$ behavior at infinity eliminates the need to enforce boundary conditions separately.
+\item \textbf{Generality:} The method is applicable to \emph{any} $g(x)$ that is a polynomial or rational function---not restricted to specific oscillator families.
+\end{enumerate}
+
+\section{Key Results: Numerical Examples}
+
+\subsection{Example 1: Helmholtz--Duffing Oscillator, $g(x)=c_1x + c_2x^2$}
+\begin{equation}
+\ddot{x} + c_1 x + c_2 x^2 = 0.
+\end{equation}
+With $c_1=-3, c_2=100$ (strongly asymmetric, large nonlinearity), $L=M=2$:
+\begin{equation}
+\text{GPA}[2/2] = \frac{0.005\operatorname{sech} t + 0.07\operatorname{sech}^2 t}{1 + 0.611111\operatorname{sech} t + 0.055555\operatorname{sech}^2 t}.
+\end{equation}
+The phase portrait matches Runge--Kutta with excellent agreement despite $c_2=100\gg 1$.
+
+\subsection{Example 2: Full Helmholtz--Duffing, $g(x)=c_1x + c_2x^2 + c_3x^3$}
+\begin{equation}
+\ddot{x} + c_1 x + c_2 x^2 + c_3 x^3 = 0.
+\end{equation}
+With $c_1=-2, c_2=5, c_3=15$, both left and right homoclinic orbits are captured simultaneously by solving for $\{\alpha_i, \beta_i\}$ with $L=M=2$, demonstrating that the GPA handles asymmetric cubic--quadratic nonlinearity without modification.
+
+\subsection{Example 3: Duffing--Harmonic Oscillator, $g(x)=\frac{\lambda x + \mu x^3}{1+\nu x^2}$}
+\begin{equation}
+\ddot{x} + \frac{\lambda x + \mu x^3}{1 + \nu x^2} = 0.
+\end{equation}
+With $\lambda=-1, \mu=1, \nu=1$ and $L=M=3$, the GPA captures homoclinic orbits of this rational-restoring-force oscillator---a system whose exact solution cannot be expressed in terms of elementary or classical elliptic functions.
+
+\section{Significance}
+
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{Theoretical unification:} The GPA definition unifies all existing Pade\'{e}-type modifications (quasi-Pade\'{e}, modified Pade\'{e}, exponential-function approximants) under a single theoretical framework---previous works become special cases of the GPA.
+
+\item \textbf{Computational efficiency:} The $\operatorname{sech}^i t$ basis produces simpler Taylor expansions than exponential-based alternatives, reducing the cost of determining the $\{\alpha_i,\beta_i\}$ coefficients at the same approximation order.
+
+\item \textbf{Broad applicability:} The method handles polynomial $g(x)$ of arbitrary degree and rational $g(x)$ of the form $(\lambda x + \mu x^3)/(1+\nu x^2)$ without modification---a significant advantage over methods restricted to specific restoring force forms.
+\end{enumerate}
+
+\section{Limitations}
+
+\begin{itemize}[leftmargin=2em]
+\item The method solves for homoclinic orbits of conservative systems only; damped systems require separate treatment.
+\item The GPA approximation order $L=M$ must be chosen empirically; no a priori error estimate is provided.
+\item Only single-degree-of-freedom autonomous oscillators are considered.
+\end{itemize}
+
+\section{Relationship to the MGHFP Series}
+
+This paper and its English counterpart (Chinese Physics B 2014) are methodologically distinct from the GHFP/MGHFP series---the GPA constructs homoclinic solutions directly via rational function approximation, whereas GHFP/MGHFP uses perturbation techniques to derive amplitude--parameter relationships. However, both share the common goal of \textbf{analytical treatment of strongly nonlinear oscillators}. The $\operatorname{sech}^i t$ basis introduced in this paper later inspired the construction of homoclinic solution forms ($x = a\sin^2\varphi + b$) in the GHFP framework (JSV 2013).
+
+\vfill
+\begin{center}
+\small\rule{0.5\textwidth}{0.3pt}\\[4pt]
+\small\color{primary} Author: 李震波 (lizhenbo@usc.edu.cn)\\
+\small 南华大学 数理学院 / University of South China, School of Mathematics and Physics\\
+\small 数学建模与科学计算湖南省重点实验室
+\end{center}
+
+\end{document}
