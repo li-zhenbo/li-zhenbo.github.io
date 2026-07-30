@@ -69,8 +69,10 @@ layout: default
   .pub-stat.s-monographs .num { color: #C26D1A; }
   .pub-stat .label {
     font-size: 0.72rem; color: #888; margin-top: 0.3rem;
-    font-family: system-ui,sans-serif; letter-spacing: 0.03em; text-transform: uppercase;
+    font-family: system-ui,sans-serif; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.4;
   }
+  .pub-stat .label .zh { display: block; font-size: 0.75rem; color: #666; text-transform: none; }
+  .pub-stat .label .en { display: block; font-size: 0.62rem; opacity: 0.7; margin-top: 1px; }
 </style>
 <div class="post">
   <header class="post-header">
@@ -143,9 +145,9 @@ layout: default
 
     <!-- Publication Statistics -->
     <div class="pub-stats">
-      <div class="pub-stat s-journals"><div class="num">{{ site.data.pubstats.journals }}</div><div class="label">期刊论文</div></div>
-      <div class="pub-stat s-conferences"><div class="num">{{ site.data.pubstats.conferences }}</div><div class="label">会议论文</div></div>
-      <div class="pub-stat s-monographs"><div class="num">{{ site.data.pubstats.monographs }}</div><div class="label">专著</div></div>
+      <div class="pub-stat s-journals"><div class="num">{{ site.data.pubstats.journals }}</div><div class="label"><span class="zh">期刊论文</span><span class="en">Journal Articles</span></div></div>
+      <div class="pub-stat s-conferences"><div class="num">{{ site.data.pubstats.conferences }}</div><div class="label"><span class="zh">会议论文</span><span class="en">Conference Papers</span></div></div>
+      <div class="pub-stat s-monographs"><div class="num">{{ site.data.pubstats.monographs }}</div><div class="label"><span class="zh">专著</span><span class="en">Monographs</span></div></div>
     </div>
 
     <!-- Selected papers -->
