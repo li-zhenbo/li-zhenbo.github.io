@@ -9,18 +9,19 @@ layout: default
   .post article > h2 { margin-top: 3rem; }
   .post .research-timeline { margin-top: 2.5rem; }
   .post .social { margin-top: 2.5rem; }
-  /* 模块装饰分隔条：h2 右侧 SVG 网管，负margin突破容器延伸到页面右边缘 */
+  /* 模块装饰分隔条：h2 右侧 SVG 网管，用 calc 确保填满容器所有剩余宽度 */
+  .post { overflow: visible; }
   .post article { overflow: visible; }
   .post article > h2 {
     display: flex; align-items: center; gap: 0.6rem;
     border-bottom: none; padding-bottom: 0;
-    position: relative;
+    position: relative; width: 100%;
   }
   .post article > h2 .braid-svg {
-    flex: 0 0 auto;
-    min-width: 600px;
+    width: 100%;
+    min-width: 400px;
+    flex: 1 1 auto;
     height: 24px;
-    margin-right: calc(-50vw + 50% + 1rem);
   }
   /* 兴趣标签 —— 大脑图+标签环绕 */
   .interest-zone {
