@@ -12,17 +12,17 @@
   .post article > h2 { margin-top: 3rem; }
   .post .research-timeline { margin-top: 2.5rem; }
   .post .social { margin-top: 2.5rem; }
-  /* 模块装饰分隔条：每个 h2 右侧的 SVG 网管通过 JS 动态注入，覆盖 ::after 默认渐变 */
+  /* 模块装饰分隔条：h2 右侧 SVG 网管突破容器，延伸到页面右边缘 */
+  .post article { overflow: visible; }
   .post article > h2 {
     display: flex; align-items: center; gap: 0.6rem;
     border-bottom: none; padding-bottom: 0;
-  }
-  .post article > h2::after {
-    content: ''; flex: 1; height: 24px;
-    background: none;
+    position: relative;
   }
   .post article > h2 .braid-svg {
-    flex: 1; height: 24px;
+    flex: 0 0 auto;
+    min-width: 400px;
+    height: 24px;
   }
   /* 兴趣标签 —— 大脑图+标签环绕 */
   .interest-zone {
