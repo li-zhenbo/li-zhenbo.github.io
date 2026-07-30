@@ -1,0 +1,804 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 时间线 · Timeline | Zhenbo Li </title> <meta name="author" content="Zhenbo Li"> <meta name="description" content="我的学术研究路径，按时间线梳理两系方法（GHFP/MGHFP + Padé逼近）的演化历程。A research trajectory in nonlinear dynamics, tracing the evolution of two families of methods."> <meta name="keywords" content="nonlinear-dynamics, bifurcation, limit-cycle, perturbation-method, sd-oscillator, 非线性动力学, 分岔, 极限环, 摄动法, 耦合SD振子"> <meta property="og:site_name" content="Zhenbo Li"> <meta property="og:type" content="website"> <meta property="og:title" content="Zhenbo Li | 时间线 · Timeline"> <meta property="og:url" content="https://li-zhenbo.github.io/timeline/"> <meta property="og:description" content="我的学术研究路径，按时间线梳理两系方法（GHFP/MGHFP + Padé逼近）的演化历程。A research trajectory in nonlinear dynamics, tracing the evolution of two families of methods."> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="时间线 · Timeline"> <meta name="twitter:description" content="我的学术研究路径，按时间线梳理两系方法（GHFP/MGHFP + Padé逼近）的演化历程。A research trajectory in nonlinear dynamics, tracing the evolution of two families of methods."> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 1200px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%94%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://li-zhenbo.github.io/timeline/"> <script src="/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Zhenbo</span> Li </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/timeline/">时间线 · Timeline <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/blog/">Blog 笔记 </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications 论文 </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects 代码 </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV 简历 </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">时间线 · Timeline</h1> <p class="post-description">我的学术研究路径，按时间线梳理两系方法（GHFP/MGHFP + Padé逼近）的演化历程。A research trajectory in nonlinear dynamics, tracing the evolution of two families of methods.</p> </header> <article> <style>
+.research-timeline {
+  --tl-bg: transparent;
+  --tl-text: #2C2C2C;
+  --tl-text-dim: #6B6B6B;
+  --tl-ghfp: #005B96;
+  --tl-ghfp-light: #0074BA;
+  --tl-ghfp-bg: #EDF2F7;
+  --tl-gpa: #8B2E2E;
+  --tl-gpa-bg: #FBF0F0;
+  --tl-line: #D8D5CB;
+  --tl-card-bg: #FAF8F4;
+  font-family: "Georgia","Noto Serif CJK SC","Times New Roman",serif;
+  color: var(--tl-text);
+  line-height: 1.7;
+}
+
+.research-timeline .timeline-header {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 2rem;
+  text-align: center;
+}
+.research-timeline .timeline-header h1 {
+  text-align: center;
+}
+.research-timeline .timeline-header h1 .zh {
+  display: block;
+  font-family: "Noto Serif CJK SC", "SimSun", "STSong", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.research-timeline .timeline-header h1 .en {
+  display: block;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--tl-text-dim);
+  letter-spacing: 0.01em;
+  margin-top: 0.3rem;
+}
+.research-timeline .timeline-header .hint {
+  font-size: 0.82rem;
+  color: #aaa;
+  margin-top: 0.35rem;
+  font-family: system-ui, sans-serif;
+}
+
+.research-timeline .tl-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.research-timeline .tl-filter-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: 20px;
+  border: 1.5px solid var(--tl-line);
+  background: transparent;
+  font-size: 0.82rem;
+  cursor: pointer;
+  font-family: system-ui,sans-serif;
+  color: var(--tl-text-dim);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.research-timeline .tl-filter-btn.active { color: #fff; border-color: transparent; }
+.research-timeline .tl-filter-btn.active.all { background: #444; }
+.research-timeline .tl-filter-btn.active.ghfp { background: var(--tl-ghfp); }
+.research-timeline .tl-filter-btn.active.gpa { background: var(--tl-gpa); }
+
+.research-timeline .tl-timeline {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1.5rem 5rem;
+}
+.research-timeline .tl-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7.2rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--tl-line);
+}
+
+.research-timeline .tl-year-group {
+  position: relative;
+  margin-bottom: 3.5rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.research-timeline .tl-year-group.in-view { opacity: 1; transform: translateY(0); }
+.research-timeline .tl-year-group:last-child { margin-bottom: 0; }
+.research-timeline .tl-year-group.filtered-out {
+  opacity: 0.10;
+  pointer-events: none;
+  transform: translateY(0);
+}
+
+.research-timeline .tl-year-marker {
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.research-timeline .tl-year-number {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  min-width: 5.5rem;
+  text-align: right;
+  opacity: 0.15;
+  letter-spacing: -0.03em;
+  transition: opacity 0.3s;
+}
+.research-timeline .tl-year-group.in-view .tl-year-number { opacity: 0.30; }
+
+.research-timeline .tl-items { margin-left: 8rem; }
+
+.research-timeline .tl-card {
+  margin-bottom: 1.25rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--tl-card-bg);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+.research-timeline .tl-card:hover {
+  transform: translateX(2px);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+.research-timeline .tl-card:last-child { margin-bottom: 0; }
+
+.research-timeline .tl-card::before {
+  content: '';
+  position: absolute;
+  left: -2.46rem;
+  top: 2.2rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #F9F8F5;
+  z-index: 2;
+  pointer-events: none;
+}
+.research-timeline .tl-card.tl-ghfp::before { background: var(--tl-ghfp); }
+.research-timeline .tl-card.tl-gpa::before  { background: var(--tl-gpa); }
+.research-timeline .tl-card::after {
+  content: '';
+  position: absolute;
+  left: -2.1rem;
+  top: 2.25rem;
+  width: 1.6rem;
+  height: 1px;
+  background: var(--tl-line);
+  pointer-events: none;
+}
+
+.research-timeline .tl-card-bar-top {
+  padding: 0.45rem 1.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  font-family: system-ui,sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.research-timeline .tl-card-bar-top .tl-publisher {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+.research-timeline .tl-card.tl-ghfp .tl-card-bar-top {
+  background: linear-gradient(90deg, #00395E 0%, var(--tl-ghfp) 30%, var(--tl-ghfp-light) 70%, #0088D4 100%);
+}
+.research-timeline .tl-card.tl-gpa .tl-card-bar-top {
+  background-color: var(--tl-gpa);
+  background-image: repeating-linear-gradient(-35deg, transparent, transparent 7px, rgba(255,255,255,0.09) 7px, rgba(255,255,255,0.09) 14px);
+}
+
+.research-timeline .tl-card-body {
+  padding: 0.65rem 1.25rem 0.5rem 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.research-timeline .tl-card-img {
+  width: 56px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.research-timeline .tl-card-txt { flex: 1; min-width: 0; }
+.research-timeline .tl-card-title {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.research-timeline .tl-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--tl-text-dim);
+}
+
+.research-timeline .tl-card-bar-bot {
+  padding: 0.2rem 1.25rem;
+  font-size: 0.75rem;
+  font-family: system-ui,sans-serif;
+  background: #5B8C6F;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.research-timeline .tl-card-bar-bot a {
+  color: #D8E8DC;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.15s;
+  font-size: 0.76rem;
+}
+.research-timeline .tl-card-bar-bot a:hover { color: #fff; }
+.research-timeline .tl-card-bar-bot svg {
+  width: 13px;
+  height: 13px;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.research-timeline .tl-thread-section {
+  margin: 2.5rem 0 1.5rem 8rem;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: system-ui,sans-serif;
+  display: none;
+}
+.research-timeline .tl-thread-section.visible { display: block; }
+.research-timeline .tl-thread-section.gs {
+  background: var(--tl-ghfp-bg);
+  color: var(--tl-ghfp);
+  border-left: 3px solid var(--tl-ghfp);
+}
+.research-timeline .tl-thread-section.ps {
+  background: var(--tl-gpa-bg);
+  color: var(--tl-gpa);
+  border-left: 3px solid var(--tl-gpa);
+}
+
+@media (max-width: 640px) {
+  .research-timeline .tl-timeline::before { left: 3.5rem; }
+  .research-timeline .tl-items { margin-left: 4.5rem; }
+  .research-timeline .tl-thread-section { margin-left: 4.5rem; }
+  .research-timeline .tl-year-number { font-size: 3rem; min-width: 3rem; }
+  .research-timeline .tl-card::before { left: -1.7rem; top: 1.8rem; }
+  .research-timeline .tl-card::after { left: -1.3rem; width: 0.8rem; top: 1.85rem; }
+  .research-timeline .tl-card-body {
+    flex-direction: column;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+  .research-timeline .tl-card-img { width: 100%; height: 100px; }
+  .research-timeline .tl-card-bar-bot { padding: 0.2rem 1rem; font-size: 0.7rem; }
+  .research-timeline .tl-card-bar-top { padding: 0.4rem 1rem; font-size: 0.7rem; }
+  .research-timeline .timeline-header { padding: 1.5rem 1rem 1.5rem; }
+  .research-timeline .timeline-header h1 .zh { font-size: 2rem; }
+  .research-timeline .timeline-header h1 .en { font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .research-timeline .tl-year-group { opacity: 1; transform: none; transition: none; }
+}
+</style> <div class="research-timeline"> <div class="timeline-header"> <h1> <span class="zh">我的动力学之路</span><span class="en">A Research Trajectory in Nonlinear Dynamics</span> </h1> <p class="hint">使用下方按钮可按研究路线筛选 · Filter papers by research thread using the buttons below</p> <div class="tl-filters"> <button class="tl-filter-btn all active" data-filter="all">全部 All</button> <button class="tl-filter-btn ghfp" data-filter="ghfp">GHFP / MGHFP</button> <button class="tl-filter-btn gpa" data-filter="gpa">Padé 逼近</button> </div> </div> <div class="tl-timeline"> <div class="tl-year-group" data-threads="gpa"> <div class="tl-year-marker"><span class="tl-year-number">2013</span></div> <div class="tl-items"> <div class="tl-card tl-gpa" onclick="window.open('/blog/2013/paper-notes-gpa-homoclinic/','_blank')"> <div class="tl-card-bar-top">力学学报  ·  2013<span class="tl-publisher">中国力学学会</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/lxxb-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">Generalized Padé Approximation Method for Homoclinic Orbits</div> <div class="tl-card-desc">广义Padé逼近方法提出——双曲函数构造广义Padé逼近式，求解强非线性振子同宿轨道</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2013/paper-notes-gpa-homoclinic/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-year-group" data-threads="ghfp"> <div class="tl-year-marker"><span class="tl-year-number">2013</span></div> <div class="tl-items"> <div class="tl-card tl-ghfp" onclick="window.open('/blog/2013/paper-notes-ghfp-helmholtz-duffing/','_blank')"> <div class="tl-card-bar-top">J. Sound Vib.  ·  2013<span class="tl-publisher">Elsevier</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/jsv-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">GHFP Method — Limit Cycles &amp; Homoclinic Orbits of Helmholtz-Duffing Oscillator</div> <div class="tl-card-desc">GHFP方法奠基——二次广义谐波函数 + 非线性时间变换，确定极限环与同宿轨道</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2013/paper-notes-ghfp-helmholtz-duffing/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-year-group" data-threads="gpa"> <div class="tl-year-marker"><span class="tl-year-number">2014</span></div> <div class="tl-items"> <div class="tl-card tl-gpa" onclick="window.open('/blog/2014/paper-notes-gpa-cpb/','_blank')"> <div class="tl-card-bar-top">Chin. Phys. B  ·  2014<span class="tl-publisher">IOP Publishing</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/cpb-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">Generalized Padé Approximants — Homoclinic &amp; Heteroclinic Orbits Unified</div> <div class="tl-card-desc">广义Padé逼近方法推广至异宿轨道——Duffing、Phi6、Duffing-harmonic三类振子验证</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2014/paper-notes-gpa-cpb/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-thread-section ps">Padé 逼近方法深化 · Generalized Padé → Cosine Padé → Asymmetric GPLP</div> <div class="tl-year-group" data-threads="ghfp"> <div class="tl-year-marker"><span class="tl-year-number">2016</span></div> <div class="tl-items"> <div class="tl-card tl-ghfp" onclick="window.open('/blog/2016/paper-notes-qghfp-duffing-harmonic/','_blank')"> <div class="tl-card-bar-top">Qual. Theory Dyn. Syst.  ·  2016<span class="tl-publisher">Springer</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/qtds-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">Quadratic GHFP Method — Homoclinic &amp; Heteroclinic Bifurcation of DH-vdP Oscillator</div> <div class="tl-card-desc">二次广义谐波函数摄动方法——Duffing-harmonic-van de Pol振子的同异宿分岔预测</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2016/paper-notes-qghfp-duffing-harmonic/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-year-group" data-threads="gpa"> <div class="tl-year-marker"><span class="tl-year-number">2016</span></div> <div class="tl-items"> <div class="tl-card tl-gpa" onclick="window.open('/blog/2016/paper-notes-gplp/','_blank')"> <div class="tl-card-bar-top">Nonlinear Dyn.  ·  2016<span class="tl-publisher">Springer</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/nody-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">GPLP Method — Replacing Integration with Padé Approximation</div> <div class="tl-card-desc">GPLP方法提出——用Padé逼近替代L-P中的积分运算，预测同异宿分岔参数</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2016/paper-notes-gplp/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-year-group" data-threads="gpa"> <div class="tl-year-marker"><span class="tl-year-number">2019</span></div> <div class="tl-items"> <div class="tl-card tl-gpa" onclick="window.open('/blog/2019/paper-notes-cosine-pade/','_blank')"> <div class="tl-card-bar-top">J. Vib. Shock  ·  2019<span class="tl-publisher">中国振动工程学会</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/jvs-cover-p9.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">Cosine Generalized Padé Approximation for Periodic Solutions</div> <div class="tl-card-desc">余弦型广义Padé逼近——分子分母均为余弦函数级数，精度与非线性强度无关</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2019/paper-notes-cosine-pade/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-year-group" data-threads="gpa"> <div class="tl-year-marker"><span class="tl-year-number">2022</span></div> <div class="tl-items"> <div class="tl-card tl-gpa" onclick="window.open('/blog/2022/paper-notes-asymmetric-gplp/','_blank')"> <div class="tl-card-bar-top">J. Vib. Eng. Technol.  ·  2022<span class="tl-publisher">Springer</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/jvet-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">High Accurate Homo-Heteroclinic Solutions — Phi6-VdP &amp; DH-VdP</div> <div class="tl-card-desc">GPLP方法扩展至Phi6-VdP与DH-VdP振子——非对称势下的高精度同异宿解</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2022/paper-notes-asymmetric-gplp/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-thread-section gs">MGHFP 方法时代 · MGHFP Foundation → Padé-Enhanced → Coupled SD</div> <div class="tl-year-group" data-threads="ghfp"> <div class="tl-year-marker"><span class="tl-year-number">2024</span></div> <div class="tl-items"> <div class="tl-card tl-ghfp" onclick="window.open('/blog/2024/paper-notes-mghfp/','_blank')"> <div class="tl-card-bar-top">Int. J. Non-Linear Mech.  ·  2024<span class="tl-publisher">Elsevier</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/ijnlm-cover-p3.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">MGHFP Method — Foundation Paper</div> <div class="tl-card-desc">MGHFP方法奠基——复合Simpson积分实现纯符号化全局动力学分析</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2024/paper-notes-mghfp/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> <div class="tl-card tl-ghfp" onclick="window.open('/blog/2024/paper-notes-rayleigh-lienard/','_blank')"> <div class="tl-card-bar-top">Phys. Scr.  ·  2024<span class="tl-publisher">IOP Publishing</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/physica-scripta-cover-p4.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">MGHFP — Mixed Rayleigh-Liénard Oscillator</div> <div class="tl-card-desc">MGHFP方法应用于混合Rayleigh-Liénard振子——三次+五次非线性阻尼的极限环定量分析</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2024/paper-notes-rayleigh-lienard/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-year-group" data-threads="ghfp"> <div class="tl-year-marker"><span class="tl-year-number">2025</span></div> <div class="tl-items"> <div class="tl-card tl-ghfp" onclick="window.open('/blog/2025/paper-notes-sd-oscillator/','_blank')"> <div class="tl-card-bar-top">Int. J. Non-Linear Mech.  ·  2025<span class="tl-publisher">Elsevier</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/ijnlm-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">MGHFP + Padé · SD Oscillator Global Limit Cycle Evolution</div> <div class="tl-card-desc">MGHFP结合Padé逼近——SD振子四次非线性阻尼的极限环全局演化</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2025/paper-notes-sd-oscillator/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> <div class="tl-year-group" data-threads="ghfp"> <div class="tl-year-marker"><span class="tl-year-number">2026</span></div> <div class="tl-items"> <div class="tl-card tl-ghfp" onclick="window.open('/blog/2026/paper-notes-coupled-sd/','_blank')"> <div class="tl-card-bar-top">Phys. Scr.  ·  2026<span class="tl-publisher">IOP Publishing</span> </div> <div class="tl-card-body"> <img class="tl-card-img" src="/assets/img/publication_preview/physica-scripta-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="tl-card-txt"> <div class="tl-card-title">MGHFP · Coupled SD Oscillator — Quantitative Bifurcation Analysis</div> <div class="tl-card-desc">MGHFP方法——耦合SD振子两无理非线性项的高次阻尼定量分岔分析</div> </div> </div> <div class="tl-card-bar-bot"> <a href="/blog/2026/paper-notes-coupled-sd/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"></path><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"></circle></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewbox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"></rect><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"></line></svg><span>Publications</span></a> </div> </div> </div> </div> </div> </div> <script>
+(function() {
+  var tl = document.querySelector('.research-timeline');
+  if (!tl) return;
+  var B = tl.querySelectorAll('.tl-filter-btn');
+  var G = tl.querySelectorAll('.tl-year-group');
+  var S = tl.querySelector('.gs');
+  var P = tl.querySelector('.ps');
+
+  B.forEach(function(b) {
+    b.addEventListener('click', function() {
+      var t = b.dataset.filter;
+      B.forEach(function(x) { x.classList.toggle('active', x.dataset.filter === t); });
+      if (S) S.classList.toggle('visible', t === 'ghfp');
+      if (P) P.classList.toggle('visible', t === 'gpa');
+      G.forEach(function(g) {
+        var d = g.dataset.threads || '';
+        g.classList.toggle('filtered-out', t !== 'all' && d.indexOf(t) === -1);
+      });
+      setTimeout(function() {
+        G.forEach(function(g) {
+          var r = g.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) g.classList.add('in-view');
+        });
+      }, 100);
+    });
+  });
+
+  var O = new IntersectionObserver(function(e) {
+    e.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  G.forEach(function(g) { O.observe(g); });
+
+  window.addEventListener('scroll', function() {
+    var c = null;
+    var v = window.scrollY + 80;
+    G.forEach(function(g) {
+      var r = g.getBoundingClientRect();
+      var t = r.top + window.scrollY;
+      var b = r.bottom + window.scrollY;
+      if (t <= v && b >= v) c = g;
+    });
+    G.forEach(function(g) {
+      var n = g.querySelector('.tl-year-number');
+      if (n) n.style.opacity = (g === c) ? '0.30' : '0.15';
+    });
+  }, { passive: true });
+})();
+</script> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Zhenbo Li. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. 境外镜像 <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a> · 国内镜像 <a href="https://gitee.com/" target="_blank" rel="external nofollow noopener">Gitee Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-时间线-timeline",
+          title: "时间线 · Timeline",
+          description: "我的学术研究路径，按时间线梳理两系方法（GHFP/MGHFP + Padé逼近）的演化历程。A research trajectory in nonlinear dynamics, tracing the evolution of two families of methods.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/timeline/";
+          },
+        },{id: "nav-blog-笔记",
+          title: "Blog 笔记",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications-论文",
+          title: "Publications 论文",
+          description: "论文列表（按年份倒序，由 _bibliography/papers.bib 自动生成）。每篇论文附核心结论、PDF 与代码链接。Publications in reversed chronological order, generated by jekyll-scholar from papers.bib.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects-代码",
+          title: "Projects 代码",
+          description: "论文配套代码与研究工具。Code accompanying my papers and other research utilities.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv-简历",
+          title: "CV 简历",
+          description: "学术简历（在线版由 _data/cv.yml 生成）。Academic CV — edit _data/cv.yml to update the online version.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-综述-ghfp-mghfp-方法从提出到完善的演进路径-基于六篇系列论文的梳理",
+        
+          title: "综述：GHFP/MGHFP 方法从提出到完善的演进路径——基于六篇系列论文的梳理",
+        
+        description: "基于六篇系列论文梳理 GHFP/MGHFP 方法从奠基、符号化改进到最复杂应用的完整发展路径，包含演进主线与核心框架。完整 PDF 综述附参考文献可下载阅读。",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/mghfp-review/";
+          
+        },
+      },{id: "post-review-evolution-of-the-ghfp-mghfp-method-from-foundation-to-completion-across-six-papers",
+        
+          title: "Review: Evolution of the GHFP/MGHFP Method — From Foundation to Completion Across Six...",
+        
+        description: "Tracing the GHFP/MGHFP method from its 2013 foundation through symbolic breakthrough to the most complex dual-irrational coupled application across six sequential papers",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/mghfp-review-en/";
+          
+        },
+      },{id: "post-综述-广义padé逼近法系列-从同宿轨到周期解的五篇论文回顾",
+        
+          title: "综述：广义Padé逼近法系列——从同宿轨到周期解的五篇论文回顾",
+        
+        description: "回顾广义Padé逼近法系列五篇论文（2013–2022）的发展历程、核心思想、关键结论与未来展望",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/gpa-review/";
+          
+        },
+      },{id: "post-review-of-the-generalized-pade-approximation-series",
+        
+          title: "Review of the Generalized Pade Approximation Series",
+        
+        description: "A retrospective review of five GPA papers from 2013 to 2022",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/gpa-review-en/";
+          
+        },
+      },{id: "post-论文笔记-耦合-sd-振子的极限环全局演化与同异宿分岔定量分析",
+        
+          title: "论文笔记：耦合 SD 振子的极限环全局演化与同异宿分岔定量分析",
+        
+        description: "提出 MGHFP 方法，对含高阶非线性阻尼的耦合 SD 振子进行极限环全局演化与同异宿分岔的定量分析",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/paper-notes-coupled-sd/";
+          
+        },
+      },{id: "post-paper-notes-quantitative-analysis-of-dynamical-bifurcations-in-a-coupled-sd-oscillator-with-high-order-nonlinear-damping",
+        
+          title: "Paper Notes — Quantitative Analysis of Dynamical Bifurcations in a Coupled SD Oscillator...",
+        
+        description: "MGHFP method for global limit cycle evolution and homo-heteroclinic bifurcation in coupled SD oscillators with two irrational nonlinearities",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/paper-notes-coupled-sd-en/";
+          
+        },
+      },{id: "post-论文笔记-sd-振子的极限环全局演化与同宿分岔-padé-增强的-mghfp-方法",
+        
+          title: "论文笔记：SD 振子的极限环全局演化与同宿分岔——Padé 增强的 MGHFP 方法",
+        
+        description: "引入 Padé 近似改进 MGHFP 方法，对含四次非线性阻尼的 SD 振子进行极限环全局演化与同宿分岔定量分析，首次实现多参数讨论",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/paper-notes-sd-oscillator/";
+          
+        },
+      },{id: "post-paper-notes-global-evolution-of-limit-cycles-and-homoclinic-bifurcation-in-sd-oscillator-with-quartic-nonlinear-damping",
+        
+          title: "Paper Notes — Global Evolution of Limit Cycles and Homoclinic Bifurcation in SD...",
+        
+        description: "Padé-enhanced MGHFP method for global limit cycle evolution and homoclinic bifurcation in SD oscillators with quartic damping — first multi-parameter analysis",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/paper-notes-sd-oscillator-en/";
+          
+        },
+      },{id: "post-论文笔记-mghfp-方法的提出-广义谐波函数摄动法的符号化改进",
+        
+          title: "论文笔记：MGHFP 方法的提出——广义谐波函数摄动法的符号化改进",
+        
+        description: "引入复合 Simpson 积分实现 GHFP 方法的纯符号化执行，MGHFP 方法在有理非线性振子上的第一个后续应用",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-mghfp/";
+          
+        },
+      },{id: "post-paper-notes-the-mghfp-method-a-symbolic-upgrade-to-the-generalized-harmonic-function-perturbation-framework",
+        
+          title: "Paper Notes — The MGHFP Method: A Symbolic Upgrade to the Generalized Harmonic...",
+        
+        description: "Introducing composite Simpson integration into the GHFP framework for purely symbolic global dynamic analysis — the first follow-up application of the MGHFP method",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-mghfp-en/";
+          
+        },
+      },{id: "post-论文笔记-mghfp-方法首次提出-混合-rayleigh-liénard-振子的全局动力学定量分析",
+        
+          title: "论文笔记：MGHFP 方法首次提出——混合 Rayleigh–Liénard 振子的全局动力学定量分析",
+        
+        description: "复合 Simpson 积分改进 GHFP 方法的首次公开发表，对含三次和五次非线性的混合 Rayleigh–Liénard 振子进行极限环全局演化与同异宿分岔的定量分析",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-rayleigh-lienard/";
+          
+        },
+      },{id: "post-paper-notes-the-mghfp-method-first-public-introduction-via-a-mixed-rayleigh-liénard-oscillator",
+        
+          title: "Paper Notes — The MGHFP Method: First Public Introduction via a Mixed Rayleigh–Liénard...",
+        
+        description: "First publication of the MGHFP method — composite Simpson integration enables purely symbolic global dynamic analysis of a mixed Rayleigh–Liénard oscillator with cubic and quintic nonlinearities",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/paper-notes-rayleigh-lienard-en/";
+          
+        },
+      },{id: "post-论文笔记-非对称gplp-用新逼近式把同异宿轨精度再推高一个台阶",
+        
+          title: "论文笔记：非对称GPLP——用新逼近式把同异宿轨精度再推高一个台阶",
+        
+        description: "在2016年GPLP方法基础上，引入ω参数化的同宿逼近式和Sech-Tanh混合逼近式，将非对称势振子的同异宿解精度提升40–80%",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/paper-notes-asymmetric-gplp/";
+          
+        },
+      },{id: "post-paper-notes-asymmetric-gplp-extending-the-integration-free-perturbation-method-to-asymmetric-potentials",
+        
+          title: "Paper Notes — Asymmetric GPLP: Extending the Integration-Free Perturbation Method to Asymmetric Potentials...",
+        
+        description: "New ω-parameterized and combined Sech-Tanh approximants extend GPLP to full quintic asymmetric potentials, reducing heteroclinic error by 70–80%",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2022/paper-notes-asymmetric-gplp-en/";
+          
+        },
+      },{id: "post-论文笔记-余弦广义padé逼近法-用周期性的逼近式直接求解周期解",
+        
+          title: "论文笔记：余弦广义Padé逼近法——用周期性的逼近式直接求解周期解",
+        
+        description: "构造余弦型广义Padé逼近式，通过双重改进求解流程，直接求得强非线性振子的解析周期解",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2019/paper-notes-cosine-pade/";
+          
+        },
+      },{id: "post-paper-notes-a-cosine-generalized-padé-approximation-method-for-periodic-solutions-of-strongly-nonlinear-oscillators",
+        
+          title: "Paper Notes — A Cosine Generalized Padé Approximation Method for Periodic Solutions of...",
+        
+        description: "Constructing a cosine-function-series generalized Padé approximant with inherent periodicity for direct periodic solution of strongly nonlinear oscillators",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2019/paper-notes-cosine-pade-en/";
+          
+        },
+      },{id: "post-论文笔记-二次广义谐波函数摄动法-duffing-harmonic-van-de-pol-振子的同宿与异宿分岔预测",
+        
+          title: "论文笔记：二次广义谐波函数摄动法——Duffing–Harmonic–van de Pol 振子的同宿与异宿分岔预测",
+        
+        description: "GHFP 方法首次拓展至有理恢复力振子——同时预测同宿和异宿分岔的临界参数，方法适用面大幅拓宽",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2016/paper-notes-qghfp-duffing-harmonic/";
+          
+        },
+      },{id: "post-paper-notes-extending-the-ghfp-method-to-rational-restoring-forces-homoclinic-and-heteroclinic-bifurcation-prediction",
+        
+          title: "Paper Notes — Extending the GHFP Method to Rational Restoring Forces: Homoclinic and...",
+        
+        description: "First application of GHFP to rational restoring forces — simultaneous prediction of homoclinic and heteroclinic bifurcations in Duffing–Harmonic–van de Pol oscillator",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2016/paper-notes-qghfp-duffing-harmonic-en/";
+          
+        },
+      },{id: "post-论文笔记-广义padé-lindstedt-poincaré方法-用逼近替代积分的摄动新技术",
+        
+          title: "论文笔记：广义Padé–Lindstedt–Poincaré方法——用逼近替代积分的摄动新技术",
+        
+        description: "将广义Padé逼近引入Lindstedt–Poincaré流程，用系数匹配替代所有积分运算，实现了无需积分的高阶同异宿分岔预测",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2016/paper-notes-gplp/";
+          
+        },
+      },{id: "post-paper-notes-the-gplp-method-replacing-integration-with-padé-approximation-in-perturbation-analysis",
+        
+          title: "Paper Notes — The GPLP Method: Replacing Integration with Padé Approximation in Perturbation...",
+        
+        description: "Generalized Padé–Lindstedt–Poincaré method achieves third-order H/H bifurcation prediction without integration, accurate at ε = 50",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2016/paper-notes-gplp-en/";
+          
+        },
+      },{id: "post-论文笔记-广义padé逼近方法的英文推广-同宿和异宿轨道的统一求解框架",
+        
+          title: "论文笔记：广义Padé逼近方法的英文推广——同宿和异宿轨道的统一求解框架",
+        
+        description: "GPA方法的英文版，首次同时处理同宿和异宿轨道，在三种不同类型振子上验证了方法的精度和广泛适用性",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2014/paper-notes-gpa-cpb/";
+          
+        },
+      },{id: "post-paper-notes-the-gpa-method-extended-a-unified-framework-for-homoclinic-and-heteroclinic-orbits",
+        
+          title: "Paper Notes — The GPA Method Extended: A Unified Framework for Homoclinic and...",
+        
+        description: "The English version of the GPA method — first simultaneous homoclinic and heteroclinic orbit solving via sech/tanh dual approximants",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2014/paper-notes-gpa-cpb-en/";
+          
+        },
+      },{id: "post-论文笔记-广义padé逼近方法的提出-双曲函数构造逼近式求解强非线性振子同宿轨",
+        
+          title: "论文笔记：广义Padé逼近方法的提出——双曲函数构造逼近式求解强非线性振子同宿轨",
+        
+        description: "在经典Padé逼近理论基础上提出广义Padé逼近（GPA）方法，利用双曲函数构造新逼近式求解同宿轨道",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2013/paper-notes-gpa-homoclinic/";
+          
+        },
+      },{id: "post-paper-notes-the-generalized-padé-approximation-method-hyperbolic-function-approximants-for-homoclinic-orbits",
+        
+          title: "Paper Notes — The Generalized Padé Approximation Method: Hyperbolic-Function Approximants for Homoclinic Orbits...",
+        
+        description: "The first publication of the GPA method — extending classical Padé to arbitrary-function bases with hyperbolic-function approximants",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2013/paper-notes-gpa-homoclinic-en/";
+          
+        },
+      },{id: "post-论文笔记-ghfp-方法的提出-helmholtz-duffing-振子极限环与同宿轨道的确定",
+        
+          title: "论文笔记：GHFP 方法的提出——Helmholtz–Duffing 振子极限环与同宿轨道的确定",
+        
+        description: "GHFP 方法的首篇论文：引入二次广义谐波函数与非线性时间变换，统一处理极限环与同宿轨道，首次解析预测同宿分岔参数",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2013/paper-notes-ghfp-helmholtz-duffing/";
+          
+        },
+      },{id: "post-paper-notes-the-ghfp-method-quadratic-generalized-harmonic-functions-for-asymmetric-oscillators",
+        
+          title: "Paper Notes — The GHFP Method: Quadratic Generalized Harmonic Functions for Asymmetric Oscillators...",
+        
+        description: "The founding paper of the GHFP method — quadratic generalized harmonic functions and nonlinear time transformation for unified limit cycle and homoclinic orbit analysis",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2013/paper-notes-ghfp-helmholtz-duffing-en/";
+          
+        },
+      },{id: "news-新论文-广义-padé-逼近方法-求解强非线性自治振子同宿轨-力学学报",
+          title: '新论文：广义 Padé 逼近方法——求解强非线性自治振子同宿轨（力学学报）',
+          description: "发表于力学学报，提出广义 Padé 逼近（GPA）方法的首次公开发表，利用双曲函数构造新逼近式求解同宿轨道",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_pade_2013/";
+            },},{id: "news-新论文-ghfp-方法首次提出-广义谐波函数摄动法确定-helmholtz-duffing-振子的极限环与同宿轨道",
+          title: '新论文：GHFP 方法首次提出——广义谐波函数摄动法确定 Helmholtz-Duffing 振子的极限环与同宿轨道',
+          description: "发表于 Journal of Sound and Vibration，提出广义谐波函数摄动法（GHFP），首次对 Helmholtz-Duffing 振子的极限环和同宿分岔进行解析预测。",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_ghfp_2013/";
+            },},{id: "news-new-paper-generalized-padé-approximation-method-for-homoclinic-and-heteroclinic-orbits-chinese-physics-b",
+          title: 'New Paper: Generalized Padé Approximation Method for Homoclinic and Heteroclinic Orbits (Chinese Physics...',
+          description: "Published in Chinese Physics B, extending the GPA method to both homoclinic and heteroclinic orbits with hyperbolic-function approximants",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_pade_2014/";
+            },},{id: "news-新论文-ghfp-方法推广至有理恢复力-预测广义-duffing-harmonic-van-de-pol-振子的同宿与异宿分岔",
+          title: '新论文：GHFP 方法推广至有理恢复力——预测广义 Duffing-Harmonic-van de Pol 振子的同宿与异宿分岔',
+          description: "发表于 Qualitative Theory of Dynamical Systems，将 GHFP 方法推广至有理恢复力振子，同时预测同宿和异宿分岔。",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_qtds_2016/";
+            },},{id: "news-gplp-method-paper-published-in-nonlinear-dynamics-generalized-padé-lindstedt-poincaré-method-for-homoclinic-heteroclinic-bifurcation-prediction-广义padé-lindstedt-poincaré方法论文发表在nonlinear-dynamics-doi",
+          title: 'GPLP method paper published in Nonlinear Dynamics: generalized Padé–Lindstedt–Poincaré method for homoclinic/heteroclinic bifurcation...',
+          description: "",
+          section: "News",},{id: "news-cosine-generalized-padé-approximation-paper-published-in-journal-of-vibration-and-shock-solving-periodic-solutions-of-strongly-nonlinear-oscillators-余弦广义padé逼近法论文发表在-振动与冲击-doi",
+          title: 'Cosine generalized Padé approximation paper published in Journal of Vibration and Shock: solving...',
+          description: "",
+          section: "News",},{id: "news-asymmetric-gplp-paper-published-in-j-vib-eng-technol-high-accurate-homo-heteroclinic-solutions-for-asymmetric-potential-oscillators-非对称gplp方法论文发表在j-vib-eng-technol-doi",
+          title: 'Asymmetric GPLP paper published in J. Vib. Eng. Technol.: high accurate homo-heteroclinic solutions...',
+          description: "",
+          section: "News",},{id: "news-新论文发表在-physica-scripta-mghfp-方法的首次提出-the-first-paper-introducing-the-mghfp-method-is-now-published-in-physica-scripta-doi",
+          title: '新论文发表在 Physica Scripta：MGHFP 方法的首次提出 / The first paper introducing the MGHFP method is...',
+          description: "",
+          section: "News",},{id: "news-mghfp-方法的第一个后续应用-dhrl-振子全局动力学分析-first-follow-up-application-of-the-mghfp-method-global-analysis-of-the-dhrl-oscillator-now-published-in-ijnlm-doi",
+          title: 'MGHFP 方法的第一个后续应用：DHRL 振子全局动力学分析 / First follow-up application of the MGHFP method — global...',
+          description: "",
+          section: "News",},{id: "news-新论文发表在-international-journal-of-non-linear-mechanics-sd-振子极限环全局演化与同宿分岔-new-paper-published-in-ijnlm-global-evolution-of-limit-cycles-and-homoclinic-bifurcation-in-sd-oscillator-with-quartic-nonlinear-damping-doi",
+          title: '新论文发表在 International Journal of Non-Linear Mechanics：SD 振子极限环全局演化与同宿分岔 / New paper published in IJNLM:...',
+          description: "",
+          section: "News",},{id: "news-新论文发表在-physica-scripta-耦合-sd-振子极限环全局定量分析-new-paper-published-in-physica-scripta-quantitative-analysis-of-limit-cycles-in-coupled-sd-oscillator-doi",
+          title: '新论文发表在 Physica Scripta：耦合 SD 振子极限环全局定量分析 / New paper published in Physica Scripta: quantitative...',
+          description: "",
+          section: "News",},{id: "news-个人主页上线啦-my-academic-homepage-is-now-online",
+          title: '个人主页上线啦！🎉 My academic homepage is now online.',
+          description: "",
+          section: "News",},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%6C%69%7A%68%65%6E%62%6F@%75%73%63.%65%64%75.%63%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/li-zhenbo", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+        id: 'social-custom_social',
+        title: 'Custom_social',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://gitee.com/your-gitee-username", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
