@@ -20,24 +20,31 @@ layout: default
     background: linear-gradient(90deg, #005B96 0%, #0074BA 40%, #E0DDD5 40%, #E0DDD5 100%);
     opacity: 0.7;
   }
-  /* 兴趣标签 —— 大脑图+标签 */
-  .interest-zone { display: flex; align-items: center; gap: 1.5rem; margin: 2rem 0 0.8rem 0; justify-content: center; flex-wrap: wrap; }
-  .interest-brain { width: 100px; height: auto; opacity: 0.88; flex-shrink: 0; }
-  .interest-tags { display: flex; flex-wrap: wrap; gap: 0.6rem 0.8rem; align-items: baseline; max-width: 460px; }
+  /* 兴趣标签 —— 大脑图+标签环绕 */
+  .interest-zone {
+    position: relative; width: 100%; max-width: 500px; height: 400px;
+    margin: 2rem auto 0.5rem;
+  }
+  .interest-brain {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 210px; height: auto;
+  }
   .interest-tag {
+    position: absolute;
     padding: 0.38rem 1rem; border-radius: 18px;
     font-size: 0.82rem; font-family: system-ui,sans-serif;
     font-weight: 500; color: #fff; letter-spacing: 0.02em;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
-    transition: transform 0.15s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    white-space: nowrap; transition: transform 0.15s; z-index: 2;
   }
   .interest-tag:hover { transform: translateY(-1px); }
-  .interest-tag.t1 { background: #005B96; }
-  .interest-tag.t2 { background: #1A7A4C; }
-  .interest-tag.t3 { background: #8B2E2E; }
-  .interest-tag.t4 { background: #6B4E9B; margin-top: 6px; }
-  .interest-tag.t5 { background: #C26D1A; }
-  .interest-tag.t6 { background: #3A7D8C; margin-top: 6px; }
+  .interest-tag.t1 { background: #005B96; top: 0; left: 50%; transform: translateX(-50%); }
+  .interest-tag.t2 { background: #1A7A4C; top: 55px; right: 0; }
+  .interest-tag.t3 { background: #8B2E2E; bottom: 110px; right: 5px; }
+  .interest-tag.t4 { background: #6B4E9B; bottom: 55px; right: 20px; }
+  .interest-tag.t5 { background: #C26D1A; bottom: 0; left: 50%; transform: translateX(-50%); }
+  .interest-tag.t6 { background: #3A7D8C; top: 95px; left: 0; }
   /* 统计卡片 */
   .pub-stats {
     display: flex; gap: 1.5rem; justify-content: center;
@@ -103,15 +110,13 @@ layout: default
 
     <!-- Research Interest Tags -->
     <div class="interest-zone">
-      <img class="interest-brain" src="/assets/img/brain.png" alt="" loading="lazy">
-      <div class="interest-tags">
-        <span class="interest-tag t1">非线性动力学</span>
-        <span class="interest-tag t2">分岔与混沌</span>
-        <span class="interest-tag t3">极限环</span>
-        <span class="interest-tag t4">摄动方法</span>
-        <span class="interest-tag t5">耦合 SD 振子</span>
-        <span class="interest-tag t6">同异宿轨道</span>
-      </div>
+      <img class="interest-brain" src="/assets/img/brain2.JPG" alt="" loading="lazy">
+      <span class="interest-tag t1">非线性动力学</span>
+      <span class="interest-tag t2">分岔与混沌</span>
+      <span class="interest-tag t3">极限环</span>
+      <span class="interest-tag t4">摄动方法</span>
+      <span class="interest-tag t5">耦合 SD 振子</span>
+      <span class="interest-tag t6">同异宿轨道</span>
     </div>
 
     <!-- News -->
