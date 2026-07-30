@@ -9,22 +9,59 @@ layout: default
   .post article > h2 { margin-top: 3rem; }
   .post .research-timeline { margin-top: 2.5rem; }
   .post .social { margin-top: 2.5rem; }
-  /* 模块分隔线 */
-  .post article > h2 { border-bottom: 1px solid #e0ddd5; padding-bottom: 0.5rem; }
-  /* 兴趣标签 */
-  .interest-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0 0; }
-  .interest-tag { padding: 0.35rem 0.9rem; border-radius: 16px; font-size: 0.8rem; font-family: system-ui,sans-serif; font-weight: 500; color: #fff; }
+  /* 模块装饰分隔条 */
+  .post article > h2 {
+    display: flex; align-items: center; gap: 0.6rem;
+    border-bottom: none; padding-bottom: 0;
+  }
+  .post article > h2::after {
+    content: ''; flex: 1; height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #005B96 0%, #0074BA 40%, #E0DDD5 40%, #E0DDD5 100%);
+    opacity: 0.7;
+  }
+  /* 兴趣标签 —— 错落有致 */
+  .interest-tags {
+    display: flex; flex-wrap: wrap; gap: 0.6rem 0.8rem;
+    margin: 1.8rem 0 0.5rem 0; align-items: baseline;
+  }
+  .interest-tag {
+    padding: 0.38rem 1rem; border-radius: 18px;
+    font-size: 0.82rem; font-family: system-ui,sans-serif;
+    font-weight: 500; color: #fff; letter-spacing: 0.02em;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+    transition: transform 0.15s;
+  }
+  .interest-tag:hover { transform: translateY(-1px); }
   .interest-tag.t1 { background: #005B96; }
   .interest-tag.t2 { background: #1A7A4C; }
   .interest-tag.t3 { background: #8B2E2E; }
-  .interest-tag.t4 { background: #6B4E9B; }
+  .interest-tag.t4 { background: #6B4E9B; margin-top: 6px; }
   .interest-tag.t5 { background: #C26D1A; }
-  .interest-tag.t6 { background: #3A7D8C; }
+  .interest-tag.t6 { background: #3A7D8C; margin-top: 6px; }
   /* 统计卡片 */
-  .pub-stats { display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; }
-  .pub-stat { text-align: center; padding: 1rem 1.8rem; border-radius: 8px; background: #F3F0EB; min-width: 100px; }
-  .pub-stat .num { font-size: 2rem; font-weight: 700; color: #005B96; line-height: 1.2; }
-  .pub-stat .label { font-size: 0.72rem; color: #7A7A7A; margin-top: 0.25rem; font-family: system-ui,sans-serif; }
+  .pub-stats {
+    display: flex; gap: 1.5rem; justify-content: center;
+    margin: 2rem 0 2.5rem 0;
+  }
+  .pub-stat {
+    text-align: center; padding: 1.2rem 2rem; border-radius: 12px;
+    min-width: 120px; border: 1px solid #E8E5DB;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .pub-stat.s-journals  { background: linear-gradient(135deg, #EDF5FB 0%, #E3EEF7 100%); }
+  .pub-stat.s-conferences { background: linear-gradient(135deg, #F4F0F9 0%, #EDE5F5 100%); }
+  .pub-stat.s-monographs { background: linear-gradient(135deg, #FDF8EE 0%, #F9F0DA 100%); }
+  .pub-stat .num {
+    font-size: 2.4rem; font-weight: 700; line-height: 1.15; font-family: "Georgia",serif;
+  }
+  .pub-stat.s-journals .num  { color: #005B96; }
+  .pub-stat.s-conferences .num { color: #6B4E9B; }
+  .pub-stat.s-monographs .num { color: #C26D1A; }
+  .pub-stat .label {
+    font-size: 0.72rem; color: #888; margin-top: 0.3rem;
+    font-family: system-ui,sans-serif; letter-spacing: 0.03em; text-transform: uppercase;
+  }
 </style>
 <div class="post">
   <header class="post-header">
@@ -95,13 +132,11 @@ layout: default
     {% include timeline.liquid %}
 
     <!-- Publication Statistics -->
-    {% if page.selected_papers %}
     <div class="pub-stats">
-      <div class="pub-stat"><div class="num">11</div><div class="label">Papers 论文</div></div>
-      <div class="pub-stat"><div class="num">9</div><div class="label">Journals 期刊</div></div>
-      <div class="pub-stat"><div class="num">13</div><div class="label">Year Span 年</div></div>
+      <div class="pub-stat s-journals"><div class="num">{{ site.data.pubstats.journals }}</div><div class="label">期刊论文</div></div>
+      <div class="pub-stat s-conferences"><div class="num">{{ site.data.pubstats.conferences }}</div><div class="label">会议论文</div></div>
+      <div class="pub-stat s-monographs"><div class="num">{{ site.data.pubstats.monographs }}</div><div class="label">专著</div></div>
     </div>
-    {% endif %}
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
