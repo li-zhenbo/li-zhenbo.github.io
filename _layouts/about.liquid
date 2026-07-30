@@ -20,11 +20,10 @@ layout: default
     background: linear-gradient(90deg, #005B96 0%, #0074BA 40%, #E0DDD5 40%, #E0DDD5 100%);
     opacity: 0.7;
   }
-  /* 兴趣标签 —— 错落有致 */
-  .interest-tags {
-    display: flex; flex-wrap: wrap; gap: 0.6rem 0.8rem;
-    margin: 1.8rem 0 0.5rem 0; align-items: baseline;
-  }
+  /* 兴趣标签 —— 大脑图+标签 */
+  .interest-zone { display: flex; align-items: center; gap: 1.5rem; margin: 2rem 0 0.8rem 0; justify-content: center; flex-wrap: wrap; }
+  .interest-brain { width: 100px; height: auto; opacity: 0.88; flex-shrink: 0; }
+  .interest-tags { display: flex; flex-wrap: wrap; gap: 0.6rem 0.8rem; align-items: baseline; max-width: 460px; }
   .interest-tag {
     padding: 0.38rem 1rem; border-radius: 18px;
     font-size: 0.82rem; font-family: system-ui,sans-serif;
@@ -103,13 +102,16 @@ layout: default
     <div class="clearfix">{{ content }}</div>
 
     <!-- Research Interest Tags -->
-    <div class="interest-tags">
-      <span class="interest-tag t1">非线性动力学</span>
-      <span class="interest-tag t2">分岔与混沌</span>
-      <span class="interest-tag t3">极限环</span>
-      <span class="interest-tag t4">摄动方法</span>
-      <span class="interest-tag t5">耦合 SD 振子</span>
-      <span class="interest-tag t6">同异宿轨道</span>
+    <div class="interest-zone">
+      <img class="interest-brain" src="/assets/img/brain.png" alt="" loading="lazy">
+      <div class="interest-tags">
+        <span class="interest-tag t1">非线性动力学</span>
+        <span class="interest-tag t2">分岔与混沌</span>
+        <span class="interest-tag t3">极限环</span>
+        <span class="interest-tag t4">摄动方法</span>
+        <span class="interest-tag t5">耦合 SD 振子</span>
+        <span class="interest-tag t6">同异宿轨道</span>
+      </div>
     </div>
 
     <!-- News -->
