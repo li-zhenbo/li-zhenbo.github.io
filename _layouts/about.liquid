@@ -9,6 +9,22 @@ layout: default
   .post article > h2 { margin-top: 3rem; }
   .post .research-timeline { margin-top: 2.5rem; }
   .post .social { margin-top: 2.5rem; }
+  /* 模块分隔线 */
+  .post article > h2 { border-bottom: 1px solid #e0ddd5; padding-bottom: 0.5rem; }
+  /* 兴趣标签 */
+  .interest-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0 0; }
+  .interest-tag { padding: 0.35rem 0.9rem; border-radius: 16px; font-size: 0.8rem; font-family: system-ui,sans-serif; font-weight: 500; color: #fff; }
+  .interest-tag.t1 { background: #005B96; }
+  .interest-tag.t2 { background: #1A7A4C; }
+  .interest-tag.t3 { background: #8B2E2E; }
+  .interest-tag.t4 { background: #6B4E9B; }
+  .interest-tag.t5 { background: #C26D1A; }
+  .interest-tag.t6 { background: #3A7D8C; }
+  /* 统计卡片 */
+  .pub-stats { display: flex; gap: 1rem; justify-content: center; margin: 2rem 0; }
+  .pub-stat { text-align: center; padding: 1rem 1.8rem; border-radius: 8px; background: #F3F0EB; min-width: 100px; }
+  .pub-stat .num { font-size: 2rem; font-weight: 700; color: #005B96; line-height: 1.2; }
+  .pub-stat .label { font-size: 0.72rem; color: #7A7A7A; margin-top: 0.25rem; font-family: system-ui,sans-serif; }
 </style>
 <div class="post">
   <header class="post-header">
@@ -49,6 +65,16 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Research Interest Tags -->
+    <div class="interest-tags">
+      <span class="interest-tag t1">非线性动力学</span>
+      <span class="interest-tag t2">分岔与混沌</span>
+      <span class="interest-tag t3">极限环</span>
+      <span class="interest-tag t4">摄动方法</span>
+      <span class="interest-tag t5">耦合 SD 振子</span>
+      <span class="interest-tag t6">同异宿轨道</span>
+    </div>
+
     <!-- News -->
     {% if site.announcements.enabled %}
       <h2>
@@ -67,6 +93,15 @@ layout: default
 
     <!-- Research Timeline -->
     {% include timeline.liquid %}
+
+    <!-- Publication Statistics -->
+    {% if page.selected_papers %}
+    <div class="pub-stats">
+      <div class="pub-stat"><div class="num">11</div><div class="label">Papers 论文</div></div>
+      <div class="pub-stat"><div class="num">9</div><div class="label">Journals 期刊</div></div>
+      <div class="pub-stat"><div class="num">13</div><div class="label">Year Span 年</div></div>
+    </div>
+    {% endif %}
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
