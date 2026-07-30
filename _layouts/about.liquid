@@ -9,7 +9,7 @@ layout: default
   .post article > h2 { margin-top: 3rem; }
   .post .research-timeline { margin-top: 2.5rem; }
   .post .social { margin-top: 2.5rem; }
-  /* 模块装饰分隔条：h2 右侧 SVG 网管突破容器，延伸到页面右边缘 */
+  /* 模块装饰分隔条：h2 右侧 SVG 网管，负margin突破容器延伸到页面右边缘 */
   .post article { overflow: visible; }
   .post article > h2 {
     display: flex; align-items: center; gap: 0.6rem;
@@ -18,8 +18,9 @@ layout: default
   }
   .post article > h2 .braid-svg {
     flex: 0 0 auto;
-    min-width: 400px;
+    min-width: 600px;
     height: 24px;
+    margin-right: calc(-50vw + 50% + 1rem);
   }
   /* 兴趣标签 —— 大脑图+标签环绕 */
   .interest-zone {
