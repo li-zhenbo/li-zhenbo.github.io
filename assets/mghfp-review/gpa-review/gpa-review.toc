@@ -29,7 +29,7 @@
 \contentsline {subsection}{\numberline {6.5}Accuracy Gains: 2022 vs.\ 2016}{11}{subsection.6.5}%
 \contentsline {subsection}{\numberline {6.6}Contributions of Paper\nobreakspace {}V}{12}{subsection.6.6}%
 \contentsline {section}{\numberline {7}The Unifying Theme: Basis-Geometry Correspondence}{12}{section.7}%
-\contentsline {section}{\numberline {8}Limitations and Open Problems}{12}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Intrinsic Limitations of the GPA Framework}{12}{subsection.8.1}%
+\contentsline {section}{\numberline {8}Limitations and Open Problems}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Intrinsic Limitations of the GPA Framework}{13}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Open Problems and Future Directions}{13}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Conclusion}{13}{section.9}%
+\contentsline {section}{\numberline {9}Conclusion}{14}{section.9}%
