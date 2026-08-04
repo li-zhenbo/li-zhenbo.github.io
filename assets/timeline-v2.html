@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的动力学之路 · Zhenbo Li</title>
+<style>
+  :root { color-scheme: light; --bg: #F9F8F5; --text: #2C2C2C; --text-dim: #6B6B6B; --ghfp: #005B96; --ghfp-light: #0074BA; --ghfp-bg: #EDF2F7; --gpa: #8B2E2E; --gpa-bg: #FBF0F0; --sync: #2E7088; --sync-bg: #EDF5F8; --line: #D8D5CB; --card-bg: #FAF8F4; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); font-family: "Georgia","Noto Serif CJK SC","Times New Roman",serif; color: var(--text); line-height: 1.7; }
+
+  .timeline-header { max-width: 780px; margin: 0 auto; padding: 4rem 1.5rem 2rem; text-align: center; }
+  .timeline-header h1 { text-align: center; }
+  .timeline-header h1 .zh { display: block; font-family: "Noto Serif CJK SC", "SimSun", "STSong", serif; font-size: 2.8rem; font-weight: 700; letter-spacing: 0.02em; }
+  .timeline-header h1 .en { display: block; font-family: "Georgia", "Times New Roman", serif; font-weight: 400; font-size: 1.25rem; font-style: italic; color: var(--text-dim); letter-spacing: 0.01em; margin-top: 0.3rem; }
+  .timeline-header .hint { font-size: 0.82rem; color: #aaa; margin-top: 0.35rem; font-family: system-ui, sans-serif; }
+  .filters { display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .filter-btn { padding: 0.45rem 1.1rem; border-radius: 20px; border: 1.5px solid var(--line); background: transparent; font-size: 0.82rem; cursor: pointer; font-family: system-ui,sans-serif; color: var(--text-dim); }
+  .filter-btn.active { color: #fff; border-color: transparent; }
+  .filter-btn.active.all { background: #444; }
+  .filter-btn.active.ghfp { background: var(--ghfp); }
+  .filter-btn.active.gpa { background: var(--gpa); }
+  .filter-btn.active.sync { background: var(--sync); }
+
+  .timeline { position: relative; max-width: 780px; margin: 0 auto; padding: 0 1.5rem 5rem; }
+  .timeline::before { content: ''; position: absolute; left: 7.2rem; top: 0; bottom: 0; width: 1px; background: var(--line); }
+
+  .year-group { position: relative; margin-bottom: 3.5rem; opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+  .year-group.in-view { opacity: 1; transform: translateY(0); }
+  .year-group:last-child { margin-bottom: 0; }
+  .year-group.filtered-out { opacity: 0.10; pointer-events: none; transform: translateY(0); }
+  .year-marker { position: sticky; top: 1rem; z-index: 10; display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .year-number { font-size: 4.5rem; font-weight: 700; line-height: 1; min-width: 5.5rem; text-align: right; opacity: 0.15; letter-spacing: -0.03em; transition: opacity 0.3s; }
+  .year-group.in-view .year-number { opacity: 0.30; }
+  .items { margin-left: 8rem; }
+
+  .card { margin-bottom: 1.25rem; border-radius: 10px; overflow: hidden; background: var(--card-bg); transition: transform 0.2s, box-shadow 0.2s; position: relative; cursor: pointer; }
+  .card:hover { transform: translateX(2px); box-shadow: 0 3px 12px rgba(0,0,0,0.08); }
+  .card:last-child { margin-bottom: 0; }
+
+  .card::before { content: ''; position: absolute; left: -2.46rem; top: 2.2rem; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--bg); z-index: 2; pointer-events: none; }
+  .card.ghfp::before { background: var(--ghfp); }
+  .card.gpa::before  { background: var(--gpa); }
+  .card.sync::before { background: var(--sync); }
+  .card::after { content: ''; position: absolute; left: -2.1rem; top: 2.25rem; width: 1.6rem; height: 1px; background: var(--line); pointer-events: none; }
+
+  .card-bar-top { padding: 0.45rem 1.25rem; font-size: 0.7rem; letter-spacing: 0.04em; color: #fff; font-family: system-ui,sans-serif; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+  .card-bar-top .publisher { font-size: 0.7rem; opacity: 0.7; font-weight: 400; letter-spacing: 0.03em; }
+  .card.ghfp .card-bar-top { background: linear-gradient(90deg, #00395E 0%, var(--ghfp) 30%, var(--ghfp-light) 70%, #0088D4 100%); }
+  .card.gpa .card-bar-top { background-color: var(--gpa); background-image: repeating-linear-gradient(-35deg, transparent, transparent 7px, rgba(255,255,255,0.09) 7px, rgba(255,255,255,0.09) 14px); }
+  .card.sync .card-bar-top { background: linear-gradient(90deg, #1A4A5A 0%, var(--sync) 30%, #3A90A8 70%, #4AACC8 100%); }
+
+  .card-body { padding: 0.65rem 1.25rem 0.5rem 1.25rem; display: flex; gap: 1rem; align-items: flex-start; }
+  .card-img { width: 56px; height: 70px; object-fit: cover; border-radius: 3px; flex-shrink: 0; }
+  .card-txt { flex: 1; min-width: 0; }
+  .card-title { font-size: 0.92rem; line-height: 1.45; font-weight: 600; margin-bottom: 0.3rem; }
+  .card-desc { font-size: 0.8rem; line-height: 1.4; color: var(--text-dim); }
+
+  .card-bar-bot { padding: 0.2rem 1.25rem; font-size: 0.75rem; font-family: system-ui,sans-serif; background: #5B8C6F; display: flex; align-items: center; gap: 1.2rem; }
+  .card-bar-bot a { color: #D8E8DC; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem; transition: color 0.15s; font-size: 0.76rem; }
+  .card-bar-bot a:hover { color: #fff; }
+  .card-bar-bot svg { width: 13px; height: 13px; opacity: 0.8; flex-shrink: 0; }
+
+  .thread-section { margin: 2.5rem 0 1.5rem 8rem; padding: 0.6rem 1rem; border-radius: 4px; font-size: 0.82rem; font-weight: 600; font-family: system-ui,sans-serif; display: none; }
+  .thread-section.visible { display: block; }
+  .thread-section.gs { background: var(--ghfp-bg); color: var(--ghfp); border-left: 3px solid var(--ghfp); }
+  .thread-section.ps { background: var(--gpa-bg); color: var(--gpa); border-left: 3px solid var(--gpa); }
+  .thread-section.ss { background: var(--sync-bg); color: var(--sync); border-left: 3px solid var(--sync); }
+
+  .tf { display: none; }
+
+  @media (max-width: 640px) {
+    .timeline::before { left: 3.5rem; } .items { margin-left: 4.5rem; } .thread-section { margin-left: 4.5rem; }
+    .year-number { font-size: 3rem; min-width: 3rem; }
+    .card::before { left: -1.7rem; top: 1.8rem; } .card::after { left: -1.3rem; width: 0.8rem; top: 1.85rem; }
+    .card-body { flex-direction: column; padding: 0.5rem 1rem 0.5rem 1rem; }
+    .card-img { width: 100%; height: 100px; }
+    .card-bar-bot { padding: 0.2rem 1rem; font-size: 0.7rem; }
+    .card-bar-top { padding: 0.4rem 1rem; font-size: 0.7rem; }
+    .timeline-header { padding: 2.5rem 1rem 1.5rem; }
+    .timeline-header h1 .zh { font-size: 2rem; }
+    .timeline-header h1 .en { font-size: 1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .year-group { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+<body>
+<div class="timeline-header">
+  <h1><span class="zh">我的动力学之路</span><span class="en">A Research Trajectory in Nonlinear Dynamics</span></h1>
+  <p class="hint">使用下方按钮可按研究路线筛选 Filter papers by research thread using the buttons below</p>
+  <div class="filters">
+    <button class="filter-btn all active" data-filter="all">全部 All</button>
+    <button class="filter-btn ghfp" data-filter="ghfp">GHFP / MGHFP</button>
+    <button class="filter-btn gpa" data-filter="gpa">Pade 逼近</button>
+    <button class="filter-btn sync" data-filter="sync">混沌同步</button>
+  </div>
+</div>
+<div class="timeline">
+
+<div class="thread-section ss">混沌同步与控制 · Modified Active Control → Generalized Projective Synchronization</div>
+
+<div class="year-group" data-threads="sync"><div class="year-marker"><span class="year-number">2011</span></div><div class="items">
+<div class="card sync" onclick="window.open('/blog/2011/paper-notes-modified-active-control/','_blank')">
+<div class="card-bar-top">物理学报 · Acta Phys. Sin. &nbsp;·&nbsp; 2011<span class="publisher">中国物理学会</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/aps-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">Modified Active Control — Generalized Projective Synchronization</div><div class="card-desc">改进主动控制法——基于Lyapunov稳定性理论与特殊矩阵构造，不依赖Routh-Hurwitz判据</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2011/paper-notes-modified-active-control/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="year-group" data-threads="gpa"><div class="year-marker"><span class="year-number">2013</span></div><div class="items">
+<div class="card gpa" onclick="window.open('/blog/2013/paper-notes-gpa-homoclinic/','_blank')">
+<div class="card-bar-top">力学学报 &nbsp;·&nbsp; 2013<span class="publisher">中国力学学会</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/lxxb-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">Generalized Pade Approximation Method for Homoclinic Orbits</div><div class="card-desc">广义Pade逼近方法提出——双曲函数构造广义Pade逼近式，求解强非线性振子同宿轨道</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2013/paper-notes-gpa-homoclinic/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="year-group" data-threads="ghfp"><div class="year-marker"><span class="year-number">2013</span></div><div class="items">
+<div class="card ghfp" onclick="window.open('/blog/2013/paper-notes-ghfp-helmholtz-duffing/','_blank')">
+<div class="card-bar-top">J. Sound Vib. &nbsp;·&nbsp; 2013<span class="publisher">Elsevier</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/jsv-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">GHFP Method — Limit Cycles & Homoclinic Orbits of Helmholtz-Duffing Oscillator</div><div class="card-desc">GHFP方法奠基——二次广义谐波函数 + 非线性时间变换，确定极限环与同宿轨道</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2013/paper-notes-ghfp-helmholtz-duffing/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="year-group" data-threads="gpa"><div class="year-marker"><span class="year-number">2014</span></div><div class="items">
+<div class="card gpa" onclick="window.open('/blog/2014/paper-notes-gpa-cpb/','_blank')">
+<div class="card-bar-top">Chin. Phys. B &nbsp;·&nbsp; 2014<span class="publisher">IOP Publishing</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/cpb-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">Generalized Pade Approximants — Homoclinic & Heteroclinic Orbits Unified</div><div class="card-desc">广义Pade逼近方法推广至异宿轨道——Duffing、Phi6、Duffing-harmonic三类振子验证</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2014/paper-notes-gpa-cpb/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="thread-section ps">Pade 逼近方法深化 · Generalized Pade -> Cosine Pade -> Asymmetric GPLP</div>
+
+<div class="year-group" data-threads="ghfp"><div class="year-marker"><span class="year-number">2016</span></div><div class="items">
+<div class="card ghfp" onclick="window.open('/blog/2016/paper-notes-qghfp-duffing-harmonic/','_blank')">
+<div class="card-bar-top">Qual. Theory Dyn. Syst. &nbsp;·&nbsp; 2016<span class="publisher">Springer</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/qtds-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">Quadratic GHFP Method — Homoclinic & Heteroclinic Bifurcation of DH-vdP Oscillator</div><div class="card-desc">二次广义谐波函数摄动方法——Duffing-harmonic-van de Pol振子的同异宿分岔预测</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2016/paper-notes-qghfp-duffing-harmonic/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="year-group" data-threads="gpa"><div class="year-marker"><span class="year-number">2016</span></div><div class="items">
+<div class="card gpa" onclick="window.open('/blog/2016/paper-notes-gplp/','_blank')">
+<div class="card-bar-top">Nonlinear Dyn. &nbsp;·&nbsp; 2016<span class="publisher">Springer</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/nody-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">GPLP Method — Replacing Integration with Pade Approximation</div><div class="card-desc">GPLP方法提出——用Pade逼近替代L-P中的积分运算，预测同异宿分岔参数</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2016/paper-notes-gplp/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="year-group" data-threads="gpa"><div class="year-marker"><span class="year-number">2019</span></div><div class="items">
+<div class="card gpa" onclick="window.open('/blog/2019/paper-notes-cosine-pade/','_blank')">
+<div class="card-bar-top">J. Vib. Shock &nbsp;·&nbsp; 2019<span class="publisher">中国振动工程学会</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/jvs-cover-p9.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">Cosine Generalized Pade Approximation for Periodic Solutions</div><div class="card-desc">余弦型广义Pade逼近——分子分母均为余弦函数级数，精度与非线性强度无关</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2019/paper-notes-cosine-pade/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="year-group" data-threads="gpa"><div class="year-marker"><span class="year-number">2022</span></div><div class="items">
+<div class="card gpa" onclick="window.open('/blog/2022/paper-notes-asymmetric-gplp/','_blank')">
+<div class="card-bar-top">J. Vib. Eng. Technol. &nbsp;·&nbsp; 2022<span class="publisher">Springer</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/jvet-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">High Accurate Homo-Heteroclinic Solutions — Phi6-VdP & DH-VdP</div><div class="card-desc">GPLP方法扩展至Phi6-VdP与DH-VdP振子——非对称势下的高精度同异宿解</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2022/paper-notes-asymmetric-gplp/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="thread-section gs">MGHFP 方法时代 · MGHFP Foundation -> Pade-Enhanced -> Coupled SD</div>
+
+<div class="year-group" data-threads="ghfp"><div class="year-marker"><span class="year-number">2024</span></div><div class="items">
+<div class="card ghfp" onclick="window.open('/blog/2024/paper-notes-mghfp/','_blank')">
+<div class="card-bar-top">Int. J. Non-Linear Mech. &nbsp;·&nbsp; 2024<span class="publisher">Elsevier</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/ijnlm-cover-p3.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">MGHFP Method — Foundation Paper</div><div class="card-desc">MGHFP方法奠基——复合Simpson积分实现纯符号化全局动力学分析</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2024/paper-notes-mghfp/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div>
+<div class="card ghfp" onclick="window.open('/blog/2024/paper-notes-rayleigh-lienard/','_blank')">
+<div class="card-bar-top">Phys. Scr. &nbsp;·&nbsp; 2024<span class="publisher">IOP Publishing</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/physica-scripta-cover-p4.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">MGHFP — Mixed Rayleigh-Lienard Oscillator</div><div class="card-desc">MGHFP方法应用于混合Rayleigh-Lienard振子——三次+五次非线性阻尼的极限环定量分析</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2024/paper-notes-rayleigh-lienard/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="year-group" data-threads="ghfp"><div class="year-marker"><span class="year-number">2025</span></div><div class="items">
+<div class="card ghfp" onclick="window.open('/blog/2025/paper-notes-sd-oscillator/','_blank')">
+<div class="card-bar-top">Int. J. Non-Linear Mech. &nbsp;·&nbsp; 2025<span class="publisher">Elsevier</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/ijnlm-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">MGHFP + Pade · SD Oscillator Global Limit Cycle Evolution</div><div class="card-desc">MGHFP结合Pade逼近——SD振子四次非线性阻尼的极限环全局演化</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2025/paper-notes-sd-oscillator/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+<div class="year-group" data-threads="ghfp"><div class="year-marker"><span class="year-number">2026</span></div><div class="items">
+<div class="card ghfp" onclick="window.open('/blog/2026/paper-notes-coupled-sd/','_blank')">
+<div class="card-bar-top">Phys. Scr. &nbsp;·&nbsp; 2026<span class="publisher">IOP Publishing</span></div>
+<div class="card-body"><img class="card-img" src="../assets/img/publication_preview/physica-scripta-cover.png" alt="" loading="lazy" onerror="this.style.display='none'"><div class="card-txt"><div class="card-title">MGHFP · Coupled SD Oscillator — Quantitative Bifurcation Analysis</div><div class="card-desc">MGHFP方法——耦合SD振子两无理非线性项的高次阻尼定量分岔分析</div></div></div>
+<div class="card-bar-bot"><a href="/blog/2026/paper-notes-coupled-sd/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><path d="M10.5 2.5L13.5 5.5L5 14L1.5 14.5L2 11L10.5 2.5Z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="8" cy="3" r="1.8" stroke="currentColor" stroke-width="1.2" fill="none"/></svg><span>Paper Notes</span></a><a href="/publications/" target="_blank" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" fill="none"><rect x="3" y="1.5" width="10" height="13" rx="1" stroke="currentColor" stroke-width="1.2" fill="none"/><line x1="5.5" y1="5" x2="10.5" y2="5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="7.5" x2="10.5" y2="7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/><line x1="5.5" y1="10" x2="8.5" y2="10" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg><span>Publications</span></a></div>
+</div></div></div>
+
+</div>
+<script>
+const B=document.querySelectorAll('.filter-btn'),G=document.querySelectorAll('.year-group'),S=document.querySelector('.gs'),P=document.querySelector('.ps'),SS=document.querySelector('.ss');
+B.forEach(b=>b.addEventListener('click',()=>{const t=b.dataset.filter;B.forEach(x=>x.classList.toggle('active',x.dataset.filter===t));S.classList.toggle('visible',t==='ghfp');P.classList.toggle('visible',t==='gpa');SS.classList.toggle('visible',t==='sync');G.forEach(g=>{const d=g.dataset.threads||'';g.classList.toggle('filtered-out',t!=='all'&&!d.includes(t));});setTimeout(()=>{G.forEach(g=>{const r=g.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)g.classList.add('in-view');});},100);}));
+const O=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view');});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});G.forEach(g=>O.observe(g));
+window.addEventListener('scroll',()=>{let c=null;const v=window.scrollY+80;G.forEach(g=>{const r=g.getBoundingClientRect(),t=r.top+window.scrollY,b=r.bottom+window.scrollY;if(t<=v&&b>=v)c=g;});G.forEach(g=>{const n=g.querySelector('.year-number');if(n)n.style.opacity=g===c?'0.30':'0.15';});},{passive:true});
+</script>
+</body>
+</html>

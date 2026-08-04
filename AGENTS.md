@@ -342,3 +342,33 @@ The central result is given by:
 ### 28. 前四篇封面不可修改
 前四篇论文的封面（physica-scripta-cover.png、ijnlm-cover.png、ijnlm-cover-p3.png、physica-scripta-cover-p4.png）为原始版本，任何时候都不应修改。后续论文的封面生成时，不要将前四篇包含在批量操作中。
 后四篇重新生成的封面（QTDS/JSV/CPB/力学学报）使用 `gen_back4.py` 脚本生成，调用方式见脚本注释。
+
+### 29. 学术时间线页面的卡片设计规范
+
+时间线预览文件为 `assets/timeline-v2.html`。每条卡片的设计结构如下：
+
+**HTML 结构**（必须严格遵守）：
+外层用 `<div class="card ghfp|gpa" onclick="...">` —— 不能使用 `<a>` 标签，因为底部色条内含 `<a>` 链接，HTML 规范不允许 `<a>` 嵌套 `<a>`（会导致浏览器把底部色条从卡片中撕开单独渲染）。整卡点击通过 `onclick` 实现，内部链接用 `event.stopPropagation()` 避免冲突。
+
+卡片内部顺序（从上到下）：
+1. `card-bar-top` — 顶部色条：期刊名 · 年份（左） + 出版社名（右，`.publisher` 类）。GHFP 线蓝色渐变，Padé 线暗红斜纹。
+2. `card-body` — 正文区：左侧封面缩略图 (`card-img`)，右侧英文标题 (`card-title`) + 中文简介 (`card-desc`)。
+3. `card-bar-bot` — 底部色条：统一浅绿色 `#5B8C6F`，高度明显小于顶部色条（`padding: 0.2rem`），内含 Paper Notes 链接（图钉 SVG 图标）和 Publications 链接（文档 SVG 图标），文字颜色 `#D8E8DC`。
+
+**关键 CSS 约束**：
+- 只允许 `.card` 本身有 `border-radius` 和 `overflow: hidden`，内部所有子元素不得设置独立边框
+- `.card-body`、`.card-img`、`.card-bar-top`、`.card-bar-bot` 全部不设独立背景色（继承 `.card` 背景 `#FAF8F4`）
+- 手机端 `.card-body` 改为 `flex-direction: column`
+
+**新增卡片条目时的注意事项**：
+- 每张卡片必须同时有 Paper Notes 和 Publications 两个链接
+- `papers.bib` 中的 `selected = {true}` 条目才需要在卡片上额外标记为里程碑（但当前版本未使用里程碑视觉标记，所有卡片统一风格）
+- 新增论文需要在卡片的出版社名处填写正确的出版社（Elsevier / IOP Publishing / Springer / 中国力学学会 / 中国振动工程学会）
+
+**其他特征**：
+- 标题：中文"我的动力学之路"（Noto Serif CJK SC，`font-weight: 900`）+ 英文副标题斜体
+- 标题下方有中英双语的筛选提示文字
+- 筛选按钮：全部 All / GHFP-MGHFP / Padé 逼近，点击后无关卡片淡出
+- 技术线分段标签（`.thread-section`）仅在筛选时显示
+- 时间正序排列（2013 → 2026）
+- 左侧年份数字 sticky 跟随，滚动时高亮当前年份

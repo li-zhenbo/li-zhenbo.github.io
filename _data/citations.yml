@@ -1,6 +1,10 @@
 metadata:
   last_updated: '2026-07-28'
 papers:
+  li2011generalized:
+    citations: 0
+    title: 基于改进的主动控制法实现混沌系统广义投影同步
+    year: '2011'
   li2026quantitative:
     citations: 0
     title: Quantitative Analysis of Dynamical Bifurcations in a Coupled Smooth and

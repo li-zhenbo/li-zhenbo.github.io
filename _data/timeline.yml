@@ -1,0 +1,103 @@
+# 学术时间线 · Research Timeline
+#
+# 每条记录包含：
+#   year: 年份（用于分组和排序）
+#   title_en: 英文论文标题
+#   title_zh: 中文简述
+#   journal: 发表期刊
+#   thread: 研究方向标签（ghfp = GHFP/MGHFP族, gpa = GPA方法族）
+#   cover: 封面图文件名（assets/img/publication_preview/ 下），可选
+#   url: 论文对应博客笔记的路径，可选
+#   highlight: true 表示里程碑式节点（加粗突出），可选
+
+- year: 2011
+  items:
+    - title_en: Generalized Projective Synchronization via Modified Active Control
+      title_zh: 改进主动控制法——混沌系统广义投影同步
+      journal: 物理学报 · Acta Phys. Sin.
+      thread: sync
+      cover: aps-cover.png
+
+- year: 2013
+  items:
+    - title_en: Generalized Padé Approximation Method for Homoclinic Orbits
+      title_zh: 广义Padé逼近方法提出——强非线性振子同宿轨求解
+      journal: 力学学报 · Chin. J. Theor. Appl. Mech.
+      thread: gpa
+      cover: lxxb-cover.png
+      highlight: true
+    - title_en: GHFP Method for Limit Cycles and Homoclinic Orbits of Helmholtz–Duffing Oscillator
+      title_zh: 广义谐波函数摄动方法——Helmholtz-Duffing振子极限环与同宿轨
+      journal: J. Sound Vib.
+      thread: ghfp
+      cover: jsv-cover.png
+      highlight: true
+
+- year: 2014
+  items:
+    - title_en: Generalized Padé Approximation for Homoclinic and Heteroclinic Orbits
+      title_zh: 广义Padé逼近方法推广至异宿轨道
+      journal: Chin. Phys. B
+      thread: gpa
+      cover: cpb-cover.png
+
+- year: 2016
+  items:
+    - title_en: Predicting Homoclinic and Heteroclinic Bifurcation of Duffing–Harmonic–van de Pol Oscillator
+      title_zh: 二次广义谐波函数方法——预测同异宿分岔
+      journal: Qual. Theory Dyn. Syst.
+      thread: ghfp
+      cover: qtds-cover.png
+    - title_en: Generalized Padé–Lindstedt–Poincaré Method for Homoclinic and Heteroclinic Bifurcations
+      title_zh: 广义Padé–Lindstedt–Poincaré方法——预测同异宿分岔
+      journal: Nonlinear Dyn.
+      thread: gpa
+      cover: nody-cover.png
+
+- year: 2019
+  items:
+    - title_en: Cosine Generalized Padé Approximation for Periodic Solutions
+      title_zh: 余弦型广义Padé逼近——强非线性振子周期解
+      journal: J. Vib. Shock
+      thread: gpa
+      cover: jvs-cover-p9.png
+
+- year: 2022
+  items:
+    - title_en: High Accurate Homo-Heteroclinic Solutions by GPLP Method
+      title_zh: GPLP方法高精度同异宿解——Φ⁶-Van der Pol与DH-VdP振子
+      journal: J. Vib. Eng. Technol.
+      thread: gpa
+      cover: jvet-cover.png
+
+- year: 2024
+  items:
+    - title_en: MGHFP Method — Foundation Paper (Duffing–Harmonic–Rayleigh–Liénard Oscillator)
+      title_zh: MGHFP方法奠基论文——纯符号化全局动力学分析
+      journal: Int. J. Non-Linear Mech.
+      thread: ghfp
+      cover: ijnlm-cover-p3.png
+      highlight: true
+    - title_en: Modified Perturbation Method — Mixed Rayleigh–Liénard Oscillator with Cubic & Quintic Nonlinearities
+      title_zh: MGHFP方法应用于混合Rayleigh-Liénard振子
+      journal: Phys. Scr.
+      thread: ghfp
+      cover: physica-scripta-cover-p4.png
+
+- year: 2025
+  items:
+    - title_en: Global Evolution of Limit Cycles — SD Oscillator with Quartic Damping
+      title_zh: MGHFP + Padé逼近——SD振子四次非线性阻尼的极限环全局演化
+      journal: Int. J. Non-Linear Mech.
+      thread: ghfp
+      cover: ijnlm-cover.png
+      highlight: true
+
+- year: 2026
+  items:
+    - title_en: Quantitative Bifurcation Analysis of Coupled SD Oscillator with High-Order Damping
+      title_zh: MGHFP方法——耦合SD振子高次非线性阻尼的定量分岔分析
+      journal: Phys. Scr.
+      thread: ghfp
+      cover: physica-scripta-cover.png
+      highlight: true
