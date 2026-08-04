@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>标题字体颜色预览</title>
+<style>
+:root { color-scheme: light; }
+body { background: #F9F8F5; padding: 3rem; max-width: 800px; margin: 0 auto; }
+h3 { font-size: 0.78rem; color: #999; font-family: system-ui,sans-serif; margin: 2.5rem 0 1rem 0; border-bottom:1px solid #eee; padding-bottom:0.3rem; }
+.preview { text-align: center; padding: 1.5rem 0; }
+.zh { display: block; font-size: 2.8rem; font-weight: 700; letter-spacing: 0.02em; }
+.en { display: block; font-weight: 400; font-size: 1.25rem; font-style: italic; margin-top: 0.3rem; opacity: 0.75; }
+
+/* 字体方案 */
+.f-sans .zh { font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+.f-song .zh { font-family: "Noto Serif CJK SC", "SimSun", "STSong", serif; }
+.f-hei .zh { font-family: "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", sans-serif; }
+.f-kai .zh { font-family: "KaiTi", "楷体", "STKaiti", serif; }
+.f-heavy .zh { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 900; letter-spacing: 0.04em; }
+.f-en { font-family: "Georgia", "Times New Roman", serif; }
+
+/* 颜色方案 */
+.c1 .zh { color: #1B5E20; } .c1 .en { color: #388E3C; }
+.c2 .zh { color: #0D3B2E; } .c2 .en { color: #2E6B5A; }
+.c3 .zh { color: #004D40; } .c3 .en { color: #00695C; }
+.c4 .zh { color: #1A3C2A; } .c4 .en { color: #3D6B52; }
+.c5 .zh { color: #2E4A1E; } .c5 .en { color: #507828; }
+.c6 .zh { color: #1B3B1B; } .c6 .en { color: #3A6B3A; }
+
+.small { font-size: 0.7rem; color: #aaa; margin-top:0.3rem; }
+</style>
+</head>
+<body>
+
+<h3>字体 A：系统黑体（PingFang / Microsoft YaHei）</h3>
+<div class="preview f-sans c1">
+  <span class="zh">我的动力学之路</span>
+  <span class="en">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">system-ui + 粗体 700</div>
+</div>
+
+<div class="preview f-sans c2">
+  <span class="zh">我的动力学之路</span>
+  <span class="en">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">#0D3B2E 深墨绿</div>
+</div>
+
+<h3>字体 B：宋体/Noto Serif</h3>
+<div class="preview f-song c3">
+  <span class="zh">我的动力学之路</span>
+  <span class="en">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">Noto Serif CJK SC + 粗体 700 + #004D40</div>
+</div>
+
+<div class="preview f-song c4">
+  <span class="zh">我的动力学之路</span>
+  <span class="en">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">Noto Serif + #1A3C2A 暗松绿</div>
+</div>
+
+<h3>字体 C：黑体 900 极粗</h3>
+<div class="preview f-heavy c5">
+  <span class="zh">我的动力学之路</span>
+  <span class="en">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">PingFang 900 极粗 + #2E4A1E</div>
+</div>
+
+<div class="preview f-heavy c6">
+  <span class="zh">我的动力学之路</span>
+  <span class="en">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">PingFang 900 + #1B3B1B 深草绿</div>
+</div>
+
+<h3>字体 D：楷体 粗体</h3>
+<div class="preview f-kai c1">
+  <span class="zh">我的动力学之路</span>
+  <span class="en">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">KaiTi 楷体 + #1B5E20</div>
+</div>
+
+<div class="preview f-kai c2">
+  <span class="zh">我的动力学之路</span>
+  <span class="en">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">KaiTi + #0D3B2E</div>
+</div>
+
+<h3>对比：当前线上版本（蓝）</h3>
+<div class="preview f-song" style="--c:#005B96">
+  <span class="zh" style="color:#005B96">我的动力学之路</span>
+  <span class="en" style="color:#0074BA">A Research Trajectory in Nonlinear Dynamics</span>
+  <div class="small">Noto Serif + #005B96（参照）</div>
+</div>
+
+</body>
+</html>
