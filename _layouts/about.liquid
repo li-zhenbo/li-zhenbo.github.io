@@ -66,12 +66,14 @@ layout: default
   .pub-stat.s-journals  { background: linear-gradient(135deg, #EDF5FB 0%, #E3EEF7 100%); }
   .pub-stat.s-conferences { background: linear-gradient(135deg, #F4F0F9 0%, #EDE5F5 100%); }
   .pub-stat.s-monographs { background: linear-gradient(135deg, #FDF8EE 0%, #F9F0DA 100%); }
+  .pub-stat.s-citations { background: linear-gradient(135deg, #EDF7F1 0%, #DFEFE5 100%); }
   .pub-stat .num {
     font-size: 2.4rem; font-weight: 700; line-height: 1.15; font-family: "Georgia",serif;
   }
   .pub-stat.s-journals .num  { color: #005B96; }
   .pub-stat.s-conferences .num { color: #6B4E9B; }
   .pub-stat.s-monographs .num { color: #C26D1A; }
+  .pub-stat.s-citations .num { color: #1A7A4C; }
   .pub-stat .label {
     font-size: 0.72rem; color: #888; margin-top: 0.3rem;
     font-family: system-ui,sans-serif; letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.4;
@@ -201,6 +203,7 @@ layout: default
       <div class="pub-stat s-journals"><div class="num">{{ site.data.pubstats.journals }}</div><div class="label"><span class="zh">期刊论文</span><span class="en">Journal Articles</span></div></div>
       <div class="pub-stat s-conferences"><div class="num">{{ site.data.pubstats.conferences }}</div><div class="label"><span class="zh">会议论文</span><span class="en">Conference Papers</span></div></div>
       <div class="pub-stat s-monographs"><div class="num">{{ site.data.pubstats.monographs }}</div><div class="label"><span class="zh">专著</span><span class="en">Monographs</span></div></div>
+      <div class="pub-stat s-citations"><div class="num">{{ site.data.pubstats.total_citations }}</div><div class="label"><span class="zh">总被引</span><span class="en">Total Citations</span></div></div>
     </div>
 
     <!-- Selected papers -->
