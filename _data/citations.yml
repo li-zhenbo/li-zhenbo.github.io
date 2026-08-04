@@ -1,6 +1,11 @@
 metadata:
   last_updated: '2026-07-28'
 papers:
+  li2011generalized2:
+    citations: 0
+    title: Generalized function projective synchronization of two different hyperchaotic
+      systems with unknown parameters
+    year: '2011'
   li2011generalized:
     citations: 0
     title: 基于改进的主动控制法实现混沌系统广义投影同步

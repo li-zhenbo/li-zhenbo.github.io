@@ -30,6 +30,8 @@ jobs:
               "li2019cosine": "10.13465/j.cnki.jvs.2019.22.023",
               "li2016generalized": "10.1007/s11071-015-2563-6",
               "li2022high": "10.1007/s42417-022-00446-7",
+              "li2011generalized": "10.7498/aps.60.050508",
+              "li2011generalized2": "10.1016/j.nonrwa.2011.03.009",
           }
 
           results = {}

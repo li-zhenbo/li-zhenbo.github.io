@@ -17,6 +17,11 @@
       journal: 物理学报 · Acta Phys. Sin.
       thread: sync
       cover: aps-cover.png
+    - title_en: GFPS of Two Hyperchaotic Systems with Unknown Parameters
+      title_zh: 广义函数投影同步——参数未知的超混沌Chen与Lorenz系统
+      journal: Nonlinear Anal. RWA
+      thread: sync
+      cover: nonrwa-cover.png
 
 - year: 2013
   items:
