@@ -1,58 +1,67 @@
 metadata:
-  last_updated: '2026-07-28'
+  last_updated: '2026-08-04'
 papers:
   li2011parametric:
-    citations: 0
+    citations: 3
     title: The parametric synchronization scheme of chaotic system
     year: '2011'
   li2011generalized2:
-    citations: 0
+    citations: 30
     title: Generalized function projective synchronization of two different hyperchaotic
       systems with unknown parameters
     year: '2011'
   li2011generalized:
-    citations: 0
+    citations: 2
     title: 基于改进的主动控制法实现混沌系统广义投影同步
     year: '2011'
-  li2026quantitative:
-    citations: 0
-    title: Quantitative Analysis of Dynamical Bifurcations in a Coupled Smooth and
-      Discontinuous Oscillator with High-order Nonlinear Damping
-    year: '2026'
+  li2013pade:
+    citations: 31
+    title: 求强非线性自治振子同宿轨的广义Padé逼近方法
+    year: '2013'
+  li2013generalized:
+    citations: 24
+    title: A Generalized Harmonic Function Perturbation Method for Determining Limit
+      Cycles and Homoclinic Orbits of Helmholtz–Duffing Oscillator
+    year: '2013'
+  li2014generalized:
+    citations: 5
+    title: A Generalized Padé Approximation Method of Solving Homoclinic and Heteroclinic
+      Orbits of Strongly Nonlinear Autonomous Oscillators
+    year: '2014'
+  li2016predicting:
+    citations: 10
+    title: Predicting Homoclinic and Heteroclinic Bifurcation of Generalized Duffing–Harmonic–van
+      de Pol Oscillator
+    year: '2016'
+  li2016generalized:
+    citations: 9
+    title: A Generalized Padé–Lindstedt–Poincaré Method for Predicting Homoclinic and Heteroclinic Bifurcations of Strongly Nonlinear Autonomous Oscillators
+    year: '2016'
+  li2019cosine:
+    citations: 1
+    title: A Cosine Generalized Padé Approximation Method and Its Application in Solving Periodic Solutions of Strongly Nonlinear Oscillators
+    year: '2019'
+  li2022high:
+    citations: 7
+    title: High Accurate Homo-Heteroclinic Solutions of Certain Strongly Nonlinear Oscillators Based on Generalized Padé–Lindstedt–Poincaré Method
+    year: '2022'
+  li2024modified:
+    citations: 2
+    title: A Modified Generalized Harmonic Function Perturbation Method and Its Application
+      in Analyzing Generalized Duffing–Harmonic–Rayleigh–Liénard Oscillator
+    year: '2024'
+  li2024modified2:
+    citations: 3
+    title: A Modified Perturbation Method for Global Dynamic Analysis of Generalized
+      Mixed Rayleigh–Liénard Oscillator with Cubic and Quintic Nonlinearities
+    year: '2024'
   li2025global:
     citations: 1
     title: Global Evolution of Limit Cycles and Homoclinic Bifurcation of Smooth and
       Discontinuous Oscillator with Quartic Nonlinear Damping
     year: '2025'
-  li2024modified:
+  li2026quantitative:
     citations: 0
-    title: A Modified Generalized Harmonic Function Perturbation Method and Its Application
-      in Analyzing Generalized Duffing–Harmonic–Rayleigh–Liénard Oscillator
-    year: '2024'
-  li2024modified2:
-    citations: 0
-    title: A Modified Perturbation Method for Global Dynamic Analysis of Generalized
-      Mixed Rayleigh–Liénard Oscillator with Cubic and Quintic Nonlinearities
-    year: '2024'
-  li2013generalized:
-    citations: 0
-    title: A Generalized Harmonic Function Perturbation Method for Determining Limit
-      Cycles and Homoclinic Orbits of Helmholtz–Duffing Oscillator
-    year: '2013'
-  li2016predicting:
-    citations: 4
-    title: Predicting Homoclinic and Heteroclinic Bifurcation of Generalized Duffing–Harmonic–van
-      de Pol Oscillator
-    year: '2016'
-  li2019cosine:
-    citations: 0
-    title: A Cosine Generalized Padé Approximation Method and Its Application in Solving Periodic Solutions of Strongly Nonlinear Oscillators
-    year: '2019'
-  li2016generalized:
-    citations: 0
-    title: A Generalized Padé–Lindstedt–Poincaré Method for Predicting Homoclinic and Heteroclinic Bifurcations of Strongly Nonlinear Autonomous Oscillators
-    year: '2016'
-  li2022high:
-    citations: 0
-    title: High Accurate Homo-Heteroclinic Solutions of Certain Strongly Nonlinear Oscillators Based on Generalized Padé–Lindstedt–Poincaré Method
-    year: '2022'
+    title: Quantitative Analysis of Dynamical Bifurcations in a Coupled Smooth and
+      Discontinuous Oscillator with High-order Nonlinear Damping
+    year: '2026'
