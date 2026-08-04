@@ -1,6 +1,10 @@
 metadata:
   last_updated: '2026-07-28'
 papers:
+  li2011parametric:
+    citations: 0
+    title: The parametric synchronization scheme of chaotic system
+    year: '2011'
   li2011generalized2:
     citations: 0
     title: Generalized function projective synchronization of two different hyperchaotic

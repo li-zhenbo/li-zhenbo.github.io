@@ -32,6 +32,7 @@ jobs:
               "li2022high": "10.1007/s42417-022-00446-7",
               "li2011generalized": "10.7498/aps.60.050508",
               "li2011generalized2": "10.1016/j.nonrwa.2011.03.009",
+              "li2011parametric": "10.1016/j.cnsns.2010.10.027",
           }
 
           results = {}

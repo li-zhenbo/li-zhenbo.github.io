@@ -22,6 +22,11 @@
       journal: Nonlinear Anal. RWA
       thread: sync
       cover: nonrwa-cover.png
+    - title_en: Parametric Synchronization Scheme of Chaotic System
+      title_zh: 参数同步方案——构造参数误差向量，状态与参数双重同步
+      journal: Commun. Nonlinear Sci. Numer. Simulat.
+      thread: sync
+      cover: cnsns-cover.png
 
 - year: 2013
   items:
