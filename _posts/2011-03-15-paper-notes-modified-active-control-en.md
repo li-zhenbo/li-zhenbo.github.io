@@ -11,7 +11,7 @@ toc:
 ---
 
 > **Paper:** Li, Z., Zhao, X., & Wang, J. (2011). *Generalized Projective Synchronization of Chaotic Systems via Modified Active Control*. Acta Physica Sinica, 60(5), 050508.
-> **Links:** [Paper (APS)](https://wulixb.iphy.ac.cn/en/article/cstr/32037.14.aps.60.050508) · [DOI](https://doi.org/10.7498/aps.60.050508)
+> **Links:** [Essential Summary PDF](/assets/pdf/essential-summary-p12.pdf) · [Paper (APS)](https://wulixb.iphy.ac.cn/en/article/cstr/32037.14.aps.60.050508) · [DOI](https://doi.org/10.7498/aps.60.050508)
 
 ## TL;DR
 

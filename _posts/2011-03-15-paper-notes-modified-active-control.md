@@ -11,7 +11,7 @@ toc:
 ---
 
 > **论文 Paper**: 李震波, 赵小山, 王靖. (2011). *基于改进的主动控制法实现混沌系统广义投影同步*. 物理学报, 60(5), 050508.
-> **链接 Links**: [Paper (物理学报)](https://wulixb.iphy.ac.cn/article/doi/10.7498/aps.60.050508) · [DOI](https://doi.org/10.7498/aps.60.050508)
+> **链接 Links**: [精华汇总 PDF](/assets/pdf/essential-summary-p12.pdf) · [Paper (物理学报)](https://wulixb.iphy.ac.cn/article/doi/10.7498/aps.60.050508) · [DOI](https://doi.org/10.7498/aps.60.050508)
 
 ## TL;DR 一句话总结
 
