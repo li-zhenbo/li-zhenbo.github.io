@@ -387,21 +387,65 @@ ninja.data = [{
             window.location.href = "/blog/2011/paper-notes-modified-active-control-en/";
           
         },
-      },{id: "news-新论文-改进的主动控制法实现混沌系统广义投影同步",
+      },{id: "post-论文笔记-混沌系统的参数同步方案-构造状态与参数双重误差向量",
+        
+          title: "论文笔记：混沌系统的参数同步方案——构造状态与参数双重误差向量",
+        
+        description: "提出参数同步方案：不仅同步状态向量，还将未知的响应系统参数同步到给定驱动参数",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2011/paper-notes-parametric-sync/";
+          
+        },
+      },{id: "post-paper-notes-the-parametric-synchronization-scheme-of-chaotic-system-synchronizing-states-and-parameters-simultaneously",
+        
+          title: "Paper Notes — The Parametric Synchronization Scheme of Chaotic System: Synchronizing States and...",
+        
+        description: "A parametric synchronization scheme constructing parametric error vectors to synchronize both states and unknown response parameters",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2011/paper-notes-parametric-sync-en/";
+          
+        },
+      },{id: "news-新论文-混沌系统的参数同步方案",
+          title: '新论文：混沌系统的参数同步方案',
+          description: "发表于 Communications in Nonlinear Science and Numerical Simulation，通过构造参数误差向量实现状态与参数的同步。",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_cnsns_2011/";
+            },},{id: "news-新论文-改进的主动控制法实现混沌系统广义投影同步",
           title: '新论文：改进的主动控制法实现混沌系统广义投影同步',
           description: "发表于物理学报，基于Lyapunov稳定性理论与特殊矩阵构造，提出不依赖Routh-Hurwitz判据的改进主动控制法。",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_aps_2011/";
-            },},{id: "news-新论文-广义-padé-逼近方法-求解强非线性自治振子同宿轨-力学学报",
-          title: '新论文：广义 Padé 逼近方法——求解强非线性自治振子同宿轨（力学学报）',
-          description: "发表于力学学报，提出广义 Padé 逼近（GPA）方法的首次公开发表，利用双曲函数构造新逼近式求解同宿轨道",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_pade_2013/";
             },},{id: "news-新论文-ghfp-方法首次提出-广义谐波函数摄动法确定-helmholtz-duffing-振子的极限环与同宿轨道",
           title: '新论文：GHFP 方法首次提出——广义谐波函数摄动法确定 Helmholtz-Duffing 振子的极限环与同宿轨道',
           description: "发表于 Journal of Sound and Vibration，提出广义谐波函数摄动法（GHFP），首次对 Helmholtz-Duffing 振子的极限环和同宿分岔进行解析预测。",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_ghfp_2013/";
+            },},{id: "news-gplp-method-paper-published-in-nonlinear-dynamics-generalized-padé-lindstedt-poincaré-method-for-homoclinic-heteroclinic-bifurcation-prediction-广义padé-lindstedt-poincaré方法论文发表在nonlinear-dynamics-doi",
+          title: 'GPLP method paper published in Nonlinear Dynamics: generalized Padé–Lindstedt–Poincaré method for homoclinic/heteroclinic bifurcation...',
+          description: "",
+          section: "News",},{id: "news-cosine-generalized-padé-approximation-paper-published-in-journal-of-vibration-and-shock-solving-periodic-solutions-of-strongly-nonlinear-oscillators-余弦广义padé逼近法论文发表在-振动与冲击-doi",
+          title: 'Cosine generalized Padé approximation paper published in Journal of Vibration and Shock: solving...',
+          description: "",
+          section: "News",},{id: "news-asymmetric-gplp-paper-published-in-j-vib-eng-technol-high-accurate-homo-heteroclinic-solutions-for-asymmetric-potential-oscillators-非对称gplp方法论文发表在j-vib-eng-technol-doi",
+          title: 'Asymmetric GPLP paper published in J. Vib. Eng. Technol.: high accurate homo-heteroclinic solutions...',
+          description: "",
+          section: "News",},{id: "news-个人主页上线啦-my-academic-homepage-is-now-online",
+          title: '个人主页上线啦！🎉 My academic homepage is now online.',
+          description: "",
+          section: "News",},{id: "news-",
+          title: '',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_nonrwa_2011/";
+            },},{id: "news-新论文-广义-padé-逼近方法-求解强非线性自治振子同宿轨-力学学报",
+          title: '新论文：广义 Padé 逼近方法——求解强非线性自治振子同宿轨（力学学报）',
+          description: "发表于力学学报，提出广义 Padé 逼近（GPA）方法的首次公开发表，利用双曲函数构造新逼近式求解同宿轨道",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_pade_2013/";
             },},{id: "news-new-paper-generalized-padé-approximation-method-for-homoclinic-and-heteroclinic-orbits-chinese-physics-b",
           title: 'New Paper: Generalized Padé Approximation Method for Homoclinic and Heteroclinic Orbits (Chinese Physics...',
           description: "Published in Chinese Physics B, extending the GPA method to both homoclinic and heteroclinic orbits with hyperbolic-function approximants",
@@ -412,16 +456,7 @@ ninja.data = [{
           description: "发表于 Qualitative Theory of Dynamical Systems，将 GHFP 方法推广至有理恢复力振子，同时预测同宿和异宿分岔。",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_qtds_2016/";
-            },},{id: "news-gplp-method-paper-published-in-nonlinear-dynamics-generalized-padé-lindstedt-poincaré-method-for-homoclinic-heteroclinic-bifurcation-prediction-广义padé-lindstedt-poincaré方法论文发表在nonlinear-dynamics-doi-https-doi-org-10-1007-s11071-015-2563-6",
-          title: 'GPLP method paper published in *Nonlinear Dynamics*: generalized Padé–Lindstedt–Poincaré method for homoclinic/heteroclinic bifurcation...',
-          description: "",
-          section: "News",},{id: "news-cosine-generalized-padé-approximation-paper-published-in-journal-of-vibration-and-shock-solving-periodic-solutions-of-strongly-nonlinear-oscillators-余弦广义padé逼近法论文发表在-振动与冲击-doi-https-doi-org-10-13465-j-cnki-jvs-2019-22-023",
-          title: 'Cosine generalized Padé approximation paper published in *Journal of Vibration and Shock*: solving...',
-          description: "",
-          section: "News",},{id: "news-asymmetric-gplp-paper-published-in-j-vib-eng-technol-high-accurate-homo-heteroclinic-solutions-for-asymmetric-potential-oscillators-非对称gplp方法论文发表在j-vib-eng-technol-doi-https-doi-org-10-1007-s42417-022-00446-7",
-          title: 'Asymmetric GPLP paper published in *J. Vib. Eng. Technol.*: high accurate homo-heteroclinic solutions...',
-          description: "",
-          section: "News",},{id: "news-新论文发表在-physica-scripta-mghfp-方法的首次提出-the-first-paper-introducing-the-mghfp-method-is-now-published-in-physica-scripta-doi-https-doi-org-10-1088-1402-4896-ad5066",
+            },},{id: "news-新论文发表在-physica-scripta-mghfp-方法的首次提出-the-first-paper-introducing-the-mghfp-method-is-now-published-in-physica-scripta-doi-https-doi-org-10-1088-1402-4896-ad5066",
           title: '新论文发表在 Physica Scripta：MGHFP 方法的首次提出 / The first paper introducing the MGHFP method is...',
           description: "",
           section: "News",},{id: "news-mghfp-方法的第一个后续应用-dhrl-振子全局动力学分析-first-follow-up-application-of-the-mghfp-method-global-analysis-of-the-dhrl-oscillator-now-published-in-ijnlm-doi-https-doi-org-10-1016-j-ijnonlinmec-2024-104832",
@@ -433,15 +468,7 @@ ninja.data = [{
           section: "News",},{id: "news-新论文发表在-physica-scripta-耦合-sd-振子极限环全局定量分析-new-paper-published-in-physica-scripta-quantitative-analysis-of-limit-cycles-in-coupled-sd-oscillator-doi-https-doi-org-10-1088-1402-4896-ae5134",
           title: '新论文发表在 Physica Scripta：耦合 SD 振子极限环全局定量分析 / New paper published in Physica Scripta: quantitative...',
           description: "",
-          section: "News",},{id: "news-个人主页上线啦-my-academic-homepage-is-now-online",
-          title: '个人主页上线啦！🎉 My academic homepage is now online.',
-          description: "",
-          section: "News",},{id: "news-",
-          title: '',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_nonrwa_2011/";
-            },},{
+          section: "News",},{
         id: 'social-cv',
         title: 'CV',
         section: 'Socials',
